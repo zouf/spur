@@ -260,11 +260,25 @@
                                     <segue destination="G2W-97-mzc" kind="push" id="hKl-mG-Kp4"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="User" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="olx-fb-fyi">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Item Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jc6-JQ-cFc">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="p0B-BI-wCP" firstAttribute="centerY" secondItem="BFK-LO-WKF" secondAttribute="centerY" type="default" id="kEX-BF-GbW"/>
+                            <constraint firstItem="Jc6-JQ-cFc" firstAttribute="centerX" secondItem="p0B-BI-wCP" secondAttribute="centerX" type="default" id="473-qb-tEd"/>
+                            <constraint firstItem="Jc6-JQ-cFc" firstAttribute="centerX" secondItem="olx-fb-fyi" secondAttribute="centerX" type="default" id="YbC-9J-G1c"/>
+                            <constraint firstItem="olx-fb-fyi" firstAttribute="top" secondItem="BFK-LO-WKF" secondAttribute="top" constant="133" id="e8q-vq-Yll"/>
                             <constraint firstItem="p0B-BI-wCP" firstAttribute="centerX" secondItem="BFK-LO-WKF" secondAttribute="centerX" type="default" id="mFP-qt-tFK"/>
+                            <constraint firstItem="Jc6-JQ-cFc" firstAttribute="top" secondItem="olx-fb-fyi" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="vT6-aI-8ge"/>
+                            <constraint firstItem="p0B-BI-wCP" firstAttribute="top" secondItem="Jc6-JQ-cFc" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="yMG-TI-B4q"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Expanded Request" id="iQn-uu-RyS"/>
@@ -643,7 +657,7 @@
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qph-pR-Xrn">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="View Picture">
+                                <state key="normal" title="Expand Picture">
                                     <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -684,23 +698,31 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E6E-x4-Qzb">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="jS0-kj-h97"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="E6E-x4-Qzb" firstAttribute="centerX" secondItem="Qph-pR-Xrn" secondAttribute="centerX" type="default" id="3nm-Ij-2SD"/>
                             <constraint firstItem="LEj-fq-VFd" firstAttribute="baseline" secondItem="br3-3i-amA" secondAttribute="baseline" type="default" id="DMA-Hu-QaC"/>
-                            <constraint firstItem="TnP-yo-FgI" firstAttribute="top" secondItem="CvQ-kI-AiU" secondAttribute="top" constant="68" id="Fnn-wM-Rrz"/>
-                            <constraint firstItem="Qph-pR-Xrn" firstAttribute="top" secondItem="PJw-MR-6Kd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="HwE-gz-hBU"/>
-                            <constraint firstItem="br3-3i-amA" firstAttribute="top" secondItem="Qph-pR-Xrn" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="MYR-Nv-TXS"/>
+                            <constraint firstItem="E6E-x4-Qzb" firstAttribute="top" secondItem="PJw-MR-6Kd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="KtU-Rn-Y66"/>
+                            <constraint firstItem="mz4-M7-0vk" firstAttribute="top" secondItem="br3-3i-amA" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="MEW-ed-R2e"/>
+                            <constraint firstItem="Qph-pR-Xrn" firstAttribute="top" secondItem="E6E-x4-Qzb" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="NMk-hJ-bz2"/>
+                            <constraint firstItem="TnP-yo-FgI" firstAttribute="top" secondItem="CvQ-kI-AiU" secondAttribute="top" constant="20" symbolic="YES" type="default" id="NX8-Hr-GzY"/>
                             <constraint firstItem="PJw-MR-6Kd" firstAttribute="top" secondItem="s9a-mc-Y2i" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="PUe-8h-KTh"/>
                             <constraint firstItem="s9a-mc-Y2i" firstAttribute="top" secondItem="TnP-yo-FgI" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="VQR-dr-EBr"/>
                             <constraint firstItem="PJw-MR-6Kd" firstAttribute="centerX" secondItem="s9a-mc-Y2i" secondAttribute="centerX" type="default" id="Yef-LM-1N4"/>
                             <constraint firstItem="s9a-mc-Y2i" firstAttribute="centerX" secondItem="TnP-yo-FgI" secondAttribute="centerX" type="default" id="Z93-lt-TEt"/>
-                            <constraint firstItem="mz4-M7-0vk" firstAttribute="centerX" secondItem="CvQ-kI-AiU" secondAttribute="centerX" type="default" id="aAE-jj-GuX"/>
-                            <constraint firstItem="mz4-M7-0vk" firstAttribute="top" secondItem="br3-3i-amA" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="lI2-vm-HJf"/>
+                            <constraint firstItem="Qph-pR-Xrn" firstAttribute="centerX" secondItem="CvQ-kI-AiU" secondAttribute="centerX" type="default" id="eqf-ok-w77"/>
+                            <constraint firstItem="E6E-x4-Qzb" firstAttribute="centerX" secondItem="PJw-MR-6Kd" secondAttribute="centerX" type="default" id="fOn-t8-7QX"/>
+                            <constraint firstItem="E6E-x4-Qzb" firstAttribute="leading" secondItem="LEj-fq-VFd" secondAttribute="leading" type="default" id="g2A-Uo-d3q"/>
+                            <constraint firstAttribute="bottom" secondItem="mz4-M7-0vk" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="lJU-2f-qVP"/>
                             <constraint firstItem="Qph-pR-Xrn" firstAttribute="centerX" secondItem="mz4-M7-0vk" secondAttribute="centerX" type="default" id="rmj-aT-uNG"/>
-                            <constraint firstItem="Qph-pR-Xrn" firstAttribute="centerX" secondItem="PJw-MR-6Kd" secondAttribute="centerX" type="default" id="vue-bl-fYX"/>
                             <constraint firstItem="br3-3i-amA" firstAttribute="leading" secondItem="LEj-fq-VFd" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="xaz-Bz-akM"/>
-                            <constraint firstItem="LEj-fq-VFd" firstAttribute="leading" secondItem="CvQ-kI-AiU" secondAttribute="leading" constant="40" id="yuk-Gx-vd6"/>
+                            <constraint firstItem="LEj-fq-VFd" firstAttribute="top" secondItem="Qph-pR-Xrn" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ztN-vc-dvz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Expanded Offer" id="oJ1-C3-Sta"/>

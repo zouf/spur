@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SpurExpandedPendingPaymentViewController : UIViewController
+@interface SpurExpandedPendingPaymentViewController : UITableViewController
 
 @end

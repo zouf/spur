@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface SpurExpandedIncomingOfferViewController : UIViewController
-
+@property (nonatomic, retain) id offerId;
 @end

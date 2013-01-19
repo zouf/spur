@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface SpurIncomingOffersTableViewController : UITableViewController
-
+@property(nonatomic,retain) id requestId;
 @end

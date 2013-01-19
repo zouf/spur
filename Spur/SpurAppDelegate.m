@@ -87,4 +87,18 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+#pragma mark - deal with username password
+
+-(NSString*)getUserId
+{
+    NSString *user = [[NSUserDefaults standardUserDefaults] stringForKey:@"userid"];
+    return user;
+}
+
+-(void)setUserId:(NSString*)theID
+{
+    [[NSUserDefaults standardUserDefaults] setObject:theID forKey:@"userid"];
+    
+    
+}
 @end

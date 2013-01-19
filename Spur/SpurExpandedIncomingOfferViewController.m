@@ -13,6 +13,7 @@
 @end
 
 @implementation SpurExpandedIncomingOfferViewController
+@synthesize offerId;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

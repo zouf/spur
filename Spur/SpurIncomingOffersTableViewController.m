@@ -13,7 +13,7 @@
 @end
 
 @implementation SpurIncomingOffersTableViewController
-
+@synthesize  requestId;
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];

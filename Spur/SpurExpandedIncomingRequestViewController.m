@@ -126,8 +126,8 @@
     @"requestId" :  self.requestID,
     @"bestOffer" :  self.bestOffer.text,
     @"deviceToken" : delegate.deviceToken,
-    @"posttime": str,9
-    @"userId": [self.spurServiceOffer.client.currentUser userId]
+    @"posttime": str,
+    @"userId": [delegate getUserId]
     };
     [self.spurServiceOffer addItem:item completion:^(NSUInteger index){
         UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"Thanks" message:@"Your offer's been placed" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
@@ -138,6 +138,8 @@
 }
 - (void) login
 {
+    SpurAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+
     UINavigationController *controller =
     [self.spurServiceOffer.client
      loginViewControllerWithProvider:@"google"
@@ -150,8 +152,9 @@
              // that the user cancelled the dialog
          } else {
              // No error, so load the data
-             [self.spurService refreshDataOnSuccess:^{
+             [self.spurServiceOffer refreshDataOnSuccess:^{
                  NSLog(@"Rock on!\n");
+                 [delegate setUserId:self.spurServiceOffer.client.currentUser.userId];
                  [self sendOfferToServer];
              }];
          }
@@ -167,12 +170,19 @@
 - (IBAction)submitOffer:(id)sender {
     self.spurServiceOffer  = [[SpurService alloc]initWithTable:@"itemoffer"];
 
+    SpurAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+
     // If user is already logged in, no need to ask for auth
-    if (self.spurServiceOffer.client.currentUser == nil)
+    if ([delegate getUserId] == nil)
     {
         // We want the login view to be presented after the this run loop has completed
         // Here we use a delay to ensure this.
         [self performSelector:@selector(login) withObject:self afterDelay:0.1];
+    }
+    else
+    
+    {
+        [self sendOfferToServer];
     }
 }
 

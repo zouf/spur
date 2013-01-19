@@ -48,8 +48,10 @@
 // mzoufaly add the following in order to enforce login
 - (void)viewDidAppear:(BOOL)animated
 {
+    SpurAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+
     // If user is already logged in, no need to ask for auth
-    if (self.spurService.client.currentUser == nil)
+    if ([delegate getUserId]== nil)
     {
         // We want the login view to be presented after the this run loop has completed
         // Here we use a delay to ensure this.
@@ -60,6 +62,8 @@
 
 - (void) login
 {
+    SpurAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+
     UINavigationController *controller =
     [self.spurService.client
      loginViewControllerWithProvider:@"google"
@@ -73,7 +77,10 @@
          } else {
              // No error, so load the data
              [self.spurService refreshDataOnSuccess:^{
+                 [delegate setUserId:self.spurService.client.currentUser.userId];
+
                  NSLog(@"Rock on!\n");
+                 
                  //  [self.tableView reloadData];
              }];
          }
@@ -150,13 +157,14 @@
     
     
     SpurAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    NSString *nm = [delegate getUserId];
     
     NSDictionary *item = @{
     @"name" : self.nameField.text,
     @"price": self.priceField.text,
     @"deviceToken" : delegate.deviceToken,
-    @"posttime": str
-    // @"userId": [self.spurService.client.currentUser userId]
+    @"posttime": str,
+     @"userId": nm
     };
     [self.spurService addItem:item completion:^(NSUInteger index){
         NSLog(@"Done!?\n");

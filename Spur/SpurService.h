@@ -8,7 +8,7 @@
 
 #import <WindowsAzureMobileServices/WindowsAzureMobileServices.h>
 #import <Foundation/Foundation.h>
-
+#import "KeychainItemWrapper.h"
 
 #pragma mark * Block Definitions
 
@@ -51,5 +51,10 @@ typedef void (^BusyUpdateBlock) (BOOL busy);
             onResponse:(MSFilterResponseBlock)onResponse;
 
 -(SpurService *) initWithTable:(NSString*)named;
+
+
+
+
+
 
 @end

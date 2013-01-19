@@ -17,4 +17,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+-(NSString *)getUserId;
+-(void)setUserId:(NSString*)theID;
+
 @end

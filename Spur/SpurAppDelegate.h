@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuickDialog/QuickDialog.h>
+
+
 
 @interface SpurAppDelegate : UIResponder <UIApplicationDelegate>
 

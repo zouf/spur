@@ -7,6 +7,7 @@
 //
 
 #import "SpurHomePageViewController.h"
+#import "QuickDialog.h"
 
 @interface SpurHomePageViewController ()
 
@@ -26,7 +27,6 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
 }
 
 - (void)didReceiveMemoryWarning

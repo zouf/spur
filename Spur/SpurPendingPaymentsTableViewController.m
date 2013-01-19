@@ -7,8 +7,12 @@
 //
 
 #import "SpurPendingPaymentsTableViewController.h"
+#import "SpurService.h"
 
 @interface SpurPendingPaymentsTableViewController ()
+
+@property (strong, nonatomic) SpurService *spurService;
+
 
 @end
 

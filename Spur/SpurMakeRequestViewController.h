@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "QuickDialog.h"
 
 @interface SpurMakeRequestViewController : UIViewController
-
+- (void) login;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *submitRequest;
 @end

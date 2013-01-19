@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0A54557A16AA509B0023C944 /* WindowsAzureMobileServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A54557916AA509B0023C944 /* WindowsAzureMobileServices.framework */; };
+		0A54560D16AA7F620023C944 /* SpurService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0A54560C16AA7F620023C944 /* SpurService.m */; };
+		0A54561316AAA5240023C944 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A54561216AAA5240023C944 /* MapKit.framework */; };
+		0A54561516AAA52A0023C944 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A54561416AAA52A0023C944 /* CoreLocation.framework */; };
+		0A54562716AAA5D60023C944 /* libQuickDialog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A54562216AAA5440023C944 /* libQuickDialog.a */; };
 		27492C9116AA3F430095A442 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27492C9016AA3F430095A442 /* UIKit.framework */; };
 		27492C9316AA3F430095A442 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27492C9216AA3F430095A442 /* Foundation.framework */; };
 		27492C9516AA3F430095A442 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27492C9416AA3F430095A442 /* CoreGraphics.framework */; };
@@ -26,7 +30,6 @@
 		27492CCA16AA446C0095A442 /* SpurIncomingOffersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CC916AA446C0095A442 /* SpurIncomingOffersTableViewController.m */; };
 		27492CCD16AA449B0095A442 /* SpurIncomingRequestsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CCC16AA449B0095A442 /* SpurIncomingRequestsTableViewController.m */; };
 		27492CD016AA49140095A442 /* SpurExpandedIncomingRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CCF16AA49140095A442 /* SpurExpandedIncomingRequestViewController.m */; };
-		27492CD316AA49BB0095A442 /* SpurMakeOfferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CD216AA49BB0095A442 /* SpurMakeOfferViewController.m */; };
 		27492CD616AA4ABA0095A442 /* SpurPictureCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CD516AA4ABA0095A442 /* SpurPictureCaptureViewController.m */; };
 		27492CD916AA4B330095A442 /* SpurExpandedIncomingOfferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CD816AA4B330095A442 /* SpurExpandedIncomingOfferViewController.m */; };
 		27492CDC16AA4BC40095A442 /* SpurExpandedPendingPaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CDB16AA4BC40095A442 /* SpurExpandedPendingPaymentViewController.m */; };
@@ -40,8 +43,37 @@
 		27492D1116AA6BC70095A442 /* SpurExpandedOutgoingRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492D1016AA6BC70095A442 /* SpurExpandedOutgoingRequestViewController.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		0A54561F16AAA5440023C944 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0A54561616AAA5440023C944 /* QuickDialog.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = D80B0E3313E052DF00FA85CA;
+			remoteInfo = QuickDialogExample;
+		};
+		0A54562116AAA5440023C944 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0A54561616AAA5440023C944 /* QuickDialog.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 2C542393145ADEBD0026A152;
+			remoteInfo = QuickDialog;
+		};
+		0A54562516AAA5CD0023C944 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0A54561616AAA5440023C944 /* QuickDialog.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 2C542392145ADEBD0026A152;
+			remoteInfo = QuickDialog;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		0A54557916AA509B0023C944 /* WindowsAzureMobileServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WindowsAzureMobileServices.framework; path = MobileServicesSDK/WindowsAzureMobileServices.framework; sourceTree = "<group>"; };
+		0A54560B16AA7F620023C944 /* SpurService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurService.h; sourceTree = "<group>"; };
+		0A54560C16AA7F620023C944 /* SpurService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurService.m; sourceTree = "<group>"; };
+		0A54561216AAA5240023C944 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		0A54561416AAA52A0023C944 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		0A54561616AAA5440023C944 /* QuickDialog.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = QuickDialog.xcodeproj; path = QuickDialog/QuickDialog.xcodeproj; sourceTree = "<group>"; };
 		27492C8C16AA3F430095A442 /* Spur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spur.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27492C9016AA3F430095A442 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		27492C9216AA3F430095A442 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -72,8 +104,6 @@
 		27492CCC16AA449B0095A442 /* SpurIncomingRequestsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurIncomingRequestsTableViewController.m; sourceTree = "<group>"; };
 		27492CCE16AA49140095A442 /* SpurExpandedIncomingRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurExpandedIncomingRequestViewController.h; sourceTree = "<group>"; };
 		27492CCF16AA49140095A442 /* SpurExpandedIncomingRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurExpandedIncomingRequestViewController.m; sourceTree = "<group>"; };
-		27492CD116AA49BB0095A442 /* SpurMakeOfferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurMakeOfferViewController.h; sourceTree = "<group>"; };
-		27492CD216AA49BB0095A442 /* SpurMakeOfferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurMakeOfferViewController.m; sourceTree = "<group>"; };
 		27492CD416AA4ABA0095A442 /* SpurPictureCaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurPictureCaptureViewController.h; sourceTree = "<group>"; };
 		27492CD516AA4ABA0095A442 /* SpurPictureCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurPictureCaptureViewController.m; sourceTree = "<group>"; };
 		27492CD716AA4B330095A442 /* SpurExpandedIncomingOfferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurExpandedIncomingOfferViewController.h; sourceTree = "<group>"; };
@@ -103,6 +133,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0A54562716AAA5D60023C944 /* libQuickDialog.a in Frameworks */,
+				0A54561516AAA52A0023C944 /* CoreLocation.framework in Frameworks */,
+				0A54561316AAA5240023C944 /* MapKit.framework in Frameworks */,
 				27492C9116AA3F430095A442 /* UIKit.framework in Frameworks */,
 				27492C9316AA3F430095A442 /* Foundation.framework in Frameworks */,
 				27492C9516AA3F430095A442 /* CoreGraphics.framework in Frameworks */,
@@ -113,6 +146,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0A54561716AAA5440023C944 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0A54562016AAA5440023C944 /* QuickDialogExample.app */,
+				0A54562216AAA5440023C944 /* libQuickDialog.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		27492C8116AA3F430095A442 = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +175,9 @@
 		27492C8F16AA3F430095A442 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0A54561416AAA52A0023C944 /* CoreLocation.framework */,
+				0A54561216AAA5240023C944 /* MapKit.framework */,
+				0A54561616AAA5440023C944 /* QuickDialog.xcodeproj */,
 				0A54557916AA509B0023C944 /* WindowsAzureMobileServices.framework */,
 				27492C9016AA3F430095A442 /* UIKit.framework */,
 				27492C9216AA3F430095A442 /* Foundation.framework */,
@@ -144,6 +189,8 @@
 		27492C9616AA3F430095A442 /* Spur */ = {
 			isa = PBXGroup;
 			children = (
+				0A54560B16AA7F620023C944 /* SpurService.h */,
+				0A54560C16AA7F620023C944 /* SpurService.m */,
 				27492CA816AA3F430095A442 /* MainStoryboard.storyboard */,
 				27492D0916AA69940095A442 /* Views */,
 				27492C9F16AA3F430095A442 /* SpurAppDelegate.h */,
@@ -183,9 +230,10 @@
 			children = (
 				27492CCB16AA449B0095A442 /* SpurIncomingRequestsTableViewController.h */,
 				27492CCC16AA449B0095A442 /* SpurIncomingRequestsTableViewController.m */,
-				27492D0016AA67EF0095A442 /* Expanded Incoming Request */,
-				27492D0116AA680C0095A442 /* Make Offer */,
-				27492D0216AA68110095A442 /* Picture Capture */,
+				27492CCE16AA49140095A442 /* SpurExpandedIncomingRequestViewController.h */,
+				27492CCF16AA49140095A442 /* SpurExpandedIncomingRequestViewController.m */,
+				27492CD416AA4ABA0095A442 /* SpurPictureCaptureViewController.h */,
+				27492CD516AA4ABA0095A442 /* SpurPictureCaptureViewController.m */,
 			);
 			name = "Incoming Requests";
 			sourceTree = "<group>";
@@ -232,33 +280,6 @@
 				27492D0716AA696B0095A442 /* Make Payment */,
 			);
 			name = "Pending Payments";
-			sourceTree = "<group>";
-		};
-		27492D0016AA67EF0095A442 /* Expanded Incoming Request */ = {
-			isa = PBXGroup;
-			children = (
-				27492CCE16AA49140095A442 /* SpurExpandedIncomingRequestViewController.h */,
-				27492CCF16AA49140095A442 /* SpurExpandedIncomingRequestViewController.m */,
-			);
-			name = "Expanded Incoming Request";
-			sourceTree = "<group>";
-		};
-		27492D0116AA680C0095A442 /* Make Offer */ = {
-			isa = PBXGroup;
-			children = (
-				27492CD116AA49BB0095A442 /* SpurMakeOfferViewController.h */,
-				27492CD216AA49BB0095A442 /* SpurMakeOfferViewController.m */,
-			);
-			name = "Make Offer";
-			sourceTree = "<group>";
-		};
-		27492D0216AA68110095A442 /* Picture Capture */ = {
-			isa = PBXGroup;
-			children = (
-				27492CD416AA4ABA0095A442 /* SpurPictureCaptureViewController.h */,
-				27492CD516AA4ABA0095A442 /* SpurPictureCaptureViewController.m */,
-			);
-			name = "Picture Capture";
 			sourceTree = "<group>";
 		};
 		27492D0316AA68670095A442 /* Quick Requests */ = {
@@ -364,6 +385,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				0A54562616AAA5CD0023C944 /* PBXTargetDependency */,
 			);
 			name = Spur;
 			productName = Spur;
@@ -390,12 +412,35 @@
 			mainGroup = 27492C8116AA3F430095A442;
 			productRefGroup = 27492C8D16AA3F430095A442 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 0A54561716AAA5440023C944 /* Products */;
+					ProjectRef = 0A54561616AAA5440023C944 /* QuickDialog.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				27492C8B16AA3F430095A442 /* Spur */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		0A54562016AAA5440023C944 /* QuickDialogExample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = QuickDialogExample.app;
+			remoteRef = 0A54561F16AAA5440023C944 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0A54562216AAA5440023C944 /* libQuickDialog.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libQuickDialog.a;
+			remoteRef = 0A54562116AAA5440023C944 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		27492C8A16AA3F430095A442 /* Resources */ = {
@@ -427,7 +472,6 @@
 				27492CCA16AA446C0095A442 /* SpurIncomingOffersTableViewController.m in Sources */,
 				27492CCD16AA449B0095A442 /* SpurIncomingRequestsTableViewController.m in Sources */,
 				27492CD016AA49140095A442 /* SpurExpandedIncomingRequestViewController.m in Sources */,
-				27492CD316AA49BB0095A442 /* SpurMakeOfferViewController.m in Sources */,
 				27492CD616AA4ABA0095A442 /* SpurPictureCaptureViewController.m in Sources */,
 				27492CD916AA4B330095A442 /* SpurExpandedIncomingOfferViewController.m in Sources */,
 				27492CDC16AA4BC40095A442 /* SpurExpandedPendingPaymentViewController.m in Sources */,
@@ -439,10 +483,19 @@
 				27492CFF16AA668E0095A442 /* SpurOutgoingRequestsViewController.m in Sources */,
 				27492D0C16AA6A970095A442 /* SpurExpandedOutgoingOfferViewController.m in Sources */,
 				27492D1116AA6BC70095A442 /* SpurExpandedOutgoingRequestViewController.m in Sources */,
+				0A54560D16AA7F620023C944 /* SpurService.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0A54562616AAA5CD0023C944 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = QuickDialog;
+			targetProxy = 0A54562516AAA5CD0023C944 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		27492C9916AA3F430095A442 /* InfoPlist.strings */ = {
@@ -517,6 +570,7 @@
 		27492CB116AA3F430095A442 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer: Matthew Zoufaly (R945WVEVM5)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -525,8 +579,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Spur/Spur-Prefix.pch";
 				INFOPLIST_FILE = "Spur/Spur-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "73BF86A2-79F9-4489-9E91-50BDE845EC44";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/QuickDialog\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -534,6 +590,7 @@
 		27492CB216AA3F430095A442 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = YES;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: AllSortz, Inc.";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -542,8 +599,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Spur/Spur-Prefix.pch";
 				INFOPLIST_FILE = "Spur/Spur-Info.plist";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "0B759705-0530-4045-85C9-C49DF5E088C2";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/QuickDialog\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

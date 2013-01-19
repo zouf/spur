@@ -7,13 +7,25 @@
 //
 
 #import "SpurExpandedIncomingRequestViewController.h"
+#import "SpurAppDelegate.h"
+#import "SpurService.h"
 
 @interface SpurExpandedIncomingRequestViewController ()
+@property (weak, nonatomic) IBOutlet UILabel *userLabel;
+@property (weak, nonatomic) IBOutlet UILabel *itemLabel;
+@property (weak, nonatomic) IBOutlet UILabel *priceLabel;
+@property (weak, nonatomic) IBOutlet UILabel *borrowLabel;
+@property (weak, nonatomic) IBOutlet UILabel *postedLabel;
+@property (nonatomic,retain) SpurService * spurService;
+@property (nonatomic,retain) SpurService * spurServiceOffer;
 
+
+
+@property (weak, nonatomic) IBOutlet UITextField *bestOffer;
 @end
 
 @implementation SpurExpandedIncomingRequestViewController
-
+@synthesize requestID;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -23,11 +35,148 @@
     return self;
 }
 
+
+
+
+
+
+-(void)dismissKeyboard {
+    [self.bestOffer resignFirstResponder];
+   
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.spurService  = [[SpurService alloc]initWithTable:@"itemrequest"];
+
+    
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc]
+                                   initWithTarget:self
+                                   action:@selector(dismissKeyboard)];
+    
+    [self.view addGestureRecognizer:tap];
+
+    
+    // Create a predicate that finds items where complete is false
+    NSPredicate * predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"id == %d", [self.requestID intValue]]];
+    [self.spurService refreshDataOnSuccess:^{
+        dispatch_async(dispatch_get_main_queue(), ^{
+                id item = [self.spurService.items objectAtIndex:0];
+        
+            NSLog(@"%@\n",[item objectForKey:@"name"]);
+            NSString *name = [item objectForKey:@"userId"];
+            if (![name  isEqual:[NSNull null]])
+            {
+                self.userLabel.text  = name;
+            }
+            NSString *price = [item objectForKey:@"price"];
+            if (![price  isEqual:[NSNull null]])
+            {
+                self.priceLabel.text  = price;
+            }
+            NSString *posttime = [item objectForKey:@"posttime"];
+
+            if (![posttime  isEqual:[NSNull null]])
+            {
+                self.priceLabel.text  = posttime;
+            }
+
+            NSString *itemlabel = [item objectForKey:@"name"];
+            
+            if (![itemlabel isEqual:[NSNull null]])
+            {
+                self.itemLabel.text  = itemlabel;
+            }
+            
+            NSString *borrow = [item objectForKey:@"borrow"];
+            
+            if (![borrow  isEqual:[NSNull null]])
+            {
+                self.itemLabel.text  = borrow;
+            }
+
+        });
+
+    } :(NSPredicate*)predicate];
+
+    
+
 	// Do any additional setup after loading the view.
 }
+
+
+-(void)sendOfferToServer
+{
+    
+    NSLog(@"Insert into offers table!\n");
+    
+    NSDate* date = [NSDate date];
+    NSDateFormatter* formatter = [[NSDateFormatter alloc] init] ;
+    [formatter setDateFormat:@"yyyy-MM-dd HH:MM:SS"];
+    
+    //Get the string date
+    
+    NSString* str = [formatter stringFromDate:date];
+    
+    
+    SpurAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    
+    NSDictionary *item = @{
+    @"requestId" :  self.requestID,
+    @"bestOffer" :  self.bestOffer.text,
+    @"deviceToken" : delegate.deviceToken,
+    @"posttime": str,9
+    @"userId": [self.spurServiceOffer.client.currentUser userId]
+    };
+    [self.spurServiceOffer addItem:item completion:^(NSUInteger index){
+        UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"Thanks" message:@"Your offer's been placed" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
+        [av show];
+        [self.navigationController popViewControllerAnimated:YES];
+    }];
+    
+}
+- (void) login
+{
+    UINavigationController *controller =
+    [self.spurServiceOffer.client
+     loginViewControllerWithProvider:@"google"
+     completion:^(MSUser *user, NSError *error) {
+         
+         
+         if (error) {
+             NSLog(@"Authentication Error: %@", error);
+             // Note that error.code == -1503 indicates
+             // that the user cancelled the dialog
+         } else {
+             // No error, so load the data
+             [self.spurService refreshDataOnSuccess:^{
+                 NSLog(@"Rock on!\n");
+                 [self sendOfferToServer];
+             }];
+         }
+         
+         
+         [self dismissViewControllerAnimated:YES completion:nil];
+     }];
+    
+    
+    [self presentViewController:controller animated:YES completion:nil];
+}
+
+- (IBAction)submitOffer:(id)sender {
+    self.spurServiceOffer  = [[SpurService alloc]initWithTable:@"itemoffer"];
+
+    // If user is already logged in, no need to ask for auth
+    if (self.spurServiceOffer.client.currentUser == nil)
+    {
+        // We want the login view to be presented after the this run loop has completed
+        // Here we use a delay to ensure this.
+        [self performSelector:@selector(login) withObject:self afterDelay:0.1];
+    }
+}
+
+
 
 - (void)didReceiveMemoryWarning
 {

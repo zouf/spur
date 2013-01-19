@@ -13,6 +13,8 @@
 
 @implementation SpurAppDelegate
 
+
+
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     MSClient *client = [MSClient clientWithApplicationURLString:@"https://spurmobile.azure-mobile.net/"
@@ -20,8 +22,16 @@
     // Register for remote notifications
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
      UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
+    
+    
+    
+    
+    
     return YES;
 }
+
+
+
 // We are registered, so now store the device token (as a string) on the AppDelegate instance
 // taking care to remove the angle brackets first.
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:

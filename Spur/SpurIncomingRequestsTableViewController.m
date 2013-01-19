@@ -7,8 +7,17 @@
 //
 
 #import "SpurIncomingRequestsTableViewController.h"
+#import "SpurService.h"
+#import "QuickDialog.h"
+#import "SpurExpandedIncomingRequestViewController.h"
 
 @interface SpurIncomingRequestsTableViewController ()
+
+
+// Private properties
+@property (strong, nonatomic) SpurService *spurService;
+
+
 
 @end
 
@@ -27,11 +36,20 @@
 {
     [super viewDidLoad];
 
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    self.spurService = [[SpurService alloc]initWithTable:@"itemrequest"];
+    
+    
+    UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
+    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Spur it on..."];
+    
+    [refresh addTarget:self
+              action:@selector(refreshView:)
+            forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refresh;
+    [self.spurService refreshDataOnSuccess:^{
+        [self.tableView reloadData];
+    }];
+
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,82 +58,75 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 1;
+    return [self.spurService.items count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    static NSString *CellIdentifier = @"RequestCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    if(cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        
+    }
     
-    // Configure the cell...
+    id item = [self.spurService.items objectAtIndex:indexPath.row];
+    cell.textLabel.text = [item objectForKey:@"name"];
+    
     
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 #pragma mark - Table view delegate
+
+ -(void)refreshView:(UIRefreshControl *)refresh {
+     refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Refreshing data..."];
+     
+     [self.spurService refreshDataOnSuccess:^{
+         NSLog(@"Pull to refresh done!\n");
+         [self.tableView reloadData];
+         [refresh endRefreshing];
+     }];
+
+     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+     [formatter setDateFormat:@"MMM d, h:mm a"];
+     NSString *lastUpdated = [NSString stringWithFormat:@"Last updated on %@",
+    [formatter stringFromDate:[NSDate date]]];
+     refresh.attributedTitle = [[NSAttributedString alloc] initWithString:lastUpdated];
+ }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     DetailViewController *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+  
+
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    SpurExpandedIncomingRequestViewController * dvc = (SpurExpandedIncomingRequestViewController*)[segue destinationViewController];
+    NSLog(@"The sender is %@",sender);
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    //Get the selected object in order to fill out the detail view
+    id item = [self.spurService.items objectAtIndex:indexPath.row];
+
+    NSLog(@"ITEM IS %@\n",item);
+    [dvc setRequestID:[item objectForKey:@"id"]];
+    
 }
 
 @end

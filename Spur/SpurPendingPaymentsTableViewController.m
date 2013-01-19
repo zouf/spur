@@ -8,6 +8,8 @@
 
 #import "SpurPendingPaymentsTableViewController.h"
 #import "SpurService.h"
+#import "SpurAppDelegate.h"
+#import "SpurMakePaymentViewController.h"
 
 @interface SpurPendingPaymentsTableViewController ()
 
@@ -18,6 +20,8 @@
 
 @implementation SpurPendingPaymentsTableViewController
 
+
+
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -27,15 +31,43 @@
     return self;
 }
 
+
+// mzoufaly add the following in order to enforce login
+
+
+-(void)fetchDataFromAzure :(UIRefreshControl*)refresh
+{
+    // ZZZ Change this line for each new view
+    SpurAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+    
+    id userId = [delegate getUserId];
+    NSPredicate * predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"userId == '%@'", userId]];
+    
+    
+    [self.spurService refreshDataOnSuccess:^{
+        NSLog(@"Get all requests that have the user as the requestor!");
+        [self.tableView reloadData];
+        [refresh endRefreshing];
+    } :predicate];
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
- 
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    // ZZZ Change this line for each new view
+    self.spurService = [[SpurService alloc]initWithTable:@"itemaccepted"];
+    
+    
+    UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
+    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Spur it on..."];
+    [refresh addTarget:self
+                action:@selector(refreshView:)
+      forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refresh;
+    [self fetchDataFromAzure :refresh];
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -44,82 +76,83 @@
     // Dispose of any resources that can be recreated.
 }
 
+
+
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 1;
+    return [self.spurService.items count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *CellIdentifier = @"Cell";
+    // ZZZ Change this line for each new view
+    static NSString *CellIdentifier = @"OfferCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
+    if(cell == nil)
+    {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
+        
+    }
     
-    // Configure the cell...
+    id item = [self.spurService.items objectAtIndex:indexPath.row];
+    NSLog(@"%@\n",item);
+    
+    BOOL accepted = [[item objectForKey:@"accepted"] boolValue];
+    if(accepted)
+    {
+        UIButton *payViewButton = [[UIButton alloc]initWithFrame:CGRectMake(250,0,50,30)];
+        [payViewButton setBackgroundColor:[UIColor blueColor]];
+        [cell.contentView addSubview:payViewButton];
+        cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+    }
+    cell.textLabel.text = [NSString stringWithFormat:@"%@ by %@",[item objectForKey:@"bestOffer"],[item objectForKey:@"userId"]];
+    
     
     return cell;
 }
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    }   
-    else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
 #pragma mark - Table view delegate
+
+-(void)refreshView:(UIRefreshControl *)refresh {
+    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Refreshing data..."];
+    
+    [self fetchDataFromAzure :refresh];
+    
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MMM d, h:mm a"];
+    NSString *lastUpdated = [NSString stringWithFormat:@"Last updated on %@",
+                             [formatter stringFromDate:[NSDate date]]];
+    refresh.attributedTitle = [[NSAttributedString alloc] initWithString:lastUpdated];
+}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Navigation logic may go here. Create and push another view controller.
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
+    
+    
+}
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    SpurMakePaymentViewController * dvc = (SpurMakePaymentViewController*)[segue destinationViewController];
+    NSLog(@"The sender is %@",sender);
+    
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    //Get the selected object in order to fill out the detail view
+    id item = [self.spurService.items objectAtIndex:indexPath.row];
+    
+    [dvc setOffer:item];  
+    
 }
 
 @end

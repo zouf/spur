@@ -25,7 +25,7 @@
 @end
 
 @implementation SpurExpandedIncomingRequestViewController
-@synthesize requestID;
+@synthesize request;
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
@@ -58,53 +58,47 @@
     [self.view addGestureRecognizer:tap];
 
     
-    // Create a predicate that finds items where complete is false
-    NSPredicate * predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"id == %d", [self.requestID intValue]]];
-    [self.spurService refreshDataOnSuccess:^{
-        dispatch_async(dispatch_get_main_queue(), ^{
-                id item = [self.spurService.items objectAtIndex:0];
+
+        id item = self.request;
         
-            NSLog(@"%@\n",[item objectForKey:@"name"]);
-            NSString *name = [item objectForKey:@"userId"];
-            if (![name  isEqual:[NSNull null]])
-            {
-                self.userLabel.text  = name;
-            }
-            NSString *price = [item objectForKey:@"price"];
-            if (![price  isEqual:[NSNull null]])
-            {
-                self.priceLabel.text  = price;
-            }
-            NSString *posttime = [item objectForKey:@"posttime"];
+        NSLog(@"%@\n",[item objectForKey:@"name"]);
+        NSString *name = [item objectForKey:@"userId"];
+        if (![name  isEqual:[NSNull null]])
+        {
+            self.userLabel.text  = name;
+        }
+        NSString *price = [item objectForKey:@"price"];
+        if (![price  isEqual:[NSNull null]])
+        {
+            self.priceLabel.text  = price;
+        }
+        NSString *posttime = [item objectForKey:@"posttime"];
 
-            if (![posttime  isEqual:[NSNull null]])
-            {
-                self.postedLabel.text  = posttime;
-            }
+        if (![posttime  isEqual:[NSNull null]])
+        {
+            self.postedLabel.text  = posttime;
+        }
 
-            NSString *itemlabel = [item objectForKey:@"name"];
-            
-            if (![itemlabel isEqual:[NSNull null]])
-            {
-                self.itemLabel.text  = itemlabel;
-            }
-      
-            BOOL borrowVal = [[item objectForKey:@"borrow"] boolValue];
+        NSString *itemlabel = [item objectForKey:@"name"];
         
-            if(borrowVal)
-            {
-                self.borrowLabel.text = @"Borrow";
-                
-            }
-            else
-            {
-                self.borrowLabel.text = @"Buy!";
-            }
-        });
-
-    } :(NSPredicate*)predicate];
-
+        if (![itemlabel isEqual:[NSNull null]])
+        {
+            self.itemLabel.text  = itemlabel;
+        }
+  
+        BOOL borrowVal = [[item objectForKey:@"borrow"] boolValue];
     
+        if(borrowVal)
+        {
+            self.borrowLabel.text = @"Borrow";
+            
+        }
+        else
+        {
+            self.borrowLabel.text = @"Buy!";
+        }
+
+
 
 	// Do any additional setup after loading the view.
 }
@@ -128,17 +122,17 @@
     NSLog(@"%@\n",self.itemLabel.text);
     // ZZZ model for item Offer
     NSDictionary *item = @{
-    @"requestId" :  self.requestID,
+    @"requestId" :  [self.request objectForKey:@"id"],
     @"bestOffer" :  self.bestOffer.text,
     @"deviceToken" : delegate.deviceToken,
     @"posttime": str,
     @"itemName": self.itemLabel.text,
     @"borrow": self.borrowLabel.text,
-    @"requestorName": self.userLabel.text,
+    @"requestorId": [self.request objectForKey:@"userId"],
     @"accepted": @(NO),
     @"userId": [delegate getUserId]
     };
-    NSLog(@"%@\n",self.requestID);
+    NSLog(@"%@\n",self.request);
 
     [self.spurServiceOffer addItem:item completion:^(NSUInteger index){
         UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"Thanks" message:@"Your offer's been placed" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];

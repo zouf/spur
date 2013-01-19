@@ -25,7 +25,7 @@
 
 @implementation SpurExpandedIncomingOfferViewController
 @synthesize offer;
-@synthesize requestId;
+@synthesize request;
 
 
 
@@ -122,7 +122,7 @@
     SpurAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     //ZZZ Model for ItemAccepted
     NSDictionary *item = @{
-    @"requestId" :  self.requestId,
+    @"requestId" :  [self.request objectForKey:@"id"],
     @"bestOffer" :  [offer objectForKey:@"id"],
     @"deviceToken" : delegate.deviceToken,
     @"posttime": str,

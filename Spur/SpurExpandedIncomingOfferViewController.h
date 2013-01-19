@@ -10,6 +10,6 @@
 
 @interface SpurExpandedIncomingOfferViewController : UIViewController
 @property (nonatomic, retain) id offer;
-@property (nonatomic, retain) id requestId;
+@property (nonatomic, retain) id request;
 
 @end

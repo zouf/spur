@@ -17,7 +17,7 @@
 @end
 
 @implementation SpurIncomingOffersTableViewController
-@synthesize  requestId;
+@synthesize  request;
 - (id)initWithStyle:(UITableViewStyle)style
 {
     self = [super initWithStyle:style];
@@ -84,7 +84,7 @@
 -(void)fetchDataFromAzure :(UIRefreshControl*)refresh
 {
     // ZZZ Change this line for each new view
-    NSPredicate * predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"requestId == '%@'", self.requestId]];
+    NSPredicate * predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"requestId == '%@'", [self.request objectForKey:@"id"]]];
     
     
     [self.spurService refreshDataOnSuccess:^{
@@ -194,7 +194,7 @@
     //Get the selected object in order to fill out the detail view
     id item = [self.spurService.items objectAtIndex:indexPath.row];
     
-    [dvc setRequestId:self.requestId];
+    [dvc setRequest:self.request];
     [dvc setOffer:item];
 
     

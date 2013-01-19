@@ -281,8 +281,9 @@
 			children = (
 				27492CF116AA63D70095A442 /* SpurPendingPaymentsTableViewController.h */,
 				27492CEE16AA60A70095A442 /* SpurPendingPaymentsTableViewController.m */,
+				27492CDD16AA4C3B0095A442 /* SpurMakePaymentViewController.h */,
+				27492CDE16AA4C3B0095A442 /* SpurMakePaymentViewController.m */,
 				27492D0616AA69570095A442 /* Expanded Pending Payment */,
-				27492D0716AA696B0095A442 /* Make Payment */,
 			);
 			name = "Pending Payments";
 			sourceTree = "<group>";
@@ -303,15 +304,6 @@
 				27492CDB16AA4BC40095A442 /* SpurExpandedPendingPaymentViewController.m */,
 			);
 			name = "Expanded Pending Payment";
-			sourceTree = "<group>";
-		};
-		27492D0716AA696B0095A442 /* Make Payment */ = {
-			isa = PBXGroup;
-			children = (
-				27492CDD16AA4C3B0095A442 /* SpurMakePaymentViewController.h */,
-				27492CDE16AA4C3B0095A442 /* SpurMakePaymentViewController.m */,
-			);
-			name = "Make Payment";
 			sourceTree = "<group>";
 		};
 		27492D0816AA697E0095A442 /* Settings */ = {

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SpurMakePaymentViewController : UIViewController
+@property(nonatomic,retain) id offer;
 
 @end

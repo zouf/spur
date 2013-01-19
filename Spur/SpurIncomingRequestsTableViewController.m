@@ -197,7 +197,7 @@
     id item = [self.spurService.items objectAtIndex:indexPath.row];
 
     NSLog(@"ITEM IS %@\n",item);
-    [dvc setRequestID:[item objectForKey:@"id"]];
+    [dvc setRequest:item];
     
 }
 

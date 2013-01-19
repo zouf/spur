@@ -9,6 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SpurExpandedIncomingRequestViewController : UIViewController
-@property (nonatomic,retain) id requestID;
+@property (nonatomic,retain) id request;
 
 @end

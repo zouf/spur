@@ -1,3 +1,6 @@
 [submodule "QuickDialog"]
 	path = QuickDialog
 	url = git@github.com:escoz/QuickDialog.git
+[submodule "Libraries/Venmo"]
+	path = Libraries/Venmo
+	url = https://github.com/venmo/venmo-your-friends-ios.git

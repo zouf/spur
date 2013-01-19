@@ -7,15 +7,49 @@
 //
 
 #import "SpurAppDelegate.h"
+#import <WindowsAzureMobileServices/WindowsAzureMobileServices.h>
+
+
 
 @implementation SpurAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    // Override point for customization after application launch.
+    MSClient *client = [MSClient clientWithApplicationURLString:@"https://spurmobile.azure-mobile.net/"
+                                             withApplicationKey:@"DakthyzRTUISjPLyzrlEAAYLixozDx13"];
+    // Register for remote notifications
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:
+     UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound];
     return YES;
 }
-							
+// We are registered, so now store the device token (as a string) on the AppDelegate instance
+// taking care to remove the angle brackets first.
+- (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:
+(NSData *)deviceToken {
+    NSCharacterSet *angleBrackets = [NSCharacterSet characterSetWithCharactersInString:@"<>"];
+    self.deviceToken = [[deviceToken description] stringByTrimmingCharactersInSet:angleBrackets];
+}
+
+// Handle any failure to register. In this case we set the deviceToken to an empty
+// string to prevent the insert from failing.
+- (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:
+(NSError *)error {
+    NSLog(@"Failed to register for remote notifications: %@", error);
+    self.deviceToken = @"";
+}
+
+// Because toast alerts don't work when the app is running, the app handles them.
+// This uses the userInfo in the payload to display a UIAlertView.
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:
+(NSDictionary *)userInfo {
+    NSLog(@"%@", userInfo);
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Notification" message:
+                          [userInfo objectForKey:@"inAppMessage"] delegate:nil cancelButtonTitle:
+                          @"OK" otherButtonTitles:nil, nil];
+    [alert show];
+}
+
+
 - (void)applicationWillResignActive:(UIApplication *)application
 {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

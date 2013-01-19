@@ -29,8 +29,7 @@
 			<string>Venmo</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>venmo</string>
-				<string>1223</string>
+				<string>venmo1223</string>
 			</array>
 		</dict>
 	</array>

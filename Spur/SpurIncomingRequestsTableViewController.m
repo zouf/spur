@@ -40,12 +40,14 @@
 
 -(void)removePopup:(id)sender
 {
+    SpurAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+
     NSUserDefaults *pref = [NSUserDefaults standardUserDefaults];
     [pref setObject:self.nameEntry.textValue forKey:@"name"];
     [pref setObject:self.emailEntry.textValue forKey:@"email"];
     [pref setObject:self.phoneEntry.textValue forKey:@"phone"];
+    [pref setObject:[delegate deviceToken]  forKey:@"userid"];
     [self.controller dismissViewControllerAnimated:YES completion:^{
-        SpurAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
 
         SpurService *sc = [[SpurService alloc]initWithTable:@"User"];
         
@@ -93,12 +95,14 @@
         QuickDialogController *controller = [QuickDialogController controllerForRoot:root];
         self.controller = controller;
         [controller.navigationItem setRightBarButtonItem:[[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(removePopup:)]];
-        [self presentViewController:[[UINavigationController alloc] initWithRootViewController:controller] animated:YES completion:nil];
+        [self presentViewController:[[UINavigationController alloc] initWithRootViewController:controller] animated:YES completion:^{
+            
+        }];
         
         
     }
 
-    [delegate setUserId:[delegate deviceToken]];
+ 
     
     
     

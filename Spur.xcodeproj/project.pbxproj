@@ -40,6 +40,7 @@
 		0AC4282E16AB3D70009A4D07 /* VenmoClientSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC4280E16AB3D70009A4D07 /* VenmoClientSpecs.m */; };
 		0AC4282F16AB3D70009A4D07 /* VenmoTransactionSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC4280F16AB3D70009A4D07 /* VenmoTransactionSpecs.m */; };
 		0AC4283016AB3D70009A4D07 /* VenmoViewControllerSpecs.m in Sources */ = {isa = PBXBuildFile; fileRef = 0AC4281016AB3D70009A4D07 /* VenmoViewControllerSpecs.m */; };
+		0AC4283A16AB3DE0009A4D07 /* libVenmo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC4283516AB3D71009A4D07 /* libVenmo.a */; };
 		27492C9116AA3F430095A442 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27492C9016AA3F430095A442 /* UIKit.framework */; };
 		27492C9316AA3F430095A442 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27492C9216AA3F430095A442 /* Foundation.framework */; };
 		27492C9516AA3F430095A442 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27492C9416AA3F430095A442 /* CoreGraphics.framework */; };
@@ -219,6 +220,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0AC4283A16AB3DE0009A4D07 /* libVenmo.a in Frameworks */,
 				0AC4274216AACC2F009A4D07 /* Security.framework in Frameworks */,
 				0A54562716AAA5D60023C944 /* libQuickDialog.a in Frameworks */,
 				0A54561516AAA52A0023C944 /* CoreLocation.framework in Frameworks */,
@@ -829,10 +831,15 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Spur/Spur-Prefix.pch";
 				INFOPLIST_FILE = "Spur/Spur-Info.plist";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-ObjC",
+					"-force_load",
+					"${BUILT_PRODUCTS_DIR}/libVenmo.a",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "73BF86A2-79F9-4489-9E91-50BDE845EC44";
-				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/QuickDialog\"/**";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/QuickDialog\"/** Libraries/Venmo";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -849,10 +856,15 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Spur/Spur-Prefix.pch";
 				INFOPLIST_FILE = "Spur/Spur-Info.plist";
-				OTHER_LDFLAGS = "-ObjC";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-ObjC",
+					"-force_load",
+					"${BUILT_PRODUCTS_DIR}/libVenmo.a",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "0B759705-0530-4045-85C9-C49DF5E088C2";
-				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/QuickDialog\"/**";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/QuickDialog\"/** Libraries/Venmo";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

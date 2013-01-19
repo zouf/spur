@@ -1,5 +1,5 @@
 //
-//  SpurViewController.h
+//  SpurViewRequestsTableViewController.h
 //  Spur
 //
 //  Created by Mike Verderese on 1/18/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SpurViewController : UIViewController
+@interface SpurViewRequestsTableViewController : UITableViewController
 
 @end

@@ -17,7 +17,20 @@
 		27492CA516AA3F430095A442 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27492CA416AA3F430095A442 /* Default@2x.png */; };
 		27492CA716AA3F430095A442 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27492CA616AA3F430095A442 /* Default-568h@2x.png */; };
 		27492CAA16AA3F430095A442 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27492CA816AA3F430095A442 /* MainStoryboard.storyboard */; };
-		27492CAD16AA3F430095A442 /* SpurViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CAC16AA3F430095A442 /* SpurViewController.m */; };
+		27492CB516AA41880095A442 /* SpurHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CB416AA41880095A442 /* SpurHomePageViewController.m */; };
+		27492CB816AA41E00095A442 /* SpurSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CB716AA41DF0095A442 /* SpurSignInViewController.m */; };
+		27492CBB16AA42090095A442 /* SpurSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CBA16AA42090095A442 /* SpurSignUpViewController.m */; };
+		27492CC116AA42EB0095A442 /* SpurMakeRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CC016AA42EB0095A442 /* SpurMakeRequestViewController.m */; };
+		27492CC716AA43070095A442 /* SpurSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CC616AA43070095A442 /* SpurSettingsViewController.m */; };
+		27492CCA16AA446C0095A442 /* SpurViewOffersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CC916AA446C0095A442 /* SpurViewOffersTableViewController.m */; };
+		27492CCD16AA449B0095A442 /* SpurViewRequestsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CCC16AA449B0095A442 /* SpurViewRequestsTableViewController.m */; };
+		27492CD016AA49140095A442 /* SpurExpandedRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CCF16AA49140095A442 /* SpurExpandedRequestViewController.m */; };
+		27492CD316AA49BB0095A442 /* SpurMakeOfferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CD216AA49BB0095A442 /* SpurMakeOfferViewController.m */; };
+		27492CD616AA4ABA0095A442 /* SpurPictureCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CD516AA4ABA0095A442 /* SpurPictureCaptureViewController.m */; };
+		27492CD916AA4B330095A442 /* SpurExpandedOfferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CD816AA4B330095A442 /* SpurExpandedOfferViewController.m */; };
+		27492CDC16AA4BC40095A442 /* SpurAccepterOfferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CDB16AA4BC40095A442 /* SpurAccepterOfferViewController.m */; };
+		27492CDF16AA4C3B0095A442 /* SpurMakePaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CDE16AA4C3B0095A442 /* SpurMakePaymentViewController.m */; };
+		27492CE516AA4DF70095A442 /* SpurQuickRequestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CE416AA4DF70095A442 /* SpurQuickRequestTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,8 +48,34 @@
 		27492CA416AA3F430095A442 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		27492CA616AA3F430095A442 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		27492CA916AA3F430095A442 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
-		27492CAB16AA3F430095A442 /* SpurViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpurViewController.h; sourceTree = "<group>"; };
-		27492CAC16AA3F430095A442 /* SpurViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpurViewController.m; sourceTree = "<group>"; };
+		27492CB316AA41880095A442 /* SpurHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurHomePageViewController.h; sourceTree = "<group>"; };
+		27492CB416AA41880095A442 /* SpurHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurHomePageViewController.m; sourceTree = "<group>"; };
+		27492CB616AA41DF0095A442 /* SpurSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurSignInViewController.h; sourceTree = "<group>"; };
+		27492CB716AA41DF0095A442 /* SpurSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurSignInViewController.m; sourceTree = "<group>"; };
+		27492CB916AA42090095A442 /* SpurSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurSignUpViewController.h; sourceTree = "<group>"; };
+		27492CBA16AA42090095A442 /* SpurSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurSignUpViewController.m; sourceTree = "<group>"; };
+		27492CBF16AA42EB0095A442 /* SpurMakeRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurMakeRequestViewController.h; sourceTree = "<group>"; };
+		27492CC016AA42EB0095A442 /* SpurMakeRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurMakeRequestViewController.m; sourceTree = "<group>"; };
+		27492CC516AA43070095A442 /* SpurSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurSettingsViewController.h; sourceTree = "<group>"; };
+		27492CC616AA43070095A442 /* SpurSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurSettingsViewController.m; sourceTree = "<group>"; };
+		27492CC816AA446C0095A442 /* SpurViewOffersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurViewOffersTableViewController.h; sourceTree = "<group>"; };
+		27492CC916AA446C0095A442 /* SpurViewOffersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurViewOffersTableViewController.m; sourceTree = "<group>"; };
+		27492CCB16AA449B0095A442 /* SpurViewRequestsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurViewRequestsTableViewController.h; sourceTree = "<group>"; };
+		27492CCC16AA449B0095A442 /* SpurViewRequestsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurViewRequestsTableViewController.m; sourceTree = "<group>"; };
+		27492CCE16AA49140095A442 /* SpurExpandedRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurExpandedRequestViewController.h; sourceTree = "<group>"; };
+		27492CCF16AA49140095A442 /* SpurExpandedRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurExpandedRequestViewController.m; sourceTree = "<group>"; };
+		27492CD116AA49BB0095A442 /* SpurMakeOfferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurMakeOfferViewController.h; sourceTree = "<group>"; };
+		27492CD216AA49BB0095A442 /* SpurMakeOfferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurMakeOfferViewController.m; sourceTree = "<group>"; };
+		27492CD416AA4ABA0095A442 /* SpurPictureCaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurPictureCaptureViewController.h; sourceTree = "<group>"; };
+		27492CD516AA4ABA0095A442 /* SpurPictureCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurPictureCaptureViewController.m; sourceTree = "<group>"; };
+		27492CD716AA4B330095A442 /* SpurExpandedOfferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurExpandedOfferViewController.h; sourceTree = "<group>"; };
+		27492CD816AA4B330095A442 /* SpurExpandedOfferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurExpandedOfferViewController.m; sourceTree = "<group>"; };
+		27492CDA16AA4BC40095A442 /* SpurAccepterOfferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurAccepterOfferViewController.h; sourceTree = "<group>"; };
+		27492CDB16AA4BC40095A442 /* SpurAccepterOfferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurAccepterOfferViewController.m; sourceTree = "<group>"; };
+		27492CDD16AA4C3B0095A442 /* SpurMakePaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurMakePaymentViewController.h; sourceTree = "<group>"; };
+		27492CDE16AA4C3B0095A442 /* SpurMakePaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurMakePaymentViewController.m; sourceTree = "<group>"; };
+		27492CE316AA4DF70095A442 /* SpurQuickRequestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurQuickRequestTableViewController.h; sourceTree = "<group>"; };
+		27492CE416AA4DF70095A442 /* SpurQuickRequestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurQuickRequestTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,8 +125,34 @@
 				27492C9F16AA3F430095A442 /* SpurAppDelegate.h */,
 				27492CA016AA3F430095A442 /* SpurAppDelegate.m */,
 				27492CA816AA3F430095A442 /* MainStoryboard.storyboard */,
-				27492CAB16AA3F430095A442 /* SpurViewController.h */,
-				27492CAC16AA3F430095A442 /* SpurViewController.m */,
+				27492CD116AA49BB0095A442 /* SpurMakeOfferViewController.h */,
+				27492CD216AA49BB0095A442 /* SpurMakeOfferViewController.m */,
+				27492CD416AA4ABA0095A442 /* SpurPictureCaptureViewController.h */,
+				27492CD516AA4ABA0095A442 /* SpurPictureCaptureViewController.m */,
+				27492CD716AA4B330095A442 /* SpurExpandedOfferViewController.h */,
+				27492CD816AA4B330095A442 /* SpurExpandedOfferViewController.m */,
+				27492CDA16AA4BC40095A442 /* SpurAccepterOfferViewController.h */,
+				27492CDB16AA4BC40095A442 /* SpurAccepterOfferViewController.m */,
+				27492CDD16AA4C3B0095A442 /* SpurMakePaymentViewController.h */,
+				27492CDE16AA4C3B0095A442 /* SpurMakePaymentViewController.m */,
+				27492CB616AA41DF0095A442 /* SpurSignInViewController.h */,
+				27492CB716AA41DF0095A442 /* SpurSignInViewController.m */,
+				27492CB916AA42090095A442 /* SpurSignUpViewController.h */,
+				27492CBA16AA42090095A442 /* SpurSignUpViewController.m */,
+				27492CBF16AA42EB0095A442 /* SpurMakeRequestViewController.h */,
+				27492CC016AA42EB0095A442 /* SpurMakeRequestViewController.m */,
+				27492CE316AA4DF70095A442 /* SpurQuickRequestTableViewController.h */,
+				27492CE416AA4DF70095A442 /* SpurQuickRequestTableViewController.m */,
+				27492CC516AA43070095A442 /* SpurSettingsViewController.h */,
+				27492CC616AA43070095A442 /* SpurSettingsViewController.m */,
+				27492CB316AA41880095A442 /* SpurHomePageViewController.h */,
+				27492CB416AA41880095A442 /* SpurHomePageViewController.m */,
+				27492CCB16AA449B0095A442 /* SpurViewRequestsTableViewController.h */,
+				27492CCC16AA449B0095A442 /* SpurViewRequestsTableViewController.m */,
+				27492CC816AA446C0095A442 /* SpurViewOffersTableViewController.h */,
+				27492CC916AA446C0095A442 /* SpurViewOffersTableViewController.m */,
+				27492CCE16AA49140095A442 /* SpurExpandedRequestViewController.h */,
+				27492CCF16AA49140095A442 /* SpurExpandedRequestViewController.m */,
 				27492C9716AA3F430095A442 /* Supporting Files */,
 			);
 			path = Spur;
@@ -176,7 +241,20 @@
 			files = (
 				27492C9D16AA3F430095A442 /* main.m in Sources */,
 				27492CA116AA3F430095A442 /* SpurAppDelegate.m in Sources */,
-				27492CAD16AA3F430095A442 /* SpurViewController.m in Sources */,
+				27492CB516AA41880095A442 /* SpurHomePageViewController.m in Sources */,
+				27492CB816AA41E00095A442 /* SpurSignInViewController.m in Sources */,
+				27492CBB16AA42090095A442 /* SpurSignUpViewController.m in Sources */,
+				27492CC116AA42EB0095A442 /* SpurMakeRequestViewController.m in Sources */,
+				27492CC716AA43070095A442 /* SpurSettingsViewController.m in Sources */,
+				27492CCA16AA446C0095A442 /* SpurViewOffersTableViewController.m in Sources */,
+				27492CCD16AA449B0095A442 /* SpurViewRequestsTableViewController.m in Sources */,
+				27492CD016AA49140095A442 /* SpurExpandedRequestViewController.m in Sources */,
+				27492CD316AA49BB0095A442 /* SpurMakeOfferViewController.m in Sources */,
+				27492CD616AA4ABA0095A442 /* SpurPictureCaptureViewController.m in Sources */,
+				27492CD916AA4B330095A442 /* SpurExpandedOfferViewController.m in Sources */,
+				27492CDC16AA4BC40095A442 /* SpurAccepterOfferViewController.m in Sources */,
+				27492CDF16AA4C3B0095A442 /* SpurMakePaymentViewController.m in Sources */,
+				27492CE516AA4DF70095A442 /* SpurQuickRequestTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

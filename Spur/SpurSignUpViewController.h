@@ -8,6 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SpurSignUpViewController : UIViewController
-
+@interface SpurSignUpViewController : UITableViewController <UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITextField *nameField;
+@property (weak, nonatomic) IBOutlet UITextField *emailField;
+@property (weak, nonatomic) IBOutlet UITextField *phoneField;
+ 
 @end

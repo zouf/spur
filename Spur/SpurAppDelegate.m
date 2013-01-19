@@ -31,29 +31,13 @@
 }
 
 
-
 // We are registered, so now store the device token (as a string) on the AppDelegate instance
 // taking care to remove the angle brackets first.
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:
 (NSData *)deviceToken {
     NSCharacterSet *angleBrackets = [NSCharacterSet characterSetWithCharactersInString:@"<>"];
     self.deviceToken = [[deviceToken description] stringByTrimmingCharactersInSet:angleBrackets];
-    SpurService *sc = [[SpurService alloc]initWithTable:@"User"];
-
-    NSDictionary *item = @{
-    @"deviceToken" :  self.deviceToken,
-    @"name": @"",
-    @"username" :  @"",
-    @"phoneNumber" : @""
-    };
-
-    NSPredicate * predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"deviceToken == '%@'",  self.deviceToken]];
-    [sc refreshDataOnSuccess:^{
-        if([sc.items count] == 0)
-            [sc addItem:item completion:^(NSUInteger index){}];       
-    } :(NSPredicate*)predicate];
-
-}
+    }
 
 // Handle any failure to register. In this case we set the deviceToken to an empty
 // string to prevent the insert from failing.
@@ -106,7 +90,7 @@
 
 -(NSString*)getUserId
 {
-    NSString *user = [[NSUserDefaults standardUserDefaults] stringForKey:@"userid"];
+    NSString *user = [[NSUserDefaults standardUserDefaults] objectForKey:@"userid"];
     return user;
 }
 

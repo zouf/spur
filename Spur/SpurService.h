@@ -42,7 +42,7 @@ typedef void (^BusyUpdateBlock) (BOOL busy);
 - (void) addItem:(NSDictionary *) item
       completion:(CompletionWithIndexBlock) completion;
 
-- (void) completeItem: (NSDictionary *) item
+- (void) acceptPayment: (NSDictionary *) item
            completion:(CompletionWithIndexBlock) completion;
 
 

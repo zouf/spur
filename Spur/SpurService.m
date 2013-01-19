@@ -120,38 +120,36 @@ SpurService *instance;
     [self.table insert:item completion:^(NSDictionary *result, NSError *error) {
         
         [self logErrorIfNotNil:error];
-        
-        NSUInteger index = [items count];
-        [(NSMutableArray *)items insertObject:result atIndex:index];
+        NSLog(@"%@\n",item);
+       // NSUInteger index = [items count];
+      //  [(NSMutableArray *)items insertObject:result atIndex:index];
         
         // Let the caller know that we finished
-        completion(index);
+        completion(0);
     }];
 }
 
--(void) completeItem:(NSDictionary *)item completion:(CompletionWithIndexBlock)completion
+-(void) acceptPayment:(NSDictionary *)item completion:(CompletionWithIndexBlock)completion
 {
     // Cast the public items property to the mutable type (it was created as mutable)
-    NSMutableArray *mutableItems = (NSMutableArray *) items;
+   // NSMutableArray *mutableItems = [[NSMutableArray alloc]initWithCapacity:1];
     
     // Set the item to be complete (we need a mutable copy)
     NSMutableDictionary *mutable = [item mutableCopy];
-    [mutable setObject:@(YES) forKey:@"complete"];
+    [mutable setObject:@(YES) forKey:@"accepted"];
     
     // Replace the original in the items array
-    NSUInteger index = [items indexOfObjectIdenticalTo:item];
-    [mutableItems replaceObjectAtIndex:index withObject:mutable];
-    
+   // [mutableItems replaceObjectAtIndex:0 withObject:mutable];
+    NSLog(@"%@\n",mutable);
     // Update the item in the TodoItem table and remove from the items array on completion
     [self.table update:mutable completion:^(NSDictionary *item, NSError *error) {
         
         [self logErrorIfNotNil:error];
         
-        NSUInteger index = [items indexOfObjectIdenticalTo:mutable];
-        [mutableItems removeObjectAtIndex:index];
+       // [mutableItems removeObjectAtIndex:index];
         
         // Let the caller know that we have finished
-        completion(index);
+        completion(0);
     }];
 }
 

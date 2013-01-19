@@ -260,7 +260,8 @@
 			children = (
 				27492CC816AA446C0095A442 /* SpurIncomingOffersTableViewController.h */,
 				27492CC916AA446C0095A442 /* SpurIncomingOffersTableViewController.m */,
-				27492D0516AA68D80095A442 /* Expanded Incoming Offer */,
+				27492CD716AA4B330095A442 /* SpurExpandedIncomingOfferViewController.h */,
+				27492CD816AA4B330095A442 /* SpurExpandedIncomingOfferViewController.m */,
 			);
 			name = "Incoming Offers";
 			sourceTree = "<group>";
@@ -293,15 +294,6 @@
 				27492CC016AA42EB0095A442 /* SpurMakeRequestViewController.m */,
 			);
 			name = "Make Request";
-			sourceTree = "<group>";
-		};
-		27492D0516AA68D80095A442 /* Expanded Incoming Offer */ = {
-			isa = PBXGroup;
-			children = (
-				27492CD716AA4B330095A442 /* SpurExpandedIncomingOfferViewController.h */,
-				27492CD816AA4B330095A442 /* SpurExpandedIncomingOfferViewController.m */,
-			);
-			name = "Expanded Incoming Offer";
 			sourceTree = "<group>";
 		};
 		27492D0616AA69570095A442 /* Expanded Pending Payment */ = {

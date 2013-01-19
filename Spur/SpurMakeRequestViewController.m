@@ -158,13 +158,17 @@
     
     SpurAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     NSString *nm = [delegate getUserId];
-    
+    BOOL borrow = NO;
+    if (self.borrowField.selectedSegmentIndex == 1)
+        borrow = YES;
+    // model for item requested
     NSDictionary *item = @{
     @"name" : self.nameField.text,
     @"price": self.priceField.text,
     @"deviceToken" : delegate.deviceToken,
     @"posttime": str,
-     @"userId": nm
+     @"userId": nm,
+    @"borrow": @(borrow)
     };
     [self.spurService addItem:item completion:^(NSUInteger index){
         NSLog(@"Done!?\n");

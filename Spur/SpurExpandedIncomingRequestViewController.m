@@ -79,7 +79,7 @@
 
             if (![posttime  isEqual:[NSNull null]])
             {
-                self.priceLabel.text  = posttime;
+                self.postedLabel.text  = posttime;
             }
 
             NSString *itemlabel = [item objectForKey:@"name"];
@@ -88,14 +88,18 @@
             {
                 self.itemLabel.text  = itemlabel;
             }
-            
-            NSString *borrow = [item objectForKey:@"borrow"];
-            
-            if (![borrow  isEqual:[NSNull null]])
+      
+            BOOL borrowVal = [[item objectForKey:@"borrow"] boolValue];
+        
+            if(borrowVal)
             {
-                self.itemLabel.text  = borrow;
+                self.borrowLabel.text = @"Borrow";
+                
             }
-
+            else
+            {
+                self.borrowLabel.text = @"Buy!";
+            }
         });
 
     } :(NSPredicate*)predicate];
@@ -121,14 +125,21 @@
     
     
     SpurAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-    
+    NSLog(@"%@\n",self.itemLabel.text);
+    // ZZZ model for item Offer
     NSDictionary *item = @{
     @"requestId" :  self.requestID,
     @"bestOffer" :  self.bestOffer.text,
     @"deviceToken" : delegate.deviceToken,
     @"posttime": str,
+    @"itemName": self.itemLabel.text,
+    @"borrow": self.borrowLabel.text,
+    @"requestorName": self.userLabel.text,
+    @"accepted": @(NO),
     @"userId": [delegate getUserId]
     };
+    NSLog(@"%@\n",self.requestID);
+
     [self.spurServiceOffer addItem:item completion:^(NSUInteger index){
         UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"Thanks" message:@"Your offer's been placed" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];
         [av show];

@@ -1,5 +1,5 @@
 //
-//  SpurAccepterOfferViewController.h
+//  SpurQuickRequestTableViewController.h
 //  Spur
 //
 //  Created by Mike Verderese on 1/18/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SpurAccepterOfferViewController : UIViewController
+@interface SpurQuickRequestsTableViewController : UITableViewController
 
 @end

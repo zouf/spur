@@ -1,5 +1,5 @@
 //
-//  SpurQuickRequestTableViewController.h
+//  SpurAccepterOfferViewController.h
 //  Spur
 //
 //  Created by Mike Verderese on 1/18/13.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SpurQuickRequestTableViewController : UITableViewController
+@interface SpurExpandedPendingPaymentViewController : UIViewController
 
 @end

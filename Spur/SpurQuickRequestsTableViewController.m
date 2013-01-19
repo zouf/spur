@@ -1,18 +1,18 @@
 //
-//  SpurViewRequestsTableViewController.m
+//  SpurQuickRequestTableViewController.m
 //  Spur
 //
 //  Created by Mike Verderese on 1/18/13.
 //  Copyright (c) 2013 Mike Verderese. All rights reserved.
 //
 
-#import "SpurViewRequestsTableViewController.h"
+#import "SpurQuickRequestsTableViewController.h"
 
-@interface SpurViewRequestsTableViewController ()
+@interface SpurQuickRequestsTableViewController ()
 
 @end
 
-@implementation SpurViewRequestsTableViewController
+@implementation SpurQuickRequestsTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -53,7 +53,7 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -111,7 +111,7 @@
 {
     // Navigation logic may go here. Create and push another view controller.
     /*
-     DetailViewController *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
+     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
      // ...
      // Pass the selected object to the new view controller.
      [self.navigationController pushViewController:detailViewController animated:YES];

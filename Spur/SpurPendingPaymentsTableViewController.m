@@ -1,18 +1,18 @@
 //
-//  SpurQuickRequestTableViewController.m
+//  SpurPendingPaymentTableViewController.m
 //  Spur
 //
-//  Created by Mike Verderese on 1/18/13.
+//  Created by Mike Verderese on 1/19/13.
 //  Copyright (c) 2013 Mike Verderese. All rights reserved.
 //
 
-#import "SpurQuickRequestTableViewController.h"
+#import "SpurPendingPaymentsTableViewController.h"
 
-@interface SpurQuickRequestTableViewController ()
+@interface SpurPendingPaymentsTableViewController ()
 
 @end
 
-@implementation SpurQuickRequestTableViewController
+@implementation SpurPendingPaymentsTableViewController
 
 - (id)initWithStyle:(UITableViewStyle)style
 {
@@ -53,7 +53,7 @@
 {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath

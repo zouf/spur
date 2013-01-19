@@ -1,18 +1,18 @@
 //
-//  SpurExpandedRequestViewController.m
+//  SpurExpandedOutgoingRequestViewController.m
 //  Spur
 //
-//  Created by Mike Verderese on 1/18/13.
+//  Created by Mike Verderese on 1/19/13.
 //  Copyright (c) 2013 Mike Verderese. All rights reserved.
 //
 
-#import "SpurExpandedRequestViewController.h"
+#import "SpurExpandedOutgoingRequestViewController.h"
 
-@interface SpurExpandedRequestViewController ()
+@interface SpurExpandedOutgoingRequestViewController ()
 
 @end
 
-@implementation SpurExpandedRequestViewController
+@implementation SpurExpandedOutgoingRequestViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

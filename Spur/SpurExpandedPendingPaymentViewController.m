@@ -1,18 +1,18 @@
 //
-//  SpurExpandedOfferViewController.m
+//  SpurAccepterOfferViewController.m
 //  Spur
 //
 //  Created by Mike Verderese on 1/18/13.
 //  Copyright (c) 2013 Mike Verderese. All rights reserved.
 //
 
-#import "SpurExpandedOfferViewController.h"
+#import "SpurExpandedPendingPaymentViewController.h"
 
-@interface SpurExpandedOfferViewController ()
+@interface SpurExpandedPendingPaymentViewController ()
 
 @end
 
-@implementation SpurExpandedOfferViewController
+@implementation SpurExpandedPendingPaymentViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

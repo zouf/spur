@@ -1,18 +1,18 @@
 //
-//  SpurAccepterOfferViewController.m
+//  SpurExpandedRequestViewController.m
 //  Spur
 //
 //  Created by Mike Verderese on 1/18/13.
 //  Copyright (c) 2013 Mike Verderese. All rights reserved.
 //
 
-#import "SpurAccepterOfferViewController.h"
+#import "SpurExpandedIncomingRequestViewController.h"
 
-@interface SpurAccepterOfferViewController ()
+@interface SpurExpandedIncomingRequestViewController ()
 
 @end
 
-@implementation SpurAccepterOfferViewController
+@implementation SpurExpandedIncomingRequestViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {

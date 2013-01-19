@@ -1,35 +1,60 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="azt-ye-O3j">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="fi8-iP-YXS">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="6Q9-rh-dgS">
+        <!--Spur Outgoing Offers Table View Controller - Outgoing Offers-->
+        <scene sceneID="wum-iS-2Ns">
             <objects>
-                <navigationController definesPresentationContext="YES" navigationBarHidden="YES" id="azt-ye-O3j" sceneMemberID="viewController">
-                    <nil key="simulatedTopBarMetrics"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="S3p-Gt-vdV">
+                <tableViewController storyboardIdentifier="OutgoingOffersViewID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YIK-aI-8UK" customClass="SpurOutgoingOffersTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eyr-vg-2oN">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="zeB-44-arf">
+                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <segue destination="kOe-Ns-X2J" kind="push" id="v9E-g6-cbD"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Outgoing Offers" id="e0N-RT-BCm"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hmL-en-Fhc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1425" y="1856"/>
+        </scene>
+        <!--Navigation Controller - Item-->
+        <scene sceneID="0qe-kg-4kZ">
+            <objects>
+                <navigationController definesPresentationContext="YES" id="TKP-gI-foJ" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="5jN-hG-anw"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="GFO-nk-5Db">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="w8r-8L-adj">
-                        <rect key="frame" x="0.0" y="416" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </toolbar>
                     <connections>
-                        <segue destination="GwY-0e-n0T" kind="relationship" relationship="rootViewController" id="BBa-Us-m9c"/>
+                        <segue destination="YIK-aI-8UK" kind="relationship" relationship="rootViewController" id="r9o-BT-kDg"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IGz-3z-2KI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g7x-Nz-A78" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1248" y="26"/>
+            <point key="canvasLocation" x="925" y="1856"/>
         </scene>
         <!--Spur Home Page View Controller-->
         <scene sceneID="XzD-Ec-hHa">
             <objects>
                 <viewController storyboardIdentifier="HomePageViewID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="GwY-0e-n0T" customClass="SpurHomePageViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Vmk-mH-2Ue">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rWe-nu-8Yy">
@@ -71,14 +96,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PJY-PX-yb1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-711" y="26"/>
+            <point key="canvasLocation" x="1443" y="2938"/>
         </scene>
         <!--Spur Sign Up View Controller-->
         <scene sceneID="0jQ-ts-5ML">
             <objects>
                 <viewController storyboardIdentifier="SignUpPageViewID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="pca-3G-c0d" customClass="SpurSignUpViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XCb-IE-hpH">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xcy-ED-mzD">
@@ -141,14 +166,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l68-AC-END" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-181" y="699"/>
+            <point key="canvasLocation" x="1977" y="3335"/>
         </scene>
         <!--Spur Sign In View Controller-->
         <scene sceneID="azq-dr-z5w">
             <objects>
                 <viewController storyboardIdentifier="SignInPageViewID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gCe-GQ-og6" customClass="SpurSignInViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Amq-gc-lgO">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Hgn-Gf-BG2">
@@ -182,7 +207,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="fi8-iP-YXS" kind="push" id="Igq-zB-jTt"/>
+                                    <segue destination="WJJ-qI-vCe" kind="push" id="oXt-y0-fYL"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -203,12 +228,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LBx-GK-873" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-181" y="-275"/>
+            <point key="canvasLocation" x="1977" y="2681"/>
         </scene>
-        <!--Spur View Requests Table View Controller - Requests-->
+        <!--Spur Incoming Requests Table View Controller - Incoming Requests-->
         <scene sceneID="m9j-kL-nag">
             <objects>
-                <tableViewController storyboardIdentifier="ViewRequestsViewID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="P8A-dU-4Cq" customClass="SpurViewRequestsTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="IncomingRequestsViewID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="P8A-dU-4Cq" customClass="SpurIncomingRequestsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="4fb-AR-CP3">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -233,16 +258,16 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="kte-S8-ThY"/>
-                    <navigationItem key="navigationItem" title="Requests" id="tcz-sp-yFf"/>
+                    <navigationItem key="navigationItem" title="Incoming Requests" id="tcz-sp-yFf"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iNZ-6J-38e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1415" y="-1461"/>
         </scene>
-        <!--Spur Expanded Request View Controller - Expanded Request-->
+        <!--Spur Expanded Incoming Request View Controller - Expanded Incoming Request-->
         <scene sceneID="nN9-DM-UBy">
             <objects>
-                <viewController storyboardIdentifier="ExpandedViewID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Udw-Ee-f4o" customClass="SpurExpandedRequestViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ExpandedViewID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Udw-Ee-f4o" customClass="SpurExpandedIncomingRequestViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BFK-LO-WKF">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -281,11 +306,11 @@
                             <constraint firstItem="p0B-BI-wCP" firstAttribute="top" secondItem="Jc6-JQ-cFc" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="yMG-TI-B4q"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Expanded Request" id="iQn-uu-RyS"/>
+                    <navigationItem key="navigationItem" title="Expanded Incoming Request" id="iQn-uu-RyS"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fg3-gC-AOI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1895" y="-1461"/>
+            <point key="canvasLocation" x="1879" y="-1461"/>
         </scene>
         <!--Spur Make Offer View Controller - Make Offer-->
         <scene sceneID="JIy-7z-MSM">
@@ -366,7 +391,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mkd-8U-7zW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2375" y="-1461"/>
+            <point key="canvasLocation" x="2359" y="-1461"/>
         </scene>
         <!--Spur Picture Capture View Controller - Take Picture-->
         <scene sceneID="8wl-2k-MZd">
@@ -381,7 +406,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ChU-dh-QMR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2843" y="-1461"/>
+            <point key="canvasLocation" x="2827" y="-1461"/>
         </scene>
         <!--Navigation Controller - Item-->
         <scene sceneID="vpv-KZ-ARF">
@@ -392,23 +417,23 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="MK2-If-CXM" kind="relationship" relationship="rootViewController" id="4Ws-7J-r13"/>
+                        <segue destination="Gnz-Pk-6Z3" kind="relationship" relationship="rootViewController" id="kiR-it-eEu"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gCU-c2-xhe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="927" y="-691"/>
+            <point key="canvasLocation" x="915" y="-135"/>
         </scene>
-        <!--Spur Quick Request Table View Controller - Quick Requests-->
-        <scene sceneID="Bwa-EA-fZn">
+        <!--Spur Outgoing Requests View Controller - Outgoing Requests-->
+        <scene sceneID="Tat-hI-hrr">
             <objects>
-                <tableViewController id="MK2-If-CXM" customClass="SpurQuickRequestTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="Wnf-RZ-t4d">
+                <tableViewController storyboardIdentifier="OutgoingRequestsViewID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Gnz-Pk-6Z3" customClass="SpurOutgoingRequestsViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="D6t-78-N8v">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="LiF-LB-CbB">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="T8p-2i-yIM">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -416,29 +441,77 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <connections>
-                                    <segue destination="ylF-WK-sQz" kind="push" id="S6K-Br-AZs"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="MK2-If-CXM" id="9Ya-Xh-B8A"/>
-                            <outlet property="delegate" destination="MK2-If-CXM" id="h0r-TU-00H"/>
+                            <outlet property="dataSource" destination="Gnz-Pk-6Z3" id="a8m-fX-ofY"/>
+                            <outlet property="delegate" destination="Gnz-Pk-6Z3" id="zMM-8x-Fvb"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="7G0-2D-RKC"/>
-                    <navigationItem key="navigationItem" title="Quick Requests" id="5ea-1w-aGH"/>
+                    <navigationItem key="navigationItem" title="Outgoing Requests" id="se4-b3-AwS"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="S70-lg-zhX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NPB-1s-Rpn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1415" y="-691"/>
+            <point key="canvasLocation" x="1415" y="-135"/>
+        </scene>
+        <!--Spur Expanded Outgoing Request View Controller - Expanded Outgoing Request-->
+        <scene sceneID="yA4-hm-Woc">
+            <objects>
+                <viewController id="a3P-Ce-FOv" customClass="SpurExpandedOutgoingRequestViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="g7V-SH-ZTG">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Details" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3O-Hp-5zK">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="S3O-Hp-5zK" firstAttribute="top" secondItem="g7V-SH-ZTG" secondAttribute="top" constant="106" id="0ff-i2-aln"/>
+                            <constraint firstItem="S3O-Hp-5zK" firstAttribute="centerX" secondItem="g7V-SH-ZTG" secondAttribute="centerX" type="default" id="JtA-uS-Dei"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Expanded Outgoing Request" id="Kbg-48-UWI"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jlH-Vj-mXm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1887" y="-789"/>
+        </scene>
+        <!--Spur Expanded Outgoing Offer View Controller - Expanded Outgoing Offer-->
+        <scene sceneID="LjE-KF-7ie">
+            <objects>
+                <viewController storyboardIdentifier="ExpandedOutgoingOfferViewID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kOe-Ns-X2J" customClass="SpurExpandedOutgoingOfferViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="08d-2B-h47">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Details" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EyO-ua-O2U">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="EyO-ua-O2U" firstAttribute="centerX" secondItem="08d-2B-h47" secondAttribute="centerX" type="default" id="3fb-li-1R4"/>
+                            <constraint firstItem="EyO-ua-O2U" firstAttribute="top" secondItem="08d-2B-h47" secondAttribute="top" constant="108" id="PAb-yS-ZA1"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Expanded Outgoing Offer" id="iyX-Q3-6DM"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pz9-W1-IUy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1905" y="1856"/>
         </scene>
         <!--Spur Make Request View Controller - Make Request-->
         <scene sceneID="abM-rZ-LDI">
             <objects>
                 <viewController storyboardIdentifier="MakeRequestViewID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ylF-WK-sQz" customClass="SpurMakeRequestViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="YTV-gD-4le">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Item Name" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ydp-v1-rwf">
@@ -469,6 +542,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7km-xo-yUl"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Public" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7Tr-Q4-tNG">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U3i-Yc-442"/>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SQV-4O-tbr">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Make Request">
@@ -483,19 +562,23 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="IQa-H8-RpC" firstAttribute="top" secondItem="Ydp-v1-rwf" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="2q0-OD-S4p"/>
+                            <constraint firstItem="Ydp-v1-rwf" firstAttribute="top" secondItem="YTV-gD-4le" secondAttribute="top" constant="20" symbolic="YES" type="default" id="49r-1j-Wlu"/>
+                            <constraint firstItem="7Tr-Q4-tNG" firstAttribute="leading" secondItem="YTV-gD-4le" secondAttribute="leading" constant="52" id="4j7-hk-6gO"/>
                             <constraint firstItem="SQV-4O-tbr" firstAttribute="top" secondItem="dFl-BX-Qpe" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="54V-g0-ygE"/>
+                            <constraint firstItem="7Tr-Q4-tNG" firstAttribute="leading" secondItem="TO9-Pp-Q04" secondAttribute="leading" type="default" id="5Pg-lb-B4D"/>
+                            <constraint firstItem="7Tr-Q4-tNG" firstAttribute="centerY" secondItem="U3i-Yc-442" secondAttribute="centerY" type="default" id="6Q9-0F-SpI"/>
                             <constraint firstItem="Kl0-OS-Ub7" firstAttribute="top" secondItem="IQa-H8-RpC" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="6ln-oO-0D5"/>
-                            <constraint firstItem="dFl-BX-Qpe" firstAttribute="centerX" secondItem="YTV-gD-4le" secondAttribute="centerX" type="default" id="CgR-nn-Ku1"/>
                             <constraint firstItem="cMM-kq-qlV" firstAttribute="top" secondItem="V5w-VV-lf1" secondAttribute="top" type="default" id="DMV-8s-tfG"/>
+                            <constraint firstItem="U3i-Yc-442" firstAttribute="top" secondItem="YTV-gD-4le" secondAttribute="top" constant="130" id="DTd-cz-8m1"/>
                             <constraint firstItem="Kl0-OS-Ub7" firstAttribute="leading" secondItem="IQa-H8-RpC" secondAttribute="leading" type="default" id="Dyz-el-qI4"/>
                             <constraint firstItem="cMM-kq-qlV" firstAttribute="top" secondItem="7km-xo-yUl" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="HiT-aD-4vS"/>
-                            <constraint firstItem="7km-xo-yUl" firstAttribute="top" secondItem="Kl0-OS-Ub7" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="JqD-eu-D1Y"/>
+                            <constraint firstItem="7km-xo-yUl" firstAttribute="top" secondItem="U3i-Yc-442" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="I9k-y9-REb"/>
                             <constraint firstItem="dFl-BX-Qpe" firstAttribute="trailing" secondItem="Kl0-OS-Ub7" secondAttribute="trailing" type="default" id="LCz-Jh-ebX"/>
                             <constraint firstItem="7km-xo-yUl" firstAttribute="leading" secondItem="TO9-Pp-Q04" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="R3A-Fp-aGa"/>
+                            <constraint firstItem="IQa-H8-RpC" firstAttribute="centerX" secondItem="YTV-gD-4le" secondAttribute="centerX" type="default" id="RKg-v7-oin"/>
                             <constraint firstItem="SQV-4O-tbr" firstAttribute="centerX" secondItem="dFl-BX-Qpe" secondAttribute="centerX" type="default" id="S2d-zK-8M2"/>
-                            <constraint firstItem="Ydp-v1-rwf" firstAttribute="top" secondItem="YTV-gD-4le" secondAttribute="top" constant="51" id="Up0-zb-pHp"/>
                             <constraint firstItem="Kl0-OS-Ub7" firstAttribute="trailing" secondItem="IQa-H8-RpC" secondAttribute="trailing" type="default" id="WXO-1W-ZNR"/>
-                            <constraint firstItem="TO9-Pp-Q04" firstAttribute="leading" secondItem="YTV-gD-4le" secondAttribute="leading" constant="52" id="XMU-i1-oUB"/>
+                            <constraint firstItem="U3i-Yc-442" firstAttribute="leading" secondItem="7km-xo-yUl" secondAttribute="leading" type="default" id="Wqg-rI-2wv"/>
                             <constraint firstItem="dFl-BX-Qpe" firstAttribute="leading" secondItem="Kl0-OS-Ub7" secondAttribute="leading" type="default" id="Ztw-wn-41c"/>
                             <constraint firstItem="cMM-kq-qlV" firstAttribute="leading" secondItem="7km-xo-yUl" secondAttribute="leading" type="default" id="fkd-Dj-hU2"/>
                             <constraint firstItem="IQa-H8-RpC" firstAttribute="leading" secondItem="Ydp-v1-rwf" secondAttribute="leading" type="default" id="hJf-nE-lbr"/>
@@ -510,7 +593,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YXQ-LF-i5a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1895" y="-691"/>
+            <point key="canvasLocation" x="927" y="1153"/>
         </scene>
         <!--Navigation Controller - Item-->
         <scene sceneID="EWx-iy-upU">
@@ -542,23 +625,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ggs-uz-uSL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1415" y="1732"/>
-        </scene>
-        <!--Navigation Controller - Item-->
-        <scene sceneID="mkg-7C-1Lv">
-            <objects>
-                <navigationController definesPresentationContext="YES" id="wfw-hq-7sp" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Item" id="oYl-U7-iWJ"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Do4-th-GSO">
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="WJJ-qI-vCe" kind="relationship" relationship="rootViewController" id="aNN-hS-HYf"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3HD-MS-vWT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="927" y="1732"/>
+            <point key="canvasLocation" x="2533" y="2932"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="bB9-d5-ouO">
@@ -572,38 +639,39 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="EcF-NQ-Jxx" kind="relationship" relationship="viewControllers" id="Asu-lg-XQL"/>
-                        <segue destination="2E9-B2-EIU" kind="relationship" relationship="viewControllers" id="mXh-OL-sxU"/>
-                        <segue destination="Nit-7r-aXz" kind="relationship" relationship="viewControllers" id="Z44-Jp-0kz"/>
-                        <segue destination="wfw-hq-7sp" kind="relationship" relationship="viewControllers" id="X4d-wM-FhR"/>
+                        <segue destination="EcF-NQ-Jxx" kind="relationship" relationship="viewControllers" id="ofu-QR-Nr4"/>
+                        <segue destination="2E9-B2-EIU" kind="relationship" relationship="viewControllers" id="8cz-yu-gMD"/>
+                        <segue destination="ylF-WK-sQz" kind="relationship" relationship="viewControllers" id="Q3p-w6-dVM"/>
+                        <segue destination="TKP-gI-foJ" kind="relationship" relationship="viewControllers" id="C6S-Aq-HwR"/>
+                        <segue destination="Nit-7r-aXz" kind="relationship" relationship="viewControllers" id="7yU-AA-Sf4"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VpZ-gU-R0w" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="387" y="-275"/>
+            <point key="canvasLocation" x="223" y="517"/>
         </scene>
         <!--Navigation Controller - Item-->
         <scene sceneID="d5z-5G-oOC">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="R1f-vT-EWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController definesPresentationContext="YES" id="Nit-7r-aXz" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Item" id="WU1-Fb-ikL"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JUP-fp-qRA">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="KAp-Kc-9y1" kind="relationship" relationship="rootViewController" id="dBD-LM-DG4"/>
+                        <segue destination="GwY-0e-n0T" kind="relationship" relationship="rootViewController" id="2Qi-03-PN0"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="R1f-vT-EWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="927" y="640"/>
+            <point key="canvasLocation" x="927" y="2938"/>
         </scene>
-        <!--Spur View Offers Table View Controller - Offers-->
+        <!--Spur Incoming Offers Table View Controller - Incoming Offers-->
         <scene sceneID="zQD-nw-khx">
             <objects>
-                <tableViewController storyboardIdentifier="ViewOffersViewID" id="KAp-Kc-9y1" customClass="SpurViewOffersTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="IncomingOffersViewID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KAp-Kc-9y1" customClass="SpurIncomingOffersTableViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="iRp-OY-wQ2">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -626,18 +694,20 @@
                         </connections>
                     </tableView>
                     <tabBarItem key="tabBarItem" title="Item" id="Ldu-1r-ck3"/>
-                    <navigationItem key="navigationItem" title="Offers" id="Ktz-Pd-QFC"/>
+                    <navigationItem key="navigationItem" title="Incoming Offers" id="Ktz-Pd-QFC">
+                        <barButtonItem key="rightBarButtonItem" title="Settings" id="pEx-19-5ec"/>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tnS-MR-mTG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1415" y="633"/>
+            <point key="canvasLocation" x="1887" y="-135"/>
         </scene>
-        <!--Spur Expanded Offer View Controller - Expanded Offer-->
+        <!--Spur Expanded Incoming Offer View Controller - Expanded Incoming Offer-->
         <scene sceneID="pNT-Bq-DXt">
             <objects>
-                <viewController storyboardIdentifier="ExpandedOfferViewID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WMB-Jh-kZI" customClass="SpurExpandedOfferViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ExpandedIncomingOfferViewID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="WMB-Jh-kZI" customClass="SpurExpandedIncomingOfferViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CvQ-kI-AiU">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="User" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TnP-yo-FgI">
@@ -655,19 +725,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qph-pR-Xrn">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Expand Picture">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="l2A-Gt-WDt" kind="push" id="oht-zF-cvy"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LEj-fq-VFd">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Accept Offer">
@@ -688,16 +745,6 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mz4-M7-0vk">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal" title="Cancel">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E6E-x4-Qzb">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="jS0-kj-h97"/>
@@ -706,37 +753,33 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="E6E-x4-Qzb" firstAttribute="centerX" secondItem="Qph-pR-Xrn" secondAttribute="centerX" type="default" id="3nm-Ij-2SD"/>
-                            <constraint firstItem="LEj-fq-VFd" firstAttribute="baseline" secondItem="br3-3i-amA" secondAttribute="baseline" type="default" id="DMA-Hu-QaC"/>
+                            <constraint firstAttribute="bottom" secondItem="br3-3i-amA" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="04t-ZC-vEC"/>
+                            <constraint firstItem="br3-3i-amA" firstAttribute="trailing" secondItem="E6E-x4-Qzb" secondAttribute="trailing" type="default" id="0ID-lL-QEQ"/>
                             <constraint firstItem="E6E-x4-Qzb" firstAttribute="top" secondItem="PJw-MR-6Kd" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="KtU-Rn-Y66"/>
-                            <constraint firstItem="mz4-M7-0vk" firstAttribute="top" secondItem="br3-3i-amA" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="MEW-ed-R2e"/>
-                            <constraint firstItem="Qph-pR-Xrn" firstAttribute="top" secondItem="E6E-x4-Qzb" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="NMk-hJ-bz2"/>
                             <constraint firstItem="TnP-yo-FgI" firstAttribute="top" secondItem="CvQ-kI-AiU" secondAttribute="top" constant="20" symbolic="YES" type="default" id="NX8-Hr-GzY"/>
                             <constraint firstItem="PJw-MR-6Kd" firstAttribute="top" secondItem="s9a-mc-Y2i" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="PUe-8h-KTh"/>
+                            <constraint firstItem="PJw-MR-6Kd" firstAttribute="centerX" secondItem="CvQ-kI-AiU" secondAttribute="centerX" type="default" id="RG4-xn-VjJ"/>
                             <constraint firstItem="s9a-mc-Y2i" firstAttribute="top" secondItem="TnP-yo-FgI" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="VQR-dr-EBr"/>
+                            <constraint firstItem="LEj-fq-VFd" firstAttribute="top" secondItem="E6E-x4-Qzb" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Ya3-IX-hHQ"/>
                             <constraint firstItem="PJw-MR-6Kd" firstAttribute="centerX" secondItem="s9a-mc-Y2i" secondAttribute="centerX" type="default" id="Yef-LM-1N4"/>
                             <constraint firstItem="s9a-mc-Y2i" firstAttribute="centerX" secondItem="TnP-yo-FgI" secondAttribute="centerX" type="default" id="Z93-lt-TEt"/>
-                            <constraint firstItem="Qph-pR-Xrn" firstAttribute="centerX" secondItem="CvQ-kI-AiU" secondAttribute="centerX" type="default" id="eqf-ok-w77"/>
                             <constraint firstItem="E6E-x4-Qzb" firstAttribute="centerX" secondItem="PJw-MR-6Kd" secondAttribute="centerX" type="default" id="fOn-t8-7QX"/>
-                            <constraint firstItem="E6E-x4-Qzb" firstAttribute="leading" secondItem="LEj-fq-VFd" secondAttribute="leading" type="default" id="g2A-Uo-d3q"/>
-                            <constraint firstAttribute="bottom" secondItem="mz4-M7-0vk" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="lJU-2f-qVP"/>
-                            <constraint firstItem="Qph-pR-Xrn" firstAttribute="centerX" secondItem="mz4-M7-0vk" secondAttribute="centerX" type="default" id="rmj-aT-uNG"/>
+                            <constraint firstAttribute="bottom" secondItem="LEj-fq-VFd" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="pog-w1-ovC"/>
                             <constraint firstItem="br3-3i-amA" firstAttribute="leading" secondItem="LEj-fq-VFd" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="xaz-Bz-akM"/>
-                            <constraint firstItem="LEj-fq-VFd" firstAttribute="top" secondItem="Qph-pR-Xrn" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ztN-vc-dvz"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Expanded Offer" id="oJ1-C3-Sta"/>
+                    <navigationItem key="navigationItem" title="Expanded Incoming Offer" id="oJ1-C3-Sta"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pBZ-V2-1eS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2069" y="193"/>
+            <point key="canvasLocation" x="2367" y="-135"/>
         </scene>
         <!--View Controller - View Item Image-->
         <scene sceneID="PMu-FE-c9u">
             <objects>
                 <viewController storyboardIdentifier="ViewItemImageViewID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="l2A-Gt-WDt" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vos-7Y-cKD">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -744,49 +787,127 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9Eg-3k-91r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2547" y="193"/>
+            <point key="canvasLocation" x="2835" y="-135"/>
         </scene>
-        <!--Spur Accepted Offer View Controller-->
+        <!--Spur Expanded Pending Payment View Controller - Expanded Pending Payment-->
         <scene sceneID="h7m-Br-fhn">
             <objects>
-                <viewController storyboardIdentifier="AcceptedOfferViewID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qOe-3h-P4b" customClass="SpurAcceptedOfferViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AcceptedOfferViewID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qOe-3h-P4b" customClass="SpurExpandedPendingPaymentViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="nLw-qr-ZXJ">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="User" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cam-Sz-7J3">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q16-w0-dRG">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Call">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nLg-UF-hyr">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Email">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oN-Fu-Zar">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Make Payment">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="XBq-Sg-Aox" kind="push" id="YfF-fU-AwC"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="q16-w0-dRG" firstAttribute="top" secondItem="Cam-Sz-7J3" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="3EQ-0r-vAe"/>
+                            <constraint firstItem="2oN-Fu-Zar" firstAttribute="centerX" secondItem="nLw-qr-ZXJ" secondAttribute="centerX" type="default" id="3UD-HZ-8NH"/>
+                            <constraint firstItem="nLg-UF-hyr" firstAttribute="centerX" secondItem="2oN-Fu-Zar" secondAttribute="centerX" type="default" id="CXn-xf-Rq4"/>
+                            <constraint firstItem="nLg-UF-hyr" firstAttribute="centerX" secondItem="q16-w0-dRG" secondAttribute="centerX" type="default" id="F15-kT-eWk"/>
+                            <constraint firstItem="nLg-UF-hyr" firstAttribute="top" secondItem="q16-w0-dRG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="ceR-4O-sB5"/>
+                            <constraint firstItem="2oN-Fu-Zar" firstAttribute="top" secondItem="nLg-UF-hyr" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="efj-iJ-Qag"/>
+                            <constraint firstItem="Cam-Sz-7J3" firstAttribute="top" secondItem="nLw-qr-ZXJ" secondAttribute="top" constant="97" id="yfP-9e-leZ"/>
+                            <constraint firstItem="q16-w0-dRG" firstAttribute="centerX" secondItem="Cam-Sz-7J3" secondAttribute="centerX" type="default" id="zj3-dP-lRA"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Expanded Pending Payment" id="oKP-en-1Mv"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qf1-Jq-Jzp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2069" y="944"/>
+            <point key="canvasLocation" x="1887" y="514"/>
         </scene>
-        <!--Spur Make Payment View Controller-->
+        <!--Spur Make Payment View Controller - Make Payment-->
         <scene sceneID="4fc-UH-b7k">
             <objects>
                 <viewController storyboardIdentifier="MakePaymentViewID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XBq-Sg-Aox" customClass="SpurMakePaymentViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="TsY-Fy-WMH">
                         <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="VENMO" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c1t-bS-DzS">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="c1t-bS-DzS" firstAttribute="centerY" secondItem="TsY-Fy-WMH" secondAttribute="centerY" type="default" id="UKA-ZP-ysg"/>
+                            <constraint firstItem="c1t-bS-DzS" firstAttribute="centerX" secondItem="TsY-Fy-WMH" secondAttribute="centerX" type="default" id="VW6-Kc-tGB"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" title="Make Payment" id="1qo-Le-nvJ"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sEC-cv-TGs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2547" y="944"/>
+            <point key="canvasLocation" x="2367" y="514"/>
         </scene>
     </scenes>
     <classes>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
         </class>
-        <class className="SpurExpandedOfferViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurExpandedOfferViewController.h"/>
+        <class className="SpurExpandedIncomingOfferViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurExpandedIncomingOfferViewController.h"/>
         </class>
-        <class className="SpurExpandedRequestViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurExpandedRequestViewController.h"/>
+        <class className="SpurExpandedIncomingRequestViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurExpandedIncomingRequestViewController.h"/>
+        </class>
+        <class className="SpurExpandedOutgoingOfferViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurExpandedOutgoingOfferViewController.h"/>
+        </class>
+        <class className="SpurExpandedOutgoingRequestViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurExpandedOutgoingRequestViewController.h"/>
+        </class>
+        <class className="SpurExpandedPendingPaymentViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurExpandedPendingPaymentViewController.h"/>
         </class>
         <class className="SpurHomePageViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurHomePageViewController.h"/>
+        </class>
+        <class className="SpurIncomingOffersTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurIncomingOffersTableViewController.h"/>
+        </class>
+        <class className="SpurIncomingRequestsTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurIncomingRequestsTableViewController.h"/>
         </class>
         <class className="SpurMakeOfferViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurMakeOfferViewController.h"/>
@@ -797,11 +918,14 @@
         <class className="SpurMakeRequestViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurMakeRequestViewController.h"/>
         </class>
+        <class className="SpurOutgoingOffersTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurOutgoingOffersTableViewController.h"/>
+        </class>
+        <class className="SpurOutgoingRequestsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurOutgoingRequestsViewController.h"/>
+        </class>
         <class className="SpurPictureCaptureViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurPictureCaptureViewController.h"/>
-        </class>
-        <class className="SpurQuickRequestTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurQuickRequestTableViewController.h"/>
         </class>
         <class className="SpurSettingsViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurSettingsViewController.h"/>
@@ -811,12 +935,6 @@
         </class>
         <class className="SpurSignUpViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurSignUpViewController.h"/>
-        </class>
-        <class className="SpurViewOffersTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurViewOffersTableViewController.h"/>
-        </class>
-        <class className="SpurViewRequestsTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurViewRequestsTableViewController.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

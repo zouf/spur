@@ -69,7 +69,7 @@
     
     
     NSLog(@"%@\n",[self.offer objectForKey:@"itemName"]);
-    NSString *name = [self.offer objectForKey:@"userId"];
+    NSString *name = [self.offer objectForKey:@"userName"];
     if (![name  isEqual:[NSNull null]])
     {
         self.userLabel.text  = name;
@@ -81,10 +81,34 @@
     }
     NSString *posttime = [self.offer objectForKey:@"posttime"];
     
-    if (![posttime  isEqual:[NSNull null]])
-    {
-        self.posttime.text  = posttime;
-    }
+    
+    NSDate *now = [[NSDate alloc] init];
+    
+    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
+    [outputFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
+    [outputFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    
+    NSString* dateStringFromDatabase = [self.offer objectForKey:@"posttime"];
+    
+    NSDate* dateFromString = [outputFormatter dateFromString:dateStringFromDatabase];
+    NSCalendar *gregorian = [[NSCalendar alloc]initWithCalendarIdentifier:NSGregorianCalendar];
+    
+    unsigned int unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit;
+    
+    NSDateComponents *components = [gregorian components:unitFlags fromDate:dateFromString
+                                                  toDate:now options:0];
+    int hours = [components hour];
+    int minutes = [components minute];
+    if(hours)
+        self.posttime.text =  [NSString stringWithFormat:@"%dh %dm ago\n",hours,minutes];
+    else if (minutes)
+        self.posttime.text =  [NSString stringWithFormat:@"%dm ago\n",minutes];
+    else
+        self.posttime.text =  [NSString stringWithFormat:@"Moments ago\n"];
+    
+
+    
+   
     
     NSString *itemlabel = [self.offer objectForKey:@"itemName"];
     

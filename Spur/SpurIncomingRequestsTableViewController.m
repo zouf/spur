@@ -235,20 +235,14 @@
         NSString* dateStringFromDatabase = [item objectForKey:@"posttime"];
         
         NSDate* dateFromString = [outputFormatter dateFromString:dateStringFromDatabase];
-        NSString* a = [outputFormatter stringFromDate:now];
-        NSDate* b = [outputFormatter dateFromString:a];
-        
         NSCalendar *gregorian = [[NSCalendar alloc]initWithCalendarIdentifier:NSGregorianCalendar];
         
         unsigned int unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit;
         
         NSDateComponents *components = [gregorian components:unitFlags fromDate:dateFromString
                                                       toDate:now options:0];
-        
         int hours = [components hour];
-        int minutes = [components minute];
-        
-        
+        int minutes = [components minute];        
         if(hours)
             time.text =  [NSString stringWithFormat:@"%dh %dm ago\n",hours,minutes];
         else if (minutes)

@@ -73,15 +73,44 @@
         {
             self.priceLabel.text  = price;
         }
-        NSString *posttime = [item objectForKey:@"posttime"];
+    
+    
+    NSDate *now = [[NSDate alloc] init];
+    
+    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
+    [outputFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
+    [outputFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+    
+    NSString* dateStringFromDatabase = [item objectForKey:@"posttime"];
+    
+    NSDate* dateFromString = [outputFormatter dateFromString:dateStringFromDatabase];
+    NSString* a = [outputFormatter stringFromDate:now];
+    NSDate* b = [outputFormatter dateFromString:a];
+    
+    NSCalendar *gregorian = [[NSCalendar alloc]initWithCalendarIdentifier:NSGregorianCalendar];
+    
+    unsigned int unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit;
+    
+    NSDateComponents *components = [gregorian components:unitFlags fromDate:dateFromString
+                                                  toDate:now options:0];
+    
+    int hours = [components hour];
+    int minutes = [components minute];
+    
+    
+    if(hours)
+        self.postedLabel.text =  [NSString stringWithFormat:@"%dh %dm ago\n",hours,minutes];
+    else if (minutes)
+        self.postedLabel.text =  [NSString stringWithFormat:@"%dm ago\n",minutes];
+    else
+        self.postedLabel.text =  [NSString stringWithFormat:@"Moments ago\n"];
+    
 
-        if (![posttime  isEqual:[NSNull null]])
-        {
-            self.postedLabel.text  = posttime;
-        }
-
+    
+    
+    
         NSString *itemlabel = [item objectForKey:@"name"];
-        
+    
         if (![itemlabel isEqual:[NSNull null]])
         {
             self.itemLabel.text  = itemlabel;

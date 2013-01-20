@@ -161,7 +161,7 @@
         
         NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
         [outputFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
-        [outputFormatter setDateFormat:@"yyyy-MM-dd HH:MM:SS"];
+        [outputFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
         
         NSString* dateStringFromDatabase = [item objectForKey:@"posttime"];
         

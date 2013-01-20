@@ -79,6 +79,11 @@
 }
 - (void)viewDidLoad
 {
+    UIImage *navigationImage = [UIImage imageNamed:@"Spur_feed@2x.png"];
+    CGImageRef imageRef = CGImageCreateWithImageInRect(navigationImage.CGImage, CGRectMake(0, 0, 320, 44));
+    navigationImage = [UIImage imageWithCGImage:imageRef];
+    [self.navigationController.navigationBar setBackgroundImage:navigationImage forBarMetrics:UIBarMetricsDefault];
+    
     SpurAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
 
     if(![delegate getUserId])

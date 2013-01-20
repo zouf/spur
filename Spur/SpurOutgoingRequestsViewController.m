@@ -23,6 +23,8 @@
 
 
 @property (nonatomic, retain) SpurService *spurService;
+@property (nonatomic, retain) SpurService *spurNumOffers;
+
 
 @end
 
@@ -38,63 +40,12 @@
 }
 
 
-// mzoufaly add the following in order to enforce login
-- (void)viewDidAppear:(BOOL)animated
-{
-    SpurAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-    
-    // If user is already logged in, no need to ask for auth
-    if ([delegate getUserId]== nil)
-    {
-        // We want the login view to be presented after the this run loop has completed
-        // Here we use a delay to ensure this.
-        [self performSelector:@selector(login) withObject:self afterDelay:0.1];
-    }
-}
-
-
-- (void) login
-{
-    SpurAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-    
-    
-    
-    UINavigationController *controller =
-    [self.spurService.client
-     loginViewControllerWithProvider:@"google"
-     completion:^(MSUser *user, NSError *error) {
-         
-         
-         if (error) {
-             NSLog(@"Authentication Error: %@", error);
-             // Note that error.code == -1503 indicates
-             // that the user cancelled the dialog
-         } else {
-             // No error, so load the data
-             [self.spurService refreshDataOnSuccess:^{
-                 [delegate setUserId:self.spurService.client.currentUser.userId];
-                 
-                 NSLog(@"Rock on!\n");
-                 
-                 //  [self.tableView reloadData];
-             }];
-         }
-         
-         
-         [self dismissViewControllerAnimated:YES completion:nil];
-     }];
-    
-    
-    [self presentViewController:controller animated:YES completion:nil];
-    
-}
-
 -(void)fetchDataFromAzure :(UIRefreshControl*)refresh
 {
     SpurAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     
     NSPredicate * predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"userId == '%@'", [delegate getUserId]]];
-    
+
    
     [self.spurService refreshDataOnSuccess:^{
         NSLog(@"Get all requests that have the user as the requestor!");
@@ -109,7 +60,8 @@
     [super viewDidLoad];
     
     self.spurService = [[SpurService alloc]initWithTable:@"itemrequest"];
-    
+    self.spurNumOffers = [[SpurService alloc]initWithTable:@"itemoffer"];
+
 
     UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
     refresh.attributedTitle = [[NSAttributedString alloc] initWithString:@"Spur it on..."];
@@ -205,13 +157,25 @@
         
     //NEED TO GET COUNT OF OFFERS
     
-    NSString *numOffers = [item objectForKey:@"name"];
-    numOffers = @"###";
+    //TODO XXX ZZZ Everything about this is terrible and egregious. I do not condone my actions, but my vision is getting blurry.
     
-    if (![name isEqual:[NSNull null]])
-    {
-        numOffersLabel.text  = numOffers;
-    }
+    NSPredicate * predicateOffers2 = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"requestId == '%@'",[item valueForKey:@"id"] ]];
+
+    [self.spurNumOffers refreshDataOnSuccess:^{
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            NSString * numOffers = [NSString stringWithFormat:@"%d offers", [self.spurNumOffers.items count]];
+            if (![numOffers isEqual:[NSNull null]])
+            {
+                numOffersLabel.text  = numOffers;
+            }
+            
+        });
+    } :predicateOffers2];
+    
+    
+    
+
     
     BOOL borrowVal = [[item objectForKey:@"borrow"] boolValue];
     

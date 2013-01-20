@@ -49,7 +49,7 @@
     SpurAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     
     id userId = [delegate getUserId];
-    NSPredicate * predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"userId == '%@'", userId]];
+    NSPredicate * predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"requesteeID == '%@'", userId]];
     
     
     [self.spurService refreshDataOnSuccess:^{
@@ -133,9 +133,9 @@
     if (![theName  isEqual:[NSNull null]])
     {
         if(!borrow)
-            name.text = [NSString stringWithFormat:@"%@ is looking to buy a ...\n", [item objectForKey:@"userName"] ];
+            name.text = [NSString stringWithFormat:@"Someone buying:\n"];//, [item objectForKey:@"userName"] ];
         else
-            name.text = [NSString stringWithFormat:@"%@ would like to borrow a ...\n", [item objectForKey:@"userName"] ];
+            name.text = [NSString stringWithFormat:@"Someone borrowing:\n"];// [item objectForKey:@"userName"] ];
         
         
     }

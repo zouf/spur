@@ -136,6 +136,10 @@
     @"requestId" :  [self.request objectForKey:@"id"],
     @"bestOffer" :  [offer objectForKey:@"id"],
     @"posttime": str,
+    @"itemName": [self.request objectForKey:@"name"],
+    @"requestorName": [[NSUserDefaults standardUserDefaults]objectForKey:@"name"],
+    @"requesteeName": [offer objectForKey:@"userName"],
+
     @"requestorID": [delegate getUserId],
     @"requesteeID": [offer objectForKey:@"userId"]
     };

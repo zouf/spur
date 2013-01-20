@@ -47,7 +47,7 @@
 -(void)removePopup:(id)sender
 {
     SpurAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-
+        
     NSUserDefaults *pref = [NSUserDefaults standardUserDefaults];
     [pref setObject:self.nameEntry.textValue forKey:@"name"];
     [pref setObject:self.emailEntry.textValue forKey:@"email"];
@@ -268,7 +268,6 @@
     //Get the selected object in order to fill out the detail view
     id item = [self.spurService.items objectAtIndex:indexPath.row];
 
-    NSLog(@"ITEM IS %@\n",item);
     [dvc setRequest:item];
     
 }

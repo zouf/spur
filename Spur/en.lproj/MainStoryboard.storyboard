@@ -872,7 +872,6 @@
         <class className="SpurExpandedIncomingOfferViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurExpandedIncomingOfferViewController.h"/>
             <relationships>
-                <relationship kind="action" name="acceptOffer:"/>
                 <relationship kind="outlet" name="borrowLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="itemImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="itemLabel" candidateClass="UILabel"/>
@@ -909,7 +908,6 @@
         <class className="SpurMakeRequestViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurMakeRequestViewController.h"/>
             <relationships>
-                <relationship kind="action" name="makeRequest:"/>
                 <relationship kind="outlet" name="borrowField" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="priceField" candidateClass="UITextField"/>

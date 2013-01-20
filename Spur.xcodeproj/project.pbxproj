@@ -19,6 +19,7 @@
 		0AC42B9116AB8928009A4D07 /* Spur_LogoRounded_114x114@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AC42B8D16AB8928009A4D07 /* Spur_LogoRounded_114x114@2x.png */; };
 		0AC42B9216AB8928009A4D07 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AC42B8E16AB8928009A4D07 /* Default@2x.png */; };
 		0AC42B9316AB8928009A4D07 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AC42B8F16AB8928009A4D07 /* Default-568h@2x.png */; };
+		0AC42C0716ABC7D8009A4D07 /* Tableemptybackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AC42C0616ABC7D8009A4D07 /* Tableemptybackground@2x.png */; };
 		272C8E2316AB721000DF2510 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 272C8E2216AB721000DF2510 /* NSData+Base64.m */; };
 		27492C9116AA3F430095A442 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27492C9016AA3F430095A442 /* UIKit.framework */; };
 		27492C9316AA3F430095A442 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27492C9216AA3F430095A442 /* Foundation.framework */; };
@@ -176,6 +177,7 @@
 		0AC42B8D16AB8928009A4D07 /* Spur_LogoRounded_114x114@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Spur_LogoRounded_114x114@2x.png"; sourceTree = "<group>"; };
 		0AC42B8E16AB8928009A4D07 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		0AC42B8F16AB8928009A4D07 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		0AC42C0616ABC7D8009A4D07 /* Tableemptybackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tableemptybackground@2x.png"; sourceTree = "<group>"; };
 		272C8E2116AB721000DF2510 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		272C8E2216AB721000DF2510 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		27492C8C16AA3F430095A442 /* Spur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spur.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -425,6 +427,7 @@
 		0AC42B1216AB6656009A4D07 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0AC42C0616ABC7D8009A4D07 /* Tableemptybackground@2x.png */,
 				27EE316D16ABB8A900E11ED1 /* Global */,
 				27EE317216ABB8A900E11ED1 /* Navigation */,
 				27EE318E16ABBE1F00E11ED1 /* Table */,
@@ -778,6 +781,7 @@
 				27EE318C16ABB8A900E11ED1 /* Tab3@2x.png in Resources */,
 				27EE318D16ABB8A900E11ED1 /* Tab4@2x.png in Resources */,
 				27EE319016ABBE1F00E11ED1 /* Tablebackground@2x.png in Resources */,
+				0AC42C0716ABC7D8009A4D07 /* Tableemptybackground@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -59,6 +59,8 @@
 {
     [super viewDidLoad];
     
+    
+    
     UIImage *navigationImage = [UIImage imageNamed:@"My_Spurs@2x.png"];
     CGImageRef imageRef = CGImageCreateWithImageInRect(navigationImage.CGImage, CGRectMake(0, 0, 640, 88));
     navigationImage = [UIImage imageWithCGImage:imageRef
@@ -101,7 +103,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.spurService.items count];
+    return ([ self.spurService.items count]  <= 7) ? 7 : [ self.spurService.items count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -117,7 +119,6 @@
     UIImage *cellBackground = [UIImage imageNamed:@"Tablebackground@2x.png"];
     [cell setBackgroundView:[[UIImageView alloc] initWithImage:cellBackground]];
     
-    id item = [self.spurService.items objectAtIndex:indexPath.row];
     
     UILabel * nameLabel = (UILabel*)[cell viewWithTag:ITEM_NAME];
     UILabel * borrowBuyLabel = (UILabel*)[cell viewWithTag:BORROW_BUY];
@@ -125,82 +126,100 @@
     UILabel *numOffersLabel = (UILabel*)[cell viewWithTag:NUMBER_OF_OFFERS];
     UILabel *timeLabel = (UILabel*)[cell viewWithTag:TIME];
     
-    NSString *name = [item objectForKey:@"name"];
-    if (![name  isEqual:[NSNull null]])
-    {
-        nameLabel.text  = name;
-    }
-    NSString *price = [item objectForKey:@"price"];
-    if (![price  isEqual:[NSNull null]])
-    {
-        priceLabel.text  = price;
-    }
-    
-    NSDate *now = [[NSDate alloc] init];
-    
-    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
-    [outputFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
-    [outputFormatter setDateFormat:@"yyyy-MM-dd HH:MM:SS"];
-    
-    NSString* dateStringFromDatabase = [item objectForKey:@"posttime"];
-    
-    NSDate* dateFromString = [outputFormatter dateFromString:dateStringFromDatabase];
-    NSString* a = [outputFormatter stringFromDate:now];
-    NSDate* b = [outputFormatter dateFromString:a];
-    
-    NSCalendar *gregorian = [[NSCalendar alloc]initWithCalendarIdentifier:NSGregorianCalendar];
-    
-    unsigned int unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit;
-    
-    NSDateComponents *components = [gregorian components:unitFlags fromDate:dateFromString
-                                                  toDate:b options:0];
-    
-    int hours = [components hour];
-    int minutes = [components minute];
     
     
-    if(hours)
-        timeLabel.text =  [NSString stringWithFormat:@"%dh %dm ago\n",hours,minutes];
-    else if (minutes)
-        timeLabel.text =  [NSString stringWithFormat:@"%dm ago\n",minutes];
-    else
-        timeLabel.text =  [NSString stringWithFormat:@"Moments ago\n"];
+    if([self.spurService.items count] <= 7 && indexPath.row +1  > ([self.spurService.items count]) ) {
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        nameLabel.text = @"";
+        priceLabel.text = @"";
+        timeLabel.text = @"";
+        numOffersLabel.text = nil;
+        borrowBuyLabel.text = @"";
+        UIImage *cellBackground = [UIImage imageNamed:@"Tableemptybackground@2x"];
+        [cell setBackgroundView:[[UIImageView alloc] initWithImage:cellBackground]];
         
-    //NEED TO GET COUNT OF OFFERS
-    
-    //TODO XXX ZZZ Everything about this is terrible and egregious. I do not condone my actions, but my vision is getting blurry.
-    
-    NSPredicate * predicateOffers2 = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"requestId == '%@'",[item valueForKey:@"id"] ]];
+    } else {
+        NSLog(@"%d\n",indexPath.row);
+        NSLog(@"%d\n", [self.spurService.items count]);
+        id item = [self.spurService.items objectAtIndex:indexPath.row];
 
-    [self.spurNumOffers refreshDataOnSuccess:^{
+    
+        NSString *name = [item objectForKey:@"name"];
+        if (![name  isEqual:[NSNull null]])
+        {
+            nameLabel.text  = name;
+        }
+        NSString *price = [item objectForKey:@"price"];
+        if (![price  isEqual:[NSNull null]])
+        {
+            priceLabel.text  = price;
+        }
         
-        dispatch_async(dispatch_get_main_queue(), ^{
-            NSString * numOffers = [NSString stringWithFormat:@"%d offers", [self.spurNumOffers.items count]];
-            if (![numOffers isEqual:[NSNull null]])
-            {
-                numOffersLabel.text  = numOffers;
-            }
+        NSDate *now = [[NSDate alloc] init];
+        
+        NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
+        [outputFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
+        [outputFormatter setDateFormat:@"yyyy-MM-dd HH:MM:SS"];
+        
+        NSString* dateStringFromDatabase = [item objectForKey:@"posttime"];
+        
+        NSDate* dateFromString = [outputFormatter dateFromString:dateStringFromDatabase];
+        NSString* a = [outputFormatter stringFromDate:now];
+        NSDate* b = [outputFormatter dateFromString:a];
+        
+        NSCalendar *gregorian = [[NSCalendar alloc]initWithCalendarIdentifier:NSGregorianCalendar];
+        
+        unsigned int unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit;
+        
+        NSDateComponents *components = [gregorian components:unitFlags fromDate:dateFromString
+                                                      toDate:b options:0];
+        
+        int hours = [components hour];
+        int minutes = [components minute];
+        
+        
+        if(hours)
+            timeLabel.text =  [NSString stringWithFormat:@"%dh %dm ago\n",hours,minutes];
+        else if (minutes)
+            timeLabel.text =  [NSString stringWithFormat:@"%dm ago\n",minutes];
+        else
+            timeLabel.text =  [NSString stringWithFormat:@"Moments ago\n"];
             
-        });
-    } :predicateOffers2];
-    
-    
-    
-
-    
-    BOOL borrowVal = [[item objectForKey:@"borrow"] boolValue];
-    
-    if(borrowVal)
-    {
-        borrowBuyLabel.text = @"Borrow";
+        //NEED TO GET COUNT OF OFFERS
         
-    }
-    else
-    {
-        borrowBuyLabel.text = @"Buy!";
-    }
+        //TODO XXX ZZZ Everything about this is terrible and egregious. I do not condone my actions, but my vision is getting blurry.
+        
+        NSPredicate * predicateOffers2 = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"requestId == '%@'",[item valueForKey:@"id"] ]];
+
+        [self.spurNumOffers refreshDataOnSuccess:^{
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                NSString * numOffers = [NSString stringWithFormat:@"%d offers", [self.spurNumOffers.items count]];
+                if (![numOffers isEqual:[NSNull null]])
+                {
+                    numOffersLabel.text  = numOffers;
+                }
+                
+            });
+        } :predicateOffers2];
+        
+        
+        
+
+        
+        BOOL borrowVal = [[item objectForKey:@"borrow"] boolValue];
+        
+        if(borrowVal)
+        {
+            borrowBuyLabel.text = @"Borrow";
+            
+        }
+        else
+        {
+            borrowBuyLabel.text = @"Buy!";
+        }
     
-    
+    }
     
     return cell;
 }

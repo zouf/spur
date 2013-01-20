@@ -36,57 +36,6 @@
 
 // mzoufaly add the following in order to enforce login
 
-//ZZZ The user must be logged on to do anything on this page. It should be impossible to get here otherwise
-- (void)viewDidAppear:(BOOL)animated
-{
-    SpurAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-    
-    // If user is already logged in, no need to ask for auth
-    if ([delegate getUserId]== nil)
-    {
-        // We want the login view to be presented after the this run loop has completed
-        // Here we use a delay to ensure this.
-        [self performSelector:@selector(login) withObject:self afterDelay:0.1];
-    }
-}
-
-
-- (void) login
-{
-    SpurAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-    
-    
-    
-    UINavigationController *controller =
-    [self.spurService.client
-     loginViewControllerWithProvider:@"google"
-     completion:^(MSUser *user, NSError *error) {
-         
-         
-         if (error) {
-             NSLog(@"Authentication Error: %@", error);
-             // Note that error.code == -1503 indicates
-             // that the user cancelled the dialog
-         } else {
-             // No error, so load the data
-             [self.spurService refreshDataOnSuccess:^{
-                 [delegate setUserId:self.spurService.client.currentUser.userId];
-                 
-                 NSLog(@"Rock on!\n");
-                 
-                 //  [self.tableView reloadData];
-             }];
-         }
-         
-         
-         [self dismissViewControllerAnimated:YES completion:nil];
-     }];
-    
-    
-    [self presentViewController:controller animated:YES completion:nil];
-    
-}
-
 -(void)fetchDataFromAzure :(UIRefreshControl*)refresh
 {
     // ZZZ Change this line for each new view
@@ -104,6 +53,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    [self.tableView setBackgroundView:[[UIImageView alloc] initWithImage:[UIImage imageNamed:@"Tablebackground@2x.png"]]];
+    [self.tableView setBackgroundColor:[UIColor blackColor]];
     
     UIImage *navigationImage = [UIImage imageNamed:@"Spur_feed@2x.png"];
     CGImageRef imageRef = CGImageCreateWithImageInRect(navigationImage.CGImage, CGRectMake(0, 0, 640, 88));
@@ -145,8 +97,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    // Return the number of rows in the section.
-    return [self.spurService.items count];
+    return ([ self.spurService.items count]  <= 7) ? 7 : [ self.spurService.items count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -160,76 +111,93 @@
         
     }
     
-    UIImage *cellBackground = [UIImage imageNamed:@"Tablebackground@2x"];
-    [cell setBackgroundView:[[UIImageView alloc] initWithImage:cellBackground]];
-    
-    id item = [self.spurService.items objectAtIndex:indexPath.row];
-    NSLog(@"%@\n",item);
     
     UILabel * nameLabel = (UILabel*)[cell viewWithTag:ITEM_NAME];
     UILabel * priceLabel = (UILabel*)[cell viewWithTag:PRICE];
     UILabel *timeLabel = (UILabel*)[cell viewWithTag:TIME];
     UIImageView *itemImage = (UIImageView*)[cell viewWithTag:ITEM_IMAGE];
     UILabel *userLabel = (UILabel*)[cell viewWithTag:USER];
+
     
-    NSString *name = [item objectForKey:@"itemName"];
-    if (![name  isEqual:[NSNull null]])
-    {
-        nameLabel.text  = name;
-    }
-    NSString *price = [item objectForKey:@"bestOffer"];
-    if (![price  isEqual:[NSNull null]])
-    {
-        priceLabel.text  = price;
-    }
-    
-    NSString *user = [item objectForKey:@"userName"];
-    if (![user  isEqual:[NSNull null]])
-    {
-        userLabel.text  = user;
-    }
-    
-    NSDate *now = [[NSDate alloc] init];
-    
-    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
-    [outputFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
-    [outputFormatter setDateFormat:@"yyyy-MM-dd HH:MM:SS"];
-    
-    NSString* dateStringFromDatabase = [item objectForKey:@"posttime"];
-    
-    NSDate* dateFromString = [outputFormatter dateFromString:dateStringFromDatabase];
-    NSString* a = [outputFormatter stringFromDate:now];
-    NSDate* b = [outputFormatter dateFromString:a];
-    
-    NSCalendar *gregorian = [[NSCalendar alloc]initWithCalendarIdentifier:NSGregorianCalendar];
-    
-    unsigned int unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit;
-    
-    NSDateComponents *components = [gregorian components:unitFlags fromDate:dateFromString
-                                                  toDate:b options:0];
-    
-    int hours = [components hour];
-    int minutes = [components minute];
-    
-    
-    if(hours)
-        timeLabel.text =  [NSString stringWithFormat:@"%dh %dm ago\n",hours,minutes];
-    else if (minutes)
-        timeLabel.text =  [NSString stringWithFormat:@"%dm ago\n",minutes];
-    else
-        timeLabel.text =  [NSString stringWithFormat:@"Moments ago\n"];
-    
-    NSString *imageData = [item objectForKey:@"pic"];
-    
-    if (![imageData  isEqual:[NSNull null]])
-    {
-        NSData *data = [NSData dataFromBase64String:imageData];
-        UIImage *image = [UIImage imageWithData:data];
+    NSInteger theVal = [self.spurService.items count];
+
+    if([self.spurService.items count] <= 7 && indexPath.row + 1> [self.spurService.items count]) {
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        nameLabel.text = @"";
+        priceLabel.text = @"";
+        timeLabel.text = @"";
+        itemImage.image = nil;
+        userLabel.text = @"";
+        UIImage *cellBackground = [UIImage imageNamed:@"Tableemptybackground@2x"];
+        [cell setBackgroundView:[[UIImageView alloc] initWithImage:cellBackground]];
+
+    } else {
         
-        itemImage.image  = image;
+    
+    
+        
+        UIImage *cellBackground = [UIImage imageNamed:@"Tablebackground@2x"];
+        [cell setBackgroundView:[[UIImageView alloc] initWithImage:cellBackground]];
+        
+        id item = [self.spurService.items objectAtIndex:indexPath.row];
+        NSString *name = [item objectForKey:@"itemName"];
+        if (![name  isEqual:[NSNull null]])
+        {
+            nameLabel.text  = name;
+        }
+        NSString *price = [item objectForKey:@"bestOffer"];
+        if (![price  isEqual:[NSNull null]])
+        {
+            priceLabel.text  = price;
+        }
+        
+        NSString *user = [item objectForKey:@"userName"];
+        if (![user  isEqual:[NSNull null]])
+        {
+            userLabel.text  = user;
+        }
+        
+        NSDate *now = [[NSDate alloc] init];
+        
+        NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
+        [outputFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
+        [outputFormatter setDateFormat:@"yyyy-MM-dd HH:MM:SS"];
+        
+        NSString* dateStringFromDatabase = [item objectForKey:@"posttime"];
+        
+        NSDate* dateFromString = [outputFormatter dateFromString:dateStringFromDatabase];
+        NSString* a = [outputFormatter stringFromDate:now];
+        NSDate* b = [outputFormatter dateFromString:a];
+        
+        NSCalendar *gregorian = [[NSCalendar alloc]initWithCalendarIdentifier:NSGregorianCalendar];
+        
+        unsigned int unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit;
+        
+        NSDateComponents *components = [gregorian components:unitFlags fromDate:dateFromString
+                                                      toDate:b options:0];
+        
+        int hours = [components hour];
+        int minutes = [components minute];
+        
+        
+        if(hours)
+            timeLabel.text =  [NSString stringWithFormat:@"%dh %dm ago\n",hours,minutes];
+        else if (minutes)
+            timeLabel.text =  [NSString stringWithFormat:@"%dm ago\n",minutes];
+        else
+            timeLabel.text =  [NSString stringWithFormat:@"Moments ago\n"];
+        
+        NSString *imageData = [item objectForKey:@"pic"];
+        
+        if (![imageData  isEqual:[NSNull null]])
+        {
+            NSData *data = [NSData dataFromBase64String:imageData];
+            UIImage *image = [UIImage imageWithData:data];
+            
+            itemImage.image  = image;
+        }
+    
     }
-    
-    
     return cell;
 }
 
@@ -258,7 +226,6 @@
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     SpurExpandedIncomingOfferViewController * dvc = (SpurExpandedIncomingOfferViewController*)[segue destinationViewController];
-    NSLog(@"The sender is %@",sender);
     
     NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
     //Get the selected object in order to fill out the detail view

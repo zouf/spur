@@ -166,7 +166,7 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [self.spurService.items count];
+    return ([ self.spurService.items count]  <= 7) ? 7 : [ self.spurService.items count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -179,76 +179,93 @@
         
         
     }
-    id item = [self.spurService.items objectAtIndex:indexPath.row];
-
+    
     UILabel * name = (UILabel*)[cell viewWithTag:NAME_TAG];
     UILabel * buySell = (UILabel*)[cell viewWithTag:BUY_SELL];
     UILabel * price = (UILabel*)[cell viewWithTag:PRICE];
     UILabel *description = (UILabel*)[cell viewWithTag:DESCRIPTION];
     UILabel *time = (UILabel*)[cell viewWithTag:TIME];
 
-    UIImage *cellBackground = [UIImage imageNamed:@"Tablebackground@2x.png"];
-    [cell setBackgroundView:[[UIImageView alloc] initWithImage:cellBackground]];
     
-    
-    
-    
-    
-    NSLog(@"%@\n", item);
-    
-    NSString *theName = [item objectForKey:@"userName"];
-    BOOL borrow = [[item objectForKey:@"borrow"] boolValue];
+    if([self.spurService.items count] <= 7 && indexPath.row +1  > ([self.spurService.items count]) ) {
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        name.text = @"";
+        buySell.text = @"";
+        price.text = @"";
+        description.text = nil;
+        time.text = @"";
+        UIImage *cellBackground = [UIImage imageNamed:@"Tableemptybackground@2x"];
+        [cell setBackgroundView:[[UIImageView alloc] initWithImage:cellBackground]];
+        
+    } else {
 
-    if (![theName  isEqual:[NSNull null]])
-    {
-        if(!borrow)
-            name.text = [NSString stringWithFormat:@"%@ is looking to buy a ...\n", [item objectForKey:@"userName"] ];
+        
+        
+        id item = [self.spurService.items objectAtIndex:indexPath.row];
+
+     
+        UIImage *cellBackground = [UIImage imageNamed:@"Tablebackground@2x.png"];
+        [cell setBackgroundView:[[UIImageView alloc] initWithImage:cellBackground]];
+        
+        
+        
+        
+        
+        NSLog(@"%@\n", item);
+        
+        NSString *theName = [item objectForKey:@"userName"];
+        BOOL borrow = [[item objectForKey:@"borrow"] boolValue];
+
+        if (![theName  isEqual:[NSNull null]])
+        {
+            if(!borrow)
+                name.text = [NSString stringWithFormat:@"%@ is looking to buy a ...\n", [item objectForKey:@"userName"] ];
+            else
+                name.text = [NSString stringWithFormat:@"%@ would like to borrow a ...\n", [item objectForKey:@"userName"] ];
+
+
+        }
+        NSDate *now = [[NSDate alloc] init];
+        
+        NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
+        [outputFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
+        [outputFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
+        
+        NSString* dateStringFromDatabase = [item objectForKey:@"posttime"];
+        
+        NSDate* dateFromString = [outputFormatter dateFromString:dateStringFromDatabase];
+        NSString* a = [outputFormatter stringFromDate:now];
+        NSDate* b = [outputFormatter dateFromString:a];
+        
+        NSCalendar *gregorian = [[NSCalendar alloc]initWithCalendarIdentifier:NSGregorianCalendar];
+        
+        unsigned int unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit;
+        
+        NSDateComponents *components = [gregorian components:unitFlags fromDate:dateFromString
+                                                      toDate:now options:0];
+        
+        int hours = [components hour];
+        int minutes = [components minute];
+        
+        
+        if(hours)
+            time.text =  [NSString stringWithFormat:@"%dh %dm ago\n",hours,minutes];
+        else if (minutes)
+            time.text =  [NSString stringWithFormat:@"%dm ago\n",minutes];
         else
-            name.text = [NSString stringWithFormat:@"%@ would like to borrow a ...\n", [item objectForKey:@"userName"] ];
+            time.text =  [NSString stringWithFormat:@"Moments ago\n"];
 
 
+        description.text = [item objectForKey:@"name"];
+        buySell.text = @"";
+        /*if(borrow)
+             buySell.text = @"Borrow";
+        else
+            buySell.text = @"Buy";*/
+        price.text = [item objectForKey:@"price"];
+
+        
     }
-    NSDate *now = [[NSDate alloc] init];
-    
-    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
-    [outputFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
-    [outputFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    
-    NSString* dateStringFromDatabase = [item objectForKey:@"posttime"];
-    
-    NSDate* dateFromString = [outputFormatter dateFromString:dateStringFromDatabase];
-    NSString* a = [outputFormatter stringFromDate:now];
-    NSDate* b = [outputFormatter dateFromString:a];
-    
-    NSCalendar *gregorian = [[NSCalendar alloc]initWithCalendarIdentifier:NSGregorianCalendar];
-    
-    unsigned int unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit;
-    
-    NSDateComponents *components = [gregorian components:unitFlags fromDate:dateFromString
-                                                  toDate:now options:0];
-    
-    int hours = [components hour];
-    int minutes = [components minute];
-    
-    
-    if(hours)
-        time.text =  [NSString stringWithFormat:@"%dh %dm ago\n",hours,minutes];
-    else if (minutes)
-        time.text =  [NSString stringWithFormat:@"%dm ago\n",minutes];
-    else
-        time.text =  [NSString stringWithFormat:@"Moments ago\n"];
-
-
-    description.text = [item objectForKey:@"name"];
-    buySell.text = @"";
-    /*if(borrow)
-         buySell.text = @"Borrow";
-    else
-        buySell.text = @"Buy";*/
-    price.text = [item objectForKey:@"price"];
-
-    
-    
     return cell;
 }
 

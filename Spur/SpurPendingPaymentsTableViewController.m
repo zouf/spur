@@ -143,7 +143,7 @@
     
     NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
     [outputFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
-    [outputFormatter setDateFormat:@"yyyy-MM-dd HH:MM:SS"];
+    [outputFormatter setDateFormat:@"yyyy-MM-dd HH:mm:s"];
     
     NSString* dateStringFromDatabase = [item objectForKey:@"posttime"];
     
@@ -191,7 +191,7 @@
     
     NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
     [formatter setDateFormat:@"MMM d, h:mm a"];
-    NSString *lastUpdated = [NSString stringWithFormat:@"Last updated on %@",
+    NSString *lastUpdated = [NSString stringWithFormat:@"Last spurred on %@",
                              [formatter stringFromDate:[NSDate date]]];
     refresh.attributedTitle = [[NSAttributedString alloc] initWithString:lastUpdated];
 }

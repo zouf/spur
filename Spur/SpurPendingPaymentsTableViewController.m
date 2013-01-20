@@ -72,6 +72,11 @@
     [self.navigationController.navigationBar setBackgroundImage:navigationImage forBarMetrics:UIBarMetricsDefault];
     CGImageRelease(imageRef);
     
+    UIImage *backgroundImage = [UIImage imageNamed:@"wood_background@2x.png"];
+    UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:backgroundImage];
+    [backgroundImageView setFrame:self.tableView.frame];
+    [self.tableView setBackgroundView:backgroundImageView];
+    
     // ZZZ Change this line for each new view
     self.spurService = [[SpurService alloc]initWithTable:@"itemaccepted"];
     

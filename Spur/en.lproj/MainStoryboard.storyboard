@@ -495,7 +495,7 @@
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwO-FA-blS">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="Fa2-4I-b3J"/>
+                                    <constraint firstAttribute="height" constant="44" id="2q3-Zc-wXA"/>
                                     <constraint firstAttribute="width" constant="177" id="czd-Nx-3zg"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -830,9 +830,7 @@
                             <outlet property="delegate" destination="aez-ZU-C1N" id="XMV-C6-MdY"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="Cjm-Bm-g7Z">
-                        <barButtonItem key="rightBarButtonItem" title="Mark Complete" id="wTh-QS-0IL"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="Cjm-Bm-g7Z"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="n9K-Po-yOZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -219,9 +219,9 @@
         if (![theName  isEqual:[NSNull null]])
         {
             if(!borrow)
-                name.text = [NSString stringWithFormat:@"%@ is looking to buy a ...\n", [item objectForKey:@"userName"] ];
+                name.text = [NSString stringWithFormat:@"%@ wants to buy\n", [item objectForKey:@"userName"] ];
             else
-                name.text = [NSString stringWithFormat:@"%@ would like to borrow a ...\n", [item objectForKey:@"userName"] ];
+                name.text = [NSString stringWithFormat:@"%@ would like to borrow\n", [item objectForKey:@"userName"] ];
 
 
         }

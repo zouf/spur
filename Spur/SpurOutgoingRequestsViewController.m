@@ -142,12 +142,22 @@
         NSLog(@"%d\n",indexPath.row);
         NSLog(@"%d\n", [self.spurService.items count]);
         id item = [self.spurService.items objectAtIndex:indexPath.row];
-
+        
+        
+        BOOL borrowVal = [[item objectForKey:@"borrow"] boolValue];
     
         NSString *name = [item objectForKey:@"name"];
         if (![name  isEqual:[NSNull null]])
         {
-            nameLabel.text  = name;
+            if(borrowVal)
+            {
+                nameLabel.text  = [NSString stringWithFormat:@"You want to borrow %@\n", name];
+            }
+            else
+            {
+                nameLabel.text  = [NSString stringWithFormat:@"You want to buy %@\n", name];
+            }
+           
         }
         NSString *price = [item objectForKey:@"price"];
         if (![price  isEqual:[NSNull null]])
@@ -205,20 +215,6 @@
         
         
         
-
-        
-        BOOL borrowVal = [[item objectForKey:@"borrow"] boolValue];
-        
-        if(borrowVal)
-        {
-            borrowBuyLabel.text = @"Borrow";
-            
-        }
-        else
-        {
-            borrowBuyLabel.text = @"Buy!";
-        }
-    
     }
     
     return cell;

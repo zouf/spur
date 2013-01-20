@@ -50,14 +50,14 @@ static NSString *const kVenmoAppSecret  = @"cRuKSVCexGy2wBK9PJAyJpZc9QP9HPsb";
     SpurAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     
     NSLog(@"%@\n", [self.confirmedOffer objectForKey:@"requesteeID"]);
-    NSPredicate * predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"deviceToken == '%@'", [self.confirmedOffer objectForKey:@"requesteeID"]]];
+    NSPredicate * predicate = [NSPredicate predicateWithFormat:[NSString stringWithFormat:@"deviceToken == '%@'", [self.confirmedOffer objectForKey:@"requestorID"]]];
     
     
     [self.spurService refreshDataOnSuccess:^{
         NSLog(@"Get all requests that have the user as the requestor!");
         if([self.spurService.items count] != 0 && self.spurService.items)
             self.requestee = [self.spurService.items objectAtIndex:0];
-        
+        NSLog(@"%@\n",self.requestee);
         [self.tableView reloadData];
     } :predicate];
     
@@ -68,22 +68,6 @@ static NSString *const kVenmoAppSecret  = @"cRuKSVCexGy2wBK9PJAyJpZc9QP9HPsb";
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
--(UIView*)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
-{
- 
-    UIView *v = [[UIView alloc]initWithFrame:CGRectMake(0,0,320,50)];
-    UILabel * lbl = [[UILabel alloc]initWithFrame:CGRectMake(200,50,100,50)];
-    lbl.text = @"Actions to take for the transaction";
-    [v addSubview:lbl];
-    return v;
-
-}
-
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    return 50;
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -150,12 +134,12 @@ static NSString *const kVenmoAppSecret  = @"cRuKSVCexGy2wBK9PJAyJpZc9QP9HPsb";
     if(indexPath.row == 0)
     {
         cell = [tableView dequeueReusableCellWithIdentifier:@"TextCell"];
-        cell.textLabel.text = [NSString stringWithFormat:@"Call %@\n",[self.requestee objectForKey:@"phone"]];
+        cell.textLabel.text = [NSString stringWithFormat:@"Call %@\n",[self.requestee objectForKey:@"phoneNumber"]];
     }
     else if (indexPath.row ==1 )
     {
         cell = [tableView dequeueReusableCellWithIdentifier:@"TextCell"];
-        cell.textLabel.text = [NSString stringWithFormat:@"Message %@\n",[self.requestee objectForKey:@"phone"]];
+        cell.textLabel.text = [NSString stringWithFormat:@"Message %@\n",[self.requestee objectForKey:@"phoneNumber"]];
     }
     else if (indexPath.row == 2)
     {

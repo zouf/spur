@@ -112,7 +112,7 @@
     
     NSDate* date = [NSDate date];
     NSDateFormatter* formatter = [[NSDateFormatter alloc] init] ;
-    [formatter setDateFormat:@"yyyy-MM-dd HH:MM:SS"];
+    [formatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     
     //Get the string date
     

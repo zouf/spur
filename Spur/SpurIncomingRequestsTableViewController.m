@@ -195,7 +195,7 @@
     
     NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
     [outputFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
-    [outputFormatter setDateFormat:@"yyyy-MM-dd HH:MM:SS"];
+    [outputFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
     
     NSString* dateStringFromDatabase = [item objectForKey:@"posttime"];
     
@@ -208,7 +208,7 @@
     unsigned int unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit;
     
     NSDateComponents *components = [gregorian components:unitFlags fromDate:dateFromString
-                                                  toDate:b options:0];
+                                                  toDate:now options:0];
     
     int hours = [components hour];
     int minutes = [components minute];
@@ -248,7 +248,7 @@
 
      NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
      [formatter setDateFormat:@"MMM d, h:mm a"];
-     NSString *lastUpdated = [NSString stringWithFormat:@"Last updated on %@",
+     NSString *lastUpdated = [NSString stringWithFormat:@"Last spurred on %@",
     [formatter stringFromDate:[NSDate date]]];
      refresh.attributedTitle = [[NSAttributedString alloc] initWithString:lastUpdated];
  }

@@ -13,43 +13,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RequestCell" rowHeight="78" id="tcm-gk-uO3">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RequestCell" rowHeight="78" id="HLs-tS-Far">
                                 <rect key="frame" x="0.0" y="22" width="320" height="78"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="77"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="left" text="Spiderman" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZkS-0F-P1N">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="left" text="Spiderman" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qUy-R3-h6u">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="199" id="HYz-sq-9dA"/>
+                                                <constraint firstAttribute="width" constant="222" id="NDt-9k-o4w"/>
+                                                <constraint firstAttribute="height" constant="22" id="fRi-0c-c6Y"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="103" contentMode="left" text="Spiderman's request for radioactive spiders" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="199" translatesAutoresizingMaskIntoConstraints="NO" id="lP0-tr-RGD">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="103" contentMode="left" text="Spiderman's request for radioactive spiders" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="199" translatesAutoresizingMaskIntoConstraints="NO" id="Sam-xP-TVO">
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="42" id="i6G-c5-WbX"/>
+                                                <constraint firstAttribute="width" constant="199" id="7Fi-in-Rcd"/>
+                                                <constraint firstAttribute="height" constant="42" id="Cgv-TS-8Ph"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" text="Stop 3 criminals" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tYj-EP-8AQ">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" text="Stop 3 criminals" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LKb-c5-v3Z">
                                             <color key="backgroundColor" red="0.32128632070000002" green="0.0" blue="0.0093975430350000007" alpha="0.0" colorSpace="calibratedRGB"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="22" id="1Mf-Vs-Zla"/>
+                                                <constraint firstAttribute="height" constant="22" id="KEx-68-L75"/>
+                                                <constraint firstAttribute="width" constant="123" id="fND-x6-1Ig"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                             <color key="textColor" red="0.94901960780000005" green="0.57254901960000004" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
-                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="104" contentMode="left" text="Time Posted" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyY-Y4-yzL">
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="104" contentMode="left" text="Time Posted" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2lr-hj-HxX">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="123" id="jVz-0p-1Rz"/>
+                                                <constraint firstAttribute="width" constant="74" id="OsD-kl-C4l"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="14"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="10"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" red="0.659378986" green="0.041133133820000001" blue="0.095853956609999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
@@ -57,17 +60,15 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="gyY-Y4-yzL" firstAttribute="top" secondItem="ZkS-0F-P1N" secondAttribute="top" type="default" id="5vZ-01-MUS"/>
-                                    <constraint firstItem="tYj-EP-8AQ" firstAttribute="leading" secondItem="tcm-gk-uO3" secondAttribute="leading" constant="190" id="M9a-SH-C9A"/>
-                                    <constraint firstItem="gyY-Y4-yzL" firstAttribute="leading" secondItem="tYj-EP-8AQ" secondAttribute="leading" type="default" id="PSB-30-SWN"/>
-                                    <constraint firstItem="ZkS-0F-P1N" firstAttribute="leading" secondItem="tcm-gk-uO3" secondAttribute="leading" constant="9" id="QrN-id-nK5"/>
-                                    <constraint firstItem="lP0-tr-RGD" firstAttribute="top" secondItem="tcm-gk-uO3" secondAttribute="top" constant="27" id="Sc2-kl-Yqv"/>
-                                    <constraint firstItem="tYj-EP-8AQ" firstAttribute="baseline" secondItem="lP0-tr-RGD" secondAttribute="baseline" type="default" id="a3T-QD-W93"/>
-                                    <constraint firstItem="gyY-Y4-yzL" firstAttribute="trailing" secondItem="tYj-EP-8AQ" secondAttribute="trailing" type="default" id="bMn-ga-p4R"/>
-                                    <constraint firstItem="gyY-Y4-yzL" firstAttribute="top" secondItem="tcm-gk-uO3" secondAttribute="top" constant="6" id="iBF-g7-Bsr"/>
-                                    <constraint firstItem="lP0-tr-RGD" firstAttribute="leading" secondItem="ZkS-0F-P1N" secondAttribute="leading" type="default" id="oSt-zq-SJ7"/>
-                                    <constraint firstItem="ZkS-0F-P1N" firstAttribute="trailing" secondItem="lP0-tr-RGD" secondAttribute="trailing" type="default" id="sXf-hR-f8I"/>
-                                    <constraint firstItem="gyY-Y4-yzL" firstAttribute="bottom" secondItem="ZkS-0F-P1N" secondAttribute="bottom" type="default" id="xHO-ld-eiM"/>
+                                    <constraint firstItem="2lr-hj-HxX" firstAttribute="trailing" secondItem="LKb-c5-v3Z" secondAttribute="trailing" type="default" id="3FU-13-9vu"/>
+                                    <constraint firstItem="2lr-hj-HxX" firstAttribute="baseline" secondItem="qUy-R3-h6u" secondAttribute="baseline" type="default" id="3pX-er-upf"/>
+                                    <constraint firstItem="LKb-c5-v3Z" firstAttribute="baseline" secondItem="Sam-xP-TVO" secondAttribute="baseline" type="default" id="9KQ-B7-5Ao"/>
+                                    <constraint firstItem="2lr-hj-HxX" firstAttribute="top" secondItem="qUy-R3-h6u" secondAttribute="top" type="default" id="CBf-fy-1k4"/>
+                                    <constraint firstItem="qUy-R3-h6u" firstAttribute="top" secondItem="HLs-tS-Far" secondAttribute="top" constant="6" id="Ndg-yE-3Zg"/>
+                                    <constraint firstItem="Sam-xP-TVO" firstAttribute="leading" secondItem="qUy-R3-h6u" secondAttribute="leading" type="default" id="PNe-S8-tgK"/>
+                                    <constraint firstItem="2lr-hj-HxX" firstAttribute="leading" secondItem="qUy-R3-h6u" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="ho1-IF-MN6"/>
+                                    <constraint firstItem="Sam-xP-TVO" firstAttribute="top" secondItem="HLs-tS-Far" secondAttribute="top" constant="27" id="iqc-DZ-kIP"/>
+                                    <constraint firstItem="qUy-R3-h6u" firstAttribute="leading" secondItem="HLs-tS-Far" secondAttribute="leading" constant="9" id="o5f-Uw-VxZ"/>
                                 </constraints>
                             </tableViewCell>
                         </prototypes>
@@ -117,14 +118,15 @@
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="left" text="Spiderman" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnT-aE-JmK">
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="22" id="6Hd-XU-z0t"/>
-                                                <constraint firstAttribute="width" constant="199" id="Oh0-6v-5VT"/>
+                                                <constraint firstAttribute="width" constant="222" id="qb4-Nk-ZfW"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="103" contentMode="left" text="Spiderman's request for radioactive spiders" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="199" translatesAutoresizingMaskIntoConstraints="NO" id="ioo-tf-sAA">
                                             <constraints>
+                                                <constraint firstAttribute="width" constant="199" id="mWL-VJ-2Wa"/>
                                                 <constraint firstAttribute="height" constant="42" id="xWb-Cl-GxM"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
@@ -143,9 +145,9 @@
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="104" contentMode="left" text="Time Posted" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpf-Kj-LA4">
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="97" id="nfx-bY-zTa"/>
+                                                <constraint firstAttribute="width" constant="74" id="wEQ-9W-Mcf"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="14"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="10"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" red="0.659378986" green="0.041133133820000001" blue="0.095853956609999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </label>
@@ -153,14 +155,13 @@
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
-                                    <constraint firstItem="bpf-Kj-LA4" firstAttribute="bottom" secondItem="UnT-aE-JmK" secondAttribute="bottom" type="default" id="6yj-9u-x6B"/>
+                                    <constraint firstItem="bpf-Kj-LA4" firstAttribute="baseline" secondItem="UnT-aE-JmK" secondAttribute="baseline" type="default" id="A6o-Mg-Xz6"/>
                                     <constraint firstItem="bpf-Kj-LA4" firstAttribute="trailing" secondItem="GR8-dF-3QJ" secondAttribute="trailing" type="default" id="FsM-Ja-KY3"/>
+                                    <constraint firstItem="bpf-Kj-LA4" firstAttribute="leading" secondItem="UnT-aE-JmK" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="OvA-Rf-Gt1"/>
                                     <constraint firstItem="ioo-tf-sAA" firstAttribute="top" secondItem="GdS-Af-kiq" secondAttribute="top" constant="27" id="UfI-yV-ek4"/>
                                     <constraint firstItem="UnT-aE-JmK" firstAttribute="leading" secondItem="GdS-Af-kiq" secondAttribute="leading" constant="9" id="aBG-dJ-tmX"/>
-                                    <constraint firstItem="bpf-Kj-LA4" firstAttribute="leading" secondItem="UnT-aE-JmK" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="ckv-L6-aja"/>
                                     <constraint firstItem="bpf-Kj-LA4" firstAttribute="top" secondItem="UnT-aE-JmK" secondAttribute="top" type="default" id="e8b-BY-m9N"/>
                                     <constraint firstItem="ioo-tf-sAA" firstAttribute="leading" secondItem="UnT-aE-JmK" secondAttribute="leading" type="default" id="g9H-wF-uAe"/>
-                                    <constraint firstItem="bpf-Kj-LA4" firstAttribute="leading" secondItem="ioo-tf-sAA" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="kY7-WH-rpe"/>
                                     <constraint firstItem="UnT-aE-JmK" firstAttribute="top" secondItem="GdS-Af-kiq" secondAttribute="top" constant="6" id="nsl-oW-12Z"/>
                                     <constraint firstItem="GR8-dF-3QJ" firstAttribute="baseline" secondItem="ioo-tf-sAA" secondAttribute="baseline" type="default" id="wgi-RP-QHV"/>
                                 </constraints>
@@ -832,7 +833,6 @@
         <class className="SpurExpandedIncomingOfferViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurExpandedIncomingOfferViewController.h"/>
             <relationships>
-                <relationship kind="action" name="acceptOffer:"/>
                 <relationship kind="outlet" name="borrowLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="itemImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="itemLabel" candidateClass="UILabel"/>
@@ -844,7 +844,6 @@
         <class className="SpurExpandedIncomingRequestViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurExpandedIncomingRequestViewController.h"/>
             <relationships>
-                <relationship kind="action" name="submitOffer:"/>
                 <relationship kind="action" name="takePicture:"/>
                 <relationship kind="outlet" name="bestOffer" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="borrowLabel" candidateClass="UILabel"/>
@@ -870,7 +869,6 @@
         <class className="SpurMakeRequestViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurMakeRequestViewController.h"/>
             <relationships>
-                <relationship kind="action" name="makeRequest:"/>
                 <relationship kind="outlet" name="borrowField" candidateClass="UISegmentedControl"/>
                 <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="priceField" candidateClass="UITextField"/>

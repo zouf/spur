@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface SpurExpandedPendingPaymentViewController : UITableViewController
-
+@property(nonatomic,retain) id confirmedOffer;
 @end

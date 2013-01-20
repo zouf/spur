@@ -124,9 +124,9 @@
     NSDictionary *item = @{
     @"requestId" :  [self.request objectForKey:@"id"],
     @"bestOffer" :  [offer objectForKey:@"id"],
-    @"deviceToken" : delegate.deviceToken,
     @"posttime": str,
-    @"userId": [delegate getUserId]
+    @"requestorID": [delegate getUserId],
+    @"requesteeID": [offer objectForKey:@"userId"]
     };
     [self.spurServiceAccept addItem:item completion:^(NSUInteger index){
         UIAlertView *av = [[UIAlertView alloc]initWithTitle:@"Thanks" message:@"You've accepted the offer." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles: nil];

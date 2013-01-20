@@ -9,7 +9,7 @@
 #import "SpurPendingPaymentsTableViewController.h"
 #import "SpurService.h"
 #import "SpurAppDelegate.h"
-#import "SpurMakePaymentViewController.h"
+#import "SpurExpandedPendingPaymentViewController.h"
 
 @interface SpurPendingPaymentsTableViewController ()
 
@@ -95,7 +95,7 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     // ZZZ Change this line for each new view
-    static NSString *CellIdentifier = @"OfferCell";
+    static NSString *CellIdentifier = @"PendingCell";
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     if(cell == nil)
     {
@@ -144,14 +144,14 @@
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    SpurMakePaymentViewController * dvc = (SpurMakePaymentViewController*)[segue destinationViewController];
+    SpurExpandedPendingPaymentViewController * dvc = (SpurExpandedPendingPaymentViewController*)[segue destinationViewController];
     NSLog(@"The sender is %@",sender);
     
     NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
     //Get the selected object in order to fill out the detail view
     id item = [self.spurService.items objectAtIndex:indexPath.row];
     
-    [dvc setOffer:item];  
+    [dvc setConfirmedOffer:item];
     
 }
 

@@ -11,6 +11,14 @@
 #import "SpurAppDelegate.h"
 #import "SpurExpandedPendingPaymentViewController.h"
 
+
+#define NAME_TAG 100
+#define BUY_SELL 101
+#define PRICE 102
+#define DESCRIPTION 103
+#define TIME 104
+
+
 @interface SpurPendingPaymentsTableViewController ()
 
 @property (strong, nonatomic) SpurService *spurService;
@@ -104,18 +112,71 @@
     }
     
     id item = [self.spurService.items objectAtIndex:indexPath.row];
-    NSLog(@"%@\n",item);
     
-    BOOL accepted = [[item objectForKey:@"accepted"] boolValue];
-    if(accepted)
+    UILabel * name = (UILabel*)[cell viewWithTag:NAME_TAG];
+    UILabel * buySell = (UILabel*)[cell viewWithTag:BUY_SELL];
+    UILabel * price = (UILabel*)[cell viewWithTag:PRICE];
+    UILabel *description = (UILabel*)[cell viewWithTag:DESCRIPTION];
+    UILabel *time = (UILabel*)[cell viewWithTag:TIME];
+    
+    
+    
+    
+    
+    
+    
+    NSLog(@"%@\n", item);
+    
+    NSString *theName = [item objectForKey:@"userName"];
+    BOOL borrow = [[item objectForKey:@"borrow"] boolValue];
+    
+    if (![theName  isEqual:[NSNull null]])
     {
-        UIButton *payViewButton = [[UIButton alloc]initWithFrame:CGRectMake(250,0,50,30)];
-        [payViewButton setBackgroundColor:[UIColor blueColor]];
-        [cell.contentView addSubview:payViewButton];
-        cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+        if(!borrow)
+            name.text = [NSString stringWithFormat:@"%@ is looking to buy a ...\n", [item objectForKey:@"userName"] ];
+        else
+            name.text = [NSString stringWithFormat:@"%@ would like to borrow a ...\n", [item objectForKey:@"userName"] ];
+        
+        
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ by %@",[item objectForKey:@"bestOffer"],[item objectForKey:@"userId"]];
+    NSDate *now = [[NSDate alloc] init];
     
+    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
+    [outputFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
+    [outputFormatter setDateFormat:@"yyyy-MM-dd HH:MM:SS"];
+    
+    NSString* dateStringFromDatabase = [item objectForKey:@"posttime"];
+    
+    NSDate* dateFromString = [outputFormatter dateFromString:dateStringFromDatabase];
+    NSString* a = [outputFormatter stringFromDate:now];
+    NSDate* b = [outputFormatter dateFromString:a];
+    
+    NSCalendar *gregorian = [[NSCalendar alloc]initWithCalendarIdentifier:NSGregorianCalendar];
+    
+    unsigned int unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit;
+    
+    NSDateComponents *components = [gregorian components:unitFlags fromDate:dateFromString
+                                                  toDate:b options:0];
+    
+    int hours = [components hour];
+    int minutes = [components minute];
+    
+    
+    if(hours)
+        time.text =  [NSString stringWithFormat:@"%dh %dm ago\n",hours,minutes];
+    else if (minutes)
+        time.text =  [NSString stringWithFormat:@"%dm ago\n",minutes];
+    else
+        time.text =  [NSString stringWithFormat:@"Moments ago\n"];
+    
+    
+    description.text = [item objectForKey:@"name"];
+    buySell.text = @"";
+    /*if(borrow)
+     buySell.text = @"Borrow";
+     else
+     buySell.text = @"Buy";*/
+    price.text = [item objectForKey:@"price"];
     
     return cell;
 }

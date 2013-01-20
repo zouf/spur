@@ -53,6 +53,7 @@
     [pref setObject:self.emailEntry.textValue forKey:@"email"];
     [pref setObject:self.phoneEntry.textValue forKey:@"phone"];
     [pref setObject:[delegate deviceToken]  forKey:@"userid"];
+    [pref synchronize];
     [self.controller dismissViewControllerAnimated:YES completion:^{
 
         SpurService *sc = [[SpurService alloc]initWithTable:@"User"];
@@ -162,14 +163,73 @@
         
         
     }
+    id item = [self.spurService.items objectAtIndex:indexPath.row];
+
     UILabel * name = (UILabel*)[cell viewWithTag:NAME_TAG];
     UILabel * buySell = (UILabel*)[cell viewWithTag:BUY_SELL];
     UILabel * price = (UILabel*)[cell viewWithTag:PRICE];
     UILabel *description = (UILabel*)[cell viewWithTag:DESCRIPTION];
     UILabel *time = (UILabel*)[cell viewWithTag:TIME];
 
-    id item = [self.spurService.items objectAtIndex:indexPath.row];
-    cell.textLabel.text = [item objectForKey:@"name"];
+    
+    
+    
+    
+    
+    
+    NSLog(@"%@\n", item);
+    
+    NSString *theName = [item objectForKey:@"userName"];
+    BOOL borrow = [[item objectForKey:@"borrow"] boolValue];
+
+    if (![theName  isEqual:[NSNull null]])
+    {
+        if(!borrow)
+            name.text = [NSString stringWithFormat:@"%@ is looking to buy a ...\n", [item objectForKey:@"userName"] ];
+        else
+            name.text = [NSString stringWithFormat:@"%@ would like to borrow a ...\n", [item objectForKey:@"userName"] ];
+
+
+    }
+    NSDate *now = [[NSDate alloc] init];
+    
+    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
+    [outputFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
+    [outputFormatter setDateFormat:@"yyyy-MM-dd HH:MM:SS"];
+    
+    NSString* dateStringFromDatabase = [item objectForKey:@"posttime"];
+    
+    NSDate* dateFromString = [outputFormatter dateFromString:dateStringFromDatabase];
+    NSString* a = [outputFormatter stringFromDate:now];
+    NSDate* b = [outputFormatter dateFromString:a];
+    
+    NSCalendar *gregorian = [[NSCalendar alloc]initWithCalendarIdentifier:NSGregorianCalendar];
+    
+    unsigned int unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit;
+    
+    NSDateComponents *components = [gregorian components:unitFlags fromDate:dateFromString
+                                                  toDate:b options:0];
+    
+    int hours = [components hour];
+    int minutes = [components minute];
+    
+    
+    if(hours)
+        time.text =  [NSString stringWithFormat:@"%dh %dm ago\n",hours,minutes];
+    else if (minutes)
+        time.text =  [NSString stringWithFormat:@"%dm ago\n",minutes];
+    else
+        time.text =  [NSString stringWithFormat:@"Moments ago\n"];
+
+
+    description.text = [item objectForKey:@"name"];
+    buySell.text = @"";
+    /*if(borrow)
+         buySell.text = @"Borrow";
+    else
+        buySell.text = @"Buy";*/
+    price.text = [item objectForKey:@"price"];
+
     
     
     return cell;

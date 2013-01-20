@@ -64,6 +64,14 @@
 {
     [super viewDidLoad];
     
+    UIImage *navigationImage = [UIImage imageNamed:@"Transactions@2x.png"];
+    CGImageRef imageRef = CGImageCreateWithImageInRect(navigationImage.CGImage, CGRectMake(0, 0, 640, 88));
+    navigationImage = [UIImage imageWithCGImage:imageRef
+                                          scale:2.0
+                                    orientation:UIImageOrientationUp];
+    [self.navigationController.navigationBar setBackgroundImage:navigationImage forBarMetrics:UIBarMetricsDefault];
+    CGImageRelease(imageRef);
+    
     // ZZZ Change this line for each new view
     self.spurService = [[SpurService alloc]initWithTable:@"itemaccepted"];
     
@@ -110,6 +118,9 @@
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         
     }
+    
+    UIImage *cellBackground = [UIImage imageNamed:@"Tablebackground@2x"];
+    [cell setBackgroundView:[[UIImageView alloc] initWithImage:cellBackground]];
     
     id item = [self.spurService.items objectAtIndex:indexPath.row];
     

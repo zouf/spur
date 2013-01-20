@@ -80,9 +80,20 @@
 - (void)viewDidLoad
 {
     UIImage *navigationImage = [UIImage imageNamed:@"Spur_feed@2x.png"];
-    CGImageRef imageRef = CGImageCreateWithImageInRect(navigationImage.CGImage, CGRectMake(0, 0, 320, 44));
-    navigationImage = [UIImage imageWithCGImage:imageRef];
+    CGImageRef imageRef = CGImageCreateWithImageInRect(navigationImage.CGImage, CGRectMake(0, 0, 640, 88));
+    navigationImage = [UIImage imageWithCGImage:imageRef
+                                          scale:2.0
+                                    orientation:UIImageOrientationUp];
     [self.navigationController.navigationBar setBackgroundImage:navigationImage forBarMetrics:UIBarMetricsDefault];
+    CGImageRelease(imageRef);
+    
+    UIImage *tabImage = [UIImage imageNamed:@"Tab1@2x.png"];
+    imageRef = CGImageCreateWithImageInRect(tabImage.CGImage, CGRectMake(0, 0, 640, 88));
+    tabImage = [UIImage imageWithCGImage:imageRef
+                                   scale:2.0
+                             orientation:UIImageOrientationUp];
+    
+    self.tabBarController.tabBarItem.image = tabImage;
     
     SpurAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
 
@@ -176,7 +187,8 @@
     UILabel *description = (UILabel*)[cell viewWithTag:DESCRIPTION];
     UILabel *time = (UILabel*)[cell viewWithTag:TIME];
 
-    
+    UIImage *cellBackground = [UIImage imageNamed:@"Tablebackground@2x.png"];
+    [cell setBackgroundView:[[UIImageView alloc] initWithImage:cellBackground]];
     
     
     

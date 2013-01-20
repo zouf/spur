@@ -110,6 +110,16 @@
                                    action:@selector(dismissKeyboard)];
     
     [self.view addGestureRecognizer:tap];
+    
+    
+    UIImage *navigationImage = [UIImage imageNamed:@"New_Spur@2x.png"];
+    CGImageRef imageRef = CGImageCreateWithImageInRect(navigationImage.CGImage, CGRectMake(0, 0, 640, 88));
+    navigationImage = [UIImage imageWithCGImage:imageRef
+                                          scale:2.0
+                                    orientation:UIImageOrientationUp];
+    [self.navigationController.navigationBar setBackgroundImage:navigationImage forBarMetrics:UIBarMetricsDefault];
+    CGImageRelease(imageRef);
+
     /*
     self.root = [[QRootElement alloc]init];
 

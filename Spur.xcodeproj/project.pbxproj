@@ -54,6 +54,7 @@
 		27EE318B16ABB8A900E11ED1 /* Tab2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27EE317C16ABB8A900E11ED1 /* Tab2@2x.png */; };
 		27EE318C16ABB8A900E11ED1 /* Tab3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27EE317D16ABB8A900E11ED1 /* Tab3@2x.png */; };
 		27EE318D16ABB8A900E11ED1 /* Tab4@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27EE317E16ABB8A900E11ED1 /* Tab4@2x.png */; };
+		27EE319016ABBE1F00E11ED1 /* Tablebackground@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27EE318F16ABBE1F00E11ED1 /* Tablebackground@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -230,6 +231,7 @@
 		27EE317C16ABB8A900E11ED1 /* Tab2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tab2@2x.png"; sourceTree = "<group>"; };
 		27EE317D16ABB8A900E11ED1 /* Tab3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tab3@2x.png"; sourceTree = "<group>"; };
 		27EE317E16ABB8A900E11ED1 /* Tab4@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tab4@2x.png"; sourceTree = "<group>"; };
+		27EE318F16ABBE1F00E11ED1 /* Tablebackground@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Tablebackground@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -425,6 +427,7 @@
 			children = (
 				27EE316D16ABB8A900E11ED1 /* Global */,
 				27EE317216ABB8A900E11ED1 /* Navigation */,
+				27EE318E16ABBE1F00E11ED1 /* Table */,
 				27EE317A16ABB8A900E11ED1 /* Tabs */,
 				0AC42B8C16AB8928009A4D07 /* Spur_LogoRounded_57x57@2x.png */,
 				0AC42B8D16AB8928009A4D07 /* Spur_LogoRounded_114x114@2x.png */,
@@ -641,6 +644,15 @@
 			path = Spur/Images/Tabs;
 			sourceTree = "<group>";
 		};
+		27EE318E16ABBE1F00E11ED1 /* Table */ = {
+			isa = PBXGroup;
+			children = (
+				27EE318F16ABBE1F00E11ED1 /* Tablebackground@2x.png */,
+			);
+			name = Table;
+			path = Spur/Images/Table;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -765,6 +777,7 @@
 				27EE318B16ABB8A900E11ED1 /* Tab2@2x.png in Resources */,
 				27EE318C16ABB8A900E11ED1 /* Tab3@2x.png in Resources */,
 				27EE318D16ABB8A900E11ED1 /* Tab4@2x.png in Resources */,
+				27EE319016ABBE1F00E11ED1 /* Tablebackground@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

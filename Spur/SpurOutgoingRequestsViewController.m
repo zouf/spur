@@ -172,13 +172,37 @@
     {
         priceLabel.text  = price;
     }
-    NSString *posttime = [item objectForKey:@"posttime"];
     
-    if (![posttime  isEqual:[NSNull null]])
-    {
-        timeLabel.text  = posttime;
-    }
+    NSDate *now = [[NSDate alloc] init];
     
+    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
+    [outputFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
+    [outputFormatter setDateFormat:@"yyyy-MM-dd HH:MM:SS"];
+    
+    NSString* dateStringFromDatabase = [item objectForKey:@"posttime"];
+    
+    NSDate* dateFromString = [outputFormatter dateFromString:dateStringFromDatabase];
+    NSString* a = [outputFormatter stringFromDate:now];
+    NSDate* b = [outputFormatter dateFromString:a];
+    
+    NSCalendar *gregorian = [[NSCalendar alloc]initWithCalendarIdentifier:NSGregorianCalendar];
+    
+    unsigned int unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit;
+    
+    NSDateComponents *components = [gregorian components:unitFlags fromDate:dateFromString
+                                                  toDate:b options:0];
+    
+    int hours = [components hour];
+    int minutes = [components minute];
+    
+    
+    if(hours)
+        timeLabel.text =  [NSString stringWithFormat:@"%dh %dm ago\n",hours,minutes];
+    else if (minutes)
+        timeLabel.text =  [NSString stringWithFormat:@"%dm ago\n",minutes];
+    else
+        timeLabel.text =  [NSString stringWithFormat:@"Moments ago\n"];
+        
     //NEED TO GET COUNT OF OFFERS
     
     NSString *numOffers = [item objectForKey:@"name"];

@@ -10,7 +10,13 @@
 #import "SpurExpandedIncomingOfferViewController.h"
 #import "SpurAppDelegate.h"
 #import "SpurService.h"
+#import "NSData+Base64.h"
 
+#define ITEM_IMAGE 100
+#define ITEM_NAME 101
+#define PRICE 102
+#define TIME 103
+#define USER 104
 
 @interface SpurIncomingOffersTableViewController ()
 @property (nonatomic,retain) SpurService *spurService;
@@ -149,15 +155,68 @@
     id item = [self.spurService.items objectAtIndex:indexPath.row];
     NSLog(@"%@\n",item);
     
-    BOOL accepted = [[item objectForKey:@"accepted"] boolValue];
-    if(accepted)
+    UILabel * nameLabel = (UILabel*)[cell viewWithTag:ITEM_NAME];
+    UILabel * priceLabel = (UILabel*)[cell viewWithTag:PRICE];
+    UILabel *timeLabel = (UILabel*)[cell viewWithTag:TIME];
+    UIImageView *itemImage = (UIImageView*)[cell viewWithTag:ITEM_IMAGE];
+    UILabel *userLabel = (UILabel*)[cell viewWithTag:USER];
+    
+    NSString *name = [item objectForKey:@"itemName"];
+    if (![name  isEqual:[NSNull null]])
     {
-        UIButton *payViewButton = [[UIButton alloc]initWithFrame:CGRectMake(250,0,50,30)];
-        [payViewButton setBackgroundColor:[UIColor blueColor]];
-        [cell.contentView addSubview:payViewButton];
-        cell.accessoryType = UITableViewCellAccessoryDetailDisclosureButton;
+        nameLabel.text  = name;
     }
-    cell.textLabel.text = [NSString stringWithFormat:@"%@ by %@",[item objectForKey:@"bestOffer"],[item objectForKey:@"userId"]];
+    NSString *price = [item objectForKey:@"bestOffer"];
+    if (![price  isEqual:[NSNull null]])
+    {
+        priceLabel.text  = price;
+    }
+    
+    NSString *user = [item objectForKey:@"userName"];
+    if (![user  isEqual:[NSNull null]])
+    {
+        userLabel.text  = user;
+    }
+    
+    NSDate *now = [[NSDate alloc] init];
+    
+    NSDateFormatter *outputFormatter = [[NSDateFormatter alloc] init];
+    [outputFormatter setLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"]];
+    [outputFormatter setDateFormat:@"yyyy-MM-dd HH:MM:SS"];
+    
+    NSString* dateStringFromDatabase = [item objectForKey:@"posttime"];
+    
+    NSDate* dateFromString = [outputFormatter dateFromString:dateStringFromDatabase];
+    NSString* a = [outputFormatter stringFromDate:now];
+    NSDate* b = [outputFormatter dateFromString:a];
+    
+    NSCalendar *gregorian = [[NSCalendar alloc]initWithCalendarIdentifier:NSGregorianCalendar];
+    
+    unsigned int unitFlags = NSHourCalendarUnit | NSMinuteCalendarUnit | NSDayCalendarUnit | NSMonthCalendarUnit;
+    
+    NSDateComponents *components = [gregorian components:unitFlags fromDate:dateFromString
+                                                  toDate:b options:0];
+    
+    int hours = [components hour];
+    int minutes = [components minute];
+    
+    
+    if(hours)
+        timeLabel.text =  [NSString stringWithFormat:@"%dh %dm ago\n",hours,minutes];
+    else if (minutes)
+        timeLabel.text =  [NSString stringWithFormat:@"%dm ago\n",minutes];
+    else
+        timeLabel.text =  [NSString stringWithFormat:@"Moments ago\n"];
+    
+    NSString *imageData = [item objectForKey:@"pic"];
+    
+    if (![imageData  isEqual:[NSNull null]])
+    {
+        NSData *data = [NSData dataFromBase64String:imageData];
+        UIImage *image = [UIImage imageWithData:data];
+        
+        itemImage.image  = image;
+    }
     
     
     return cell;

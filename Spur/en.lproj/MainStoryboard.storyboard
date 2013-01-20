@@ -582,7 +582,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="118"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="243-L6-1fY">
+                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFit" translatesAutoresizingMaskIntoConstraints="NO" id="243-L6-1fY">
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="83" id="XrB-Jd-52F"/>
                                                 <constraint firstAttribute="height" constant="103" id="gFi-Ro-3DZ"/>
@@ -590,8 +590,8 @@
                                         </imageView>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" text="The Hulk is a big green monster giant" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="217" translatesAutoresizingMaskIntoConstraints="NO" id="cJZ-PD-edc">
                                             <constraints>
+                                                <constraint firstAttribute="height" constant="49" id="AXn-bg-vyC"/>
                                                 <constraint firstAttribute="width" constant="217" id="buk-6T-4GJ"/>
-                                                <constraint firstAttribute="height" constant="64" id="d8s-qS-KSA"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -609,10 +609,19 @@
                                         </label>
                                         <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="103" contentMode="left" text="Time Posted" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="93" translatesAutoresizingMaskIntoConstraints="NO" id="frt-ck-GKa">
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="32" id="Lmt-ox-lQu"/>
+                                                <constraint firstAttribute="height" constant="32" id="LU4-2k-Uvi"/>
                                                 <constraint firstAttribute="width" constant="93" id="tqh-qd-Vfo"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="104" contentMode="left" text="Username" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UR2-EL-1me">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="K2i-LO-Zew"/>
+                                                <constraint firstAttribute="width" constant="79" id="fhg-da-yCG"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
@@ -621,13 +630,15 @@
                                 </view>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="frt-ck-GKa" secondAttribute="trailing" constant="7" id="4cy-3Y-8dY"/>
-                                    <constraint firstItem="243-L6-1fY" firstAttribute="top" secondItem="ID9-nM-qfw" secondAttribute="top" constant="7" id="Kse-jB-7oM"/>
-                                    <constraint firstItem="243-L6-1fY" firstAttribute="bottom" secondItem="dgR-cO-wZY" secondAttribute="bottom" type="default" id="TzH-zb-HiU"/>
-                                    <constraint firstAttribute="bottom" secondItem="frt-ck-GKa" secondAttribute="bottom" constant="17" id="acL-Mo-4Ky"/>
+                                    <constraint firstItem="frt-ck-GKa" firstAttribute="top" secondItem="cJZ-PD-edc" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="5P5-UP-bhJ"/>
+                                    <constraint firstItem="UR2-EL-1me" firstAttribute="top" secondItem="243-L6-1fY" secondAttribute="top" type="default" id="7HK-Fk-KHT"/>
+                                    <constraint firstItem="UR2-EL-1me" firstAttribute="leading" secondItem="243-L6-1fY" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="DvH-4U-CpK"/>
+                                    <constraint firstItem="243-L6-1fY" firstAttribute="top" secondItem="ID9-nM-qfw" secondAttribute="top" constant="7" id="RsQ-wN-83d"/>
+                                    <constraint firstItem="dgR-cO-wZY" firstAttribute="top" secondItem="ID9-nM-qfw" secondAttribute="top" constant="78" id="dOv-BW-tCt"/>
                                     <constraint firstItem="cJZ-PD-edc" firstAttribute="leading" secondItem="243-L6-1fY" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="k3M-ut-JjL"/>
                                     <constraint firstItem="cJZ-PD-edc" firstAttribute="trailing" secondItem="ID9-nM-qfw" secondAttribute="trailing" type="default" id="mDk-1d-Tyb"/>
                                     <constraint firstItem="dgR-cO-wZY" firstAttribute="leading" secondItem="243-L6-1fY" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="n8d-9Q-KCg"/>
-                                    <constraint firstItem="cJZ-PD-edc" firstAttribute="top" secondItem="243-L6-1fY" secondAttribute="top" type="default" id="yx0-hF-buB"/>
+                                    <constraint firstItem="frt-ck-GKa" firstAttribute="bottom" secondItem="ID9-nM-qfw" secondAttribute="bottom" type="default" id="xEe-cd-hoT"/>
                                 </constraints>
                                 <connections>
                                     <segue destination="WMB-Jh-kZI" kind="push" id="Td8-C5-o6Q"/>
@@ -825,68 +836,6 @@
     <resources>
         <image name="venmo.png" width="179" height="35"/>
     </resources>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="SpurExpandedIncomingOfferViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurExpandedIncomingOfferViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="acceptOffer:"/>
-                <relationship kind="outlet" name="borrowLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="itemImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="itemLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="posttime" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="priceOffered" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="userLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SpurExpandedIncomingRequestViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurExpandedIncomingRequestViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="submitOffer:"/>
-                <relationship kind="action" name="takePicture:"/>
-                <relationship kind="outlet" name="bestOffer" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="borrowLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="itemImageView" candidateClass="UIImageView"/>
-                <relationship kind="outlet" name="itemLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="postedLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="priceLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="userLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-        <class className="SpurExpandedOutgoingRequestViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurExpandedOutgoingRequestViewController.h"/>
-        </class>
-        <class className="SpurExpandedPendingPaymentViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurExpandedPendingPaymentViewController.h"/>
-        </class>
-        <class className="SpurIncomingOffersTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurIncomingOffersTableViewController.h"/>
-        </class>
-        <class className="SpurIncomingRequestsTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurIncomingRequestsTableViewController.h"/>
-        </class>
-        <class className="SpurMakeRequestViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurMakeRequestViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="makeRequest:"/>
-                <relationship kind="outlet" name="borrowField" candidateClass="UISegmentedControl"/>
-                <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="priceField" candidateClass="UITextField"/>
-                <relationship kind="outlet" name="submitRequest" candidateClass="UIBarButtonItem"/>
-            </relationships>
-        </class>
-        <class className="SpurOutgoingRequestsViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurOutgoingRequestsViewController.h"/>
-        </class>
-        <class className="SpurPendingPaymentsTableViewController" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurPendingPaymentsTableViewController.h"/>
-        </class>
-        <class className="SpurPictureCaptureViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurPictureCaptureViewController.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

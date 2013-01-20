@@ -15,6 +15,10 @@
 		0AC4274216AACC2F009A4D07 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC4274116AACC2F009A4D07 /* Security.framework */; };
 		0AC42AE816AB5905009A4D07 /* libVenmo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC42AE116AB58FA009A4D07 /* libVenmo.a */; };
 		0AC42B1116AB6651009A4D07 /* venmo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AC42B1016AB6651009A4D07 /* venmo.png */; };
+		0AC42B9016AB8928009A4D07 /* Spur_LogoRounded_57x57@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AC42B8C16AB8928009A4D07 /* Spur_LogoRounded_57x57@2x.png */; };
+		0AC42B9116AB8928009A4D07 /* Spur_LogoRounded_114x114@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AC42B8D16AB8928009A4D07 /* Spur_LogoRounded_114x114@2x.png */; };
+		0AC42B9216AB8928009A4D07 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AC42B8E16AB8928009A4D07 /* Default@2x.png */; };
+		0AC42B9316AB8928009A4D07 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AC42B8F16AB8928009A4D07 /* Default-568h@2x.png */; };
 		272C8E2316AB721000DF2510 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 272C8E2216AB721000DF2510 /* NSData+Base64.m */; };
 		27492C9116AA3F430095A442 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27492C9016AA3F430095A442 /* UIKit.framework */; };
 		27492C9316AA3F430095A442 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27492C9216AA3F430095A442 /* Foundation.framework */; };
@@ -155,6 +159,10 @@
 		0AC42AD616AB58F9009A4D07 /* VenmoTransactionSpecs.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VenmoTransactionSpecs.m; sourceTree = "<group>"; };
 		0AC42AD716AB58F9009A4D07 /* VenmoViewControllerSpecs.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VenmoViewControllerSpecs.m; sourceTree = "<group>"; };
 		0AC42B1016AB6651009A4D07 /* venmo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = venmo.png; path = Spur/venmo.png; sourceTree = "<group>"; };
+		0AC42B8C16AB8928009A4D07 /* Spur_LogoRounded_57x57@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Spur_LogoRounded_57x57@2x.png"; sourceTree = "<group>"; };
+		0AC42B8D16AB8928009A4D07 /* Spur_LogoRounded_114x114@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Spur_LogoRounded_114x114@2x.png"; sourceTree = "<group>"; };
+		0AC42B8E16AB8928009A4D07 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
+		0AC42B8F16AB8928009A4D07 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		272C8E2116AB721000DF2510 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
 		272C8E2216AB721000DF2510 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		27492C8C16AA3F430095A442 /* Spur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spur.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -388,6 +396,10 @@
 		0AC42B1216AB6656009A4D07 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				0AC42B8C16AB8928009A4D07 /* Spur_LogoRounded_57x57@2x.png */,
+				0AC42B8D16AB8928009A4D07 /* Spur_LogoRounded_114x114@2x.png */,
+				0AC42B8E16AB8928009A4D07 /* Default@2x.png */,
+				0AC42B8F16AB8928009A4D07 /* Default-568h@2x.png */,
 				0AC42B1016AB6651009A4D07 /* venmo.png */,
 			);
 			name = Images;
@@ -521,8 +533,6 @@
 				27492CDB16AA4BC40095A442 /* SpurExpandedPendingPaymentViewController.m */,
 				27492CF116AA63D70095A442 /* SpurPendingPaymentsTableViewController.h */,
 				27492CEE16AA60A70095A442 /* SpurPendingPaymentsTableViewController.m */,
-				0AC42B1316AB78E5009A4D07 /* SpurVenmoViewController.h */,
-				0AC42B1416AB78E5009A4D07 /* SpurVenmoViewController.m */,
 			);
 			name = "Pending Payments";
 			sourceTree = "<group>";
@@ -670,6 +680,10 @@
 				27492CA716AA3F430095A442 /* Default-568h@2x.png in Resources */,
 				27492CAA16AA3F430095A442 /* MainStoryboard.storyboard in Resources */,
 				0AC42B1116AB6651009A4D07 /* venmo.png in Resources */,
+				0AC42B9016AB8928009A4D07 /* Spur_LogoRounded_57x57@2x.png in Resources */,
+				0AC42B9116AB8928009A4D07 /* Spur_LogoRounded_114x114@2x.png in Resources */,
+				0AC42B9216AB8928009A4D07 /* Default@2x.png in Resources */,
+				0AC42B9316AB8928009A4D07 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

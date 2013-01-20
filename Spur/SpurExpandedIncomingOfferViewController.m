@@ -9,6 +9,7 @@
 #import "SpurExpandedIncomingOfferViewController.h"
 #import "SpurAppDelegate.h"
 #import "SpurService.h"
+#import "NSData+Base64.h"
 
 
 @interface SpurExpandedIncomingOfferViewController ()
@@ -44,7 +45,7 @@
 
 
 -(void)dismissKeyboard {
-   // [self.bestOffer resignFirstResponder];
+    // [self.bestOffer resignFirstResponder];
     
 }
 
@@ -63,42 +64,52 @@
     [self.view addGestureRecognizer:tap];
     
     
-    // Create a predicate that finds items where complete is false
-
     
-        NSLog(@"%@\n",[self.offer objectForKey:@"itemName"]);
-        NSString *name = [self.offer objectForKey:@"userId"];
-        if (![name  isEqual:[NSNull null]])
-        {
-            self.userLabel.text  = name;
-        }
-        NSString *price = [self.offer objectForKey:@"bestOffer"];
-        if (![price  isEqual:[NSNull null]])
-        {
-            self.priceOffered.text  = price;
-        }
-        NSString *posttime = [self.offer objectForKey:@"posttime"];
+    // Create a predicate that finds items where complete is false
+    
+    
+    NSLog(@"%@\n",[self.offer objectForKey:@"itemName"]);
+    NSString *name = [self.offer objectForKey:@"userId"];
+    if (![name  isEqual:[NSNull null]])
+    {
+        self.userLabel.text  = name;
+    }
+    NSString *price = [self.offer objectForKey:@"bestOffer"];
+    if (![price  isEqual:[NSNull null]])
+    {
+        self.priceOffered.text  = price;
+    }
+    NSString *posttime = [self.offer objectForKey:@"posttime"];
+    
+    if (![posttime  isEqual:[NSNull null]])
+    {
+        self.posttime.text  = posttime;
+    }
+    
+    NSString *itemlabel = [self.offer objectForKey:@"itemName"];
+    
+    if (![itemlabel isEqual:[NSNull null]])
+    {
+        self.itemLabel.text  = itemlabel;
+    }
+    
+    NSString *borrow = [self.offer objectForKey:@"borrow"];
+    
+    if (![borrow  isEqual:[NSNull null]])
+    {
+        self.borrowLabel.text  = borrow;
+    }
+    
+    NSString *imageData = [self.offer objectForKey:@"pic"];
+    
+    if (![imageData  isEqual:[NSNull null]])
+    {
+        NSData *data = [NSData dataFromBase64String:imageData];
+        UIImage *image = [UIImage imageWithData:data];
         
-        if (![posttime  isEqual:[NSNull null]])
-        {
-            self.posttime.text  = posttime;
-        }
-        
-        NSString *itemlabel = [self.offer objectForKey:@"itemName"];
-        
-        if (![itemlabel isEqual:[NSNull null]])
-        {
-            self.itemLabel.text  = itemlabel;
-        }
-        
-        NSString *borrow = [self.offer objectForKey:@"borrow"];
-        
-        if (![borrow  isEqual:[NSNull null]])
-        {
-            self.itemLabel.text  = borrow;
-        }
-        
-
+        self.itemImageView.image  = image;
+    }
+    
     
     
 	// Do any additional setup after loading the view.
@@ -138,7 +149,7 @@
     [self.spurService acceptPayment:self.offer completion:^(NSUInteger index){
         NSLog(@"Updated");
     }];
-
+    
     
 }
 

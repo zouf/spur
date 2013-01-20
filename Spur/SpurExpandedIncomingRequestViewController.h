@@ -8,7 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SpurExpandedIncomingRequestViewController : UIViewController
+@interface SpurExpandedIncomingRequestViewController : UIViewController<UINavigationControllerDelegate, UIImagePickerControllerDelegate>
 @property (nonatomic,retain) id request;
+- (IBAction)takePicture:(id)sender;
+@property (strong, nonatomic) IBOutlet UIImageView *itemImageView;
+@property (strong, nonatomic) UIImage *itemImage;
 
 @end

@@ -11,5 +11,6 @@
 @interface SpurExpandedIncomingOfferViewController : UIViewController
 @property (nonatomic, retain) id offer;
 @property (nonatomic, retain) id request;
+@property (strong, nonatomic) IBOutlet UIImageView *itemImageView;
 
 @end

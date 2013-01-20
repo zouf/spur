@@ -6,10 +6,17 @@
 //  Copyright (c) 2013 Mike Verderese. All rights reserved.
 //
 
+
 #import "SpurOutgoingRequestsViewController.h"
 #import "SpurAppDelegate.h"
 #import "SpurService.h"
 #import "SpurIncomingOffersTableViewController.h"
+
+#define ITEM_NAME 100
+#define TIME 101
+#define PRICE 102
+#define BORROW_BUY 103
+#define NUMBER_OF_OFFERS 104
 
 @interface SpurOutgoingRequestsViewController ()
 
@@ -112,6 +119,7 @@
     self.refreshControl = refresh;
     [self fetchDataFromAzure :refresh];
     
+        
 }
 
 - (void)didReceiveMemoryWarning
@@ -147,7 +155,52 @@
     }
     
     id item = [self.spurService.items objectAtIndex:indexPath.row];
-    cell.textLabel.text = [item objectForKey:@"name"];
+    
+    UILabel * nameLabel = (UILabel*)[cell viewWithTag:ITEM_NAME];
+    UILabel * borrowBuyLabel = (UILabel*)[cell viewWithTag:BORROW_BUY];
+    UILabel * priceLabel = (UILabel*)[cell viewWithTag:PRICE];
+    UILabel *numOffersLabel = (UILabel*)[cell viewWithTag:NUMBER_OF_OFFERS];
+    UILabel *timeLabel = (UILabel*)[cell viewWithTag:TIME];
+    
+    NSString *name = [item objectForKey:@"name"];
+    if (![name  isEqual:[NSNull null]])
+    {
+        nameLabel.text  = name;
+    }
+    NSString *price = [item objectForKey:@"price"];
+    if (![price  isEqual:[NSNull null]])
+    {
+        priceLabel.text  = price;
+    }
+    NSString *posttime = [item objectForKey:@"posttime"];
+    
+    if (![posttime  isEqual:[NSNull null]])
+    {
+        timeLabel.text  = posttime;
+    }
+    
+    //NEED TO GET COUNT OF OFFERS
+    
+    NSString *numOffers = [item objectForKey:@"name"];
+    numOffers = @"###";
+    
+    if (![name isEqual:[NSNull null]])
+    {
+        numOffersLabel.text  = numOffers;
+    }
+    
+    BOOL borrowVal = [[item objectForKey:@"borrow"] boolValue];
+    
+    if(borrowVal)
+    {
+        borrowBuyLabel.text = @"Borrow";
+        
+    }
+    else
+    {
+        borrowBuyLabel.text = @"Buy!";
+    }
+    
     
     
     return cell;

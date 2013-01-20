@@ -481,16 +481,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" translatesAutoresizingMaskIntoConstraints="NO" id="LAX-Zx-OOF">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="161" id="VrI-Pa-UZY"/>
-                                </constraints>
-                                <segments>
-                                    <segment title="Buy"/>
-                                    <segment title="Borrow"/>
-                                </segments>
-                                <color key="tintColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                            </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jwO-FA-blS">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="2q3-Zc-wXA"/>
@@ -508,20 +498,30 @@
                                     <action selector="makeRequest:" destination="ylF-WK-sQz" eventType="touchUpInside" id="dTa-mP-d0g"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="HuT-iX-9es">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="161" id="Lxg-qT-cvY"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Buy"/>
+                                    <segment title="Borrow"/>
+                                </segments>
+                                <color key="tintColor" red="0.41597576530612246" green="0.41597576530612246" blue="0.41597576530612246" alpha="1" colorSpace="calibratedRGB"/>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="LAX-Zx-OOF" firstAttribute="centerX" secondItem="H9H-zd-E9B" secondAttribute="centerX" type="default" id="1TP-Te-aS2"/>
                             <constraint firstItem="PUq-HE-knB" firstAttribute="leading" secondItem="h9W-vV-bqh" secondAttribute="leading" type="default" id="2Jm-GO-O1a"/>
-                            <constraint firstItem="jwO-FA-blS" firstAttribute="centerX" secondItem="LAX-Zx-OOF" secondAttribute="centerX" type="default" id="OuF-pr-r1x"/>
-                            <constraint firstAttribute="bottom" secondItem="jwO-FA-blS" secondAttribute="bottom" constant="40" id="QxK-R0-kEw"/>
-                            <constraint firstItem="jwO-FA-blS" firstAttribute="centerX" secondItem="h9W-vV-bqh" secondAttribute="centerX" type="default" id="XIC-Sc-h5e"/>
+                            <constraint firstAttribute="bottom" secondItem="jwO-FA-blS" secondAttribute="bottom" constant="40" id="7Er-h6-aJM"/>
+                            <constraint firstItem="HuT-iX-9es" firstAttribute="centerX" secondItem="H9H-zd-E9B" secondAttribute="centerX" type="default" id="H3d-Vl-cJc"/>
+                            <constraint firstItem="PUq-HE-knB" firstAttribute="centerX" secondItem="H9H-zd-E9B" secondAttribute="centerX" type="default" id="IDR-Lx-4ZR"/>
+                            <constraint firstItem="jwO-FA-blS" firstAttribute="top" secondItem="HuT-iX-9es" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="RhV-q6-fcv"/>
+                            <constraint firstItem="HuT-iX-9es" firstAttribute="centerX" secondItem="jwO-FA-blS" secondAttribute="centerX" type="default" id="T4U-o9-3SE"/>
                             <constraint firstItem="PUq-HE-knB" firstAttribute="top" secondItem="h9W-vV-bqh" secondAttribute="top" type="default" id="Yr7-3y-f9C"/>
                             <constraint firstItem="PUq-HE-knB" firstAttribute="bottom" secondItem="h9W-vV-bqh" secondAttribute="bottom" type="default" id="bwb-yQ-LxT"/>
-                            <constraint firstItem="LAX-Zx-OOF" firstAttribute="centerX" secondItem="PUq-HE-knB" secondAttribute="centerX" type="default" id="dJT-WF-Xxi"/>
-                            <constraint firstItem="jwO-FA-blS" firstAttribute="top" secondItem="LAX-Zx-OOF" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="elN-Hm-AI4"/>
-                            <constraint firstItem="LAX-Zx-OOF" firstAttribute="top" secondItem="CD0-fh-G8L" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="elr-Kb-vaj"/>
+                            <constraint firstItem="HuT-iX-9es" firstAttribute="top" secondItem="CD0-fh-G8L" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="d2p-Th-MZa"/>
                             <constraint firstItem="CD0-fh-G8L" firstAttribute="trailing" secondItem="H9H-zd-E9B" secondAttribute="trailing" type="default" id="faz-p8-mEg"/>
+                            <constraint firstItem="HuT-iX-9es" firstAttribute="centerX" secondItem="h9W-vV-bqh" secondAttribute="centerX" type="default" id="wDy-kh-Tkh"/>
                             <constraint firstItem="CD0-fh-G8L" firstAttribute="top" secondItem="H9H-zd-E9B" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="wJd-X9-2WP"/>
                         </constraints>
                     </view>
@@ -529,7 +529,7 @@
                     <navigationItem key="navigationItem" id="q1D-oE-egt"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="blackOpaque" prompted="NO"/>
                     <connections>
-                        <outlet property="borrowField" destination="LAX-Zx-OOF" id="xfl-Fp-bdE"/>
+                        <outlet property="borrowField" destination="HuT-iX-9es" id="Vbe-4z-A43"/>
                         <outlet property="nameField" destination="H9H-zd-E9B" id="Guu-YC-smI"/>
                         <outlet property="priceField" destination="CD0-fh-G8L" id="sM4-r2-Hp2"/>
                     </connections>
@@ -851,6 +851,64 @@
         <image name="venmo.png" width="179" height="35"/>
         <image name="wood_background@2x.png" width="640" height="1126"/>
     </resources>
+    <classes>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SpurExpandedIncomingOfferViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurExpandedIncomingOfferViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="acceptOffer:"/>
+                <relationship kind="outlet" name="borrowLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="itemImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="itemLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="posttime" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="priceOffered" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="userLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SpurExpandedIncomingRequestViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurExpandedIncomingRequestViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="takePicture:"/>
+                <relationship kind="outlet" name="bestOffer" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="borrowLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="itemImageView" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="itemLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="postedLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="priceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="userLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="SpurExpandedPendingPaymentViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurExpandedPendingPaymentViewController.h"/>
+        </class>
+        <class className="SpurIncomingOffersTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurIncomingOffersTableViewController.h"/>
+        </class>
+        <class className="SpurIncomingRequestsTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurIncomingRequestsTableViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="infoButtonPressed:"/>
+            </relationships>
+        </class>
+        <class className="SpurMakeRequestViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurMakeRequestViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="makeRequest:"/>
+                <relationship kind="outlet" name="borrowField" candidateClass="UISegmentedControl"/>
+                <relationship kind="outlet" name="nameField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="priceField" candidateClass="UITextField"/>
+                <relationship kind="outlet" name="submitRequest" candidateClass="UIBarButtonItem"/>
+            </relationships>
+        </class>
+        <class className="SpurOutgoingRequestsViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurOutgoingRequestsViewController.h"/>
+        </class>
+        <class className="SpurPendingPaymentsTableViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurPendingPaymentsTableViewController.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

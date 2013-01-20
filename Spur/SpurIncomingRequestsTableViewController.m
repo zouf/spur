@@ -257,6 +257,8 @@
              buySell.text = @"Borrow";
         else
             buySell.text = @"Buy";*/
+        
+        
         price.text = [item objectForKey:@"price"];
 
         

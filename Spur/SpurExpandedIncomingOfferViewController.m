@@ -77,9 +77,8 @@
     NSString *price = [self.offer objectForKey:@"bestOffer"];
     if (![price  isEqual:[NSNull null]])
     {
-        self.priceOffered.text  = price;
+        self.priceOffered.text  = [NSString stringWithFormat:@"Offering: %@\n",price];
     }
-    NSString *posttime = [self.offer objectForKey:@"posttime"];
     
     
     NSDate *now = [[NSDate alloc] init];

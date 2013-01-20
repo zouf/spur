@@ -13,9 +13,6 @@
 		0A54561516AAA52A0023C944 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A54561416AAA52A0023C944 /* CoreLocation.framework */; };
 		0A54562716AAA5D60023C944 /* libQuickDialog.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0A54562216AAA5440023C944 /* libQuickDialog.a */; };
 		0AC4274216AACC2F009A4D07 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC4274116AACC2F009A4D07 /* Security.framework */; };
-		0AC42AE816AB5905009A4D07 /* libVenmo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AC42AE116AB58FA009A4D07 /* libVenmo.a */; };
-		0AC42B1116AB6651009A4D07 /* venmo.png in Resources */ = {isa = PBXBuildFile; fileRef = 0AC42B1016AB6651009A4D07 /* venmo.png */; };
-		272C8E2316AB721000DF2510 /* NSData+Base64.m in Sources */ = {isa = PBXBuildFile; fileRef = 272C8E2216AB721000DF2510 /* NSData+Base64.m */; };
 		27492C9116AA3F430095A442 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27492C9016AA3F430095A442 /* UIKit.framework */; };
 		27492C9316AA3F430095A442 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27492C9216AA3F430095A442 /* Foundation.framework */; };
 		27492C9516AA3F430095A442 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27492C9416AA3F430095A442 /* CoreGraphics.framework */; };
@@ -26,18 +23,32 @@
 		27492CA516AA3F430095A442 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27492CA416AA3F430095A442 /* Default@2x.png */; };
 		27492CA716AA3F430095A442 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27492CA616AA3F430095A442 /* Default-568h@2x.png */; };
 		27492CAA16AA3F430095A442 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27492CA816AA3F430095A442 /* MainStoryboard.storyboard */; };
+		27492CB516AA41880095A442 /* SpurHomePageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CB416AA41880095A442 /* SpurHomePageViewController.m */; };
+		27492CB816AA41E00095A442 /* SpurSignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CB716AA41DF0095A442 /* SpurSignInViewController.m */; };
+		27492CBB16AA42090095A442 /* SpurSignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CBA16AA42090095A442 /* SpurSignUpViewController.m */; };
 		27492CC116AA42EB0095A442 /* SpurMakeRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CC016AA42EB0095A442 /* SpurMakeRequestViewController.m */; };
+		27492CC716AA43070095A442 /* SpurSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CC616AA43070095A442 /* SpurSettingsViewController.m */; };
 		27492CCA16AA446C0095A442 /* SpurIncomingOffersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CC916AA446C0095A442 /* SpurIncomingOffersTableViewController.m */; };
 		27492CCD16AA449B0095A442 /* SpurIncomingRequestsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CCC16AA449B0095A442 /* SpurIncomingRequestsTableViewController.m */; };
 		27492CD016AA49140095A442 /* SpurExpandedIncomingRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CCF16AA49140095A442 /* SpurExpandedIncomingRequestViewController.m */; };
-		27492CD616AA4ABA0095A442 /* SpurPictureCaptureViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CD516AA4ABA0095A442 /* SpurPictureCaptureViewController.m */; };
 		27492CD916AA4B330095A442 /* SpurExpandedIncomingOfferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CD816AA4B330095A442 /* SpurExpandedIncomingOfferViewController.m */; };
 		27492CDC16AA4BC40095A442 /* SpurExpandedPendingPaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CDB16AA4BC40095A442 /* SpurExpandedPendingPaymentViewController.m */; };
+		27492CDF16AA4C3B0095A442 /* SpurMakePaymentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CDE16AA4C3B0095A442 /* SpurMakePaymentViewController.m */; };
+		27492CE816AA59FB0095A442 /* SpurViewItemImageViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CE716AA59FB0095A442 /* SpurViewItemImageViewController.m */; };
 		27492CEF16AA60A70095A442 /* SpurPendingPaymentsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CEE16AA60A70095A442 /* SpurPendingPaymentsTableViewController.m */; };
 		27492CF416AA645E0095A442 /* SpurOutgoingOffersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CF316AA645E0095A442 /* SpurOutgoingOffersTableViewController.m */; };
 		27492CFF16AA668E0095A442 /* SpurOutgoingRequestsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CFE16AA668E0095A442 /* SpurOutgoingRequestsViewController.m */; };
 		27492D0C16AA6A970095A442 /* SpurExpandedOutgoingOfferViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492D0B16AA6A970095A442 /* SpurExpandedOutgoingOfferViewController.m */; };
 		27492D1116AA6BC70095A442 /* SpurExpandedOutgoingRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492D1016AA6BC70095A442 /* SpurExpandedOutgoingRequestViewController.m */; };
+		27492D3F16AB284C0095A442 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 27492D3E16AB284C0095A442 /* AVFoundation.framework */; };
+		27492D4A16AB2C2C0095A442 /* btn_back@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27492D4216AB2C2C0095A442 /* btn_back@2x.png */; };
+		27492D4B16AB2C2C0095A442 /* btn_camera@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27492D4316AB2C2C0095A442 /* btn_camera@2x.png */; };
+		27492D4C16AB2C2C0095A442 /* btn_check@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27492D4416AB2C2C0095A442 /* btn_check@2x.png */; };
+		27492D4D16AB2C2C0095A442 /* btn_x@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27492D4516AB2C2C0095A442 /* btn_x@2x.png */; };
+		27492D4E16AB2C2C0095A442 /* Camera_hidefilters@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27492D4616AB2C2C0095A442 /* Camera_hidefilters@2x.png */; };
+		27492D4F16AB2C2C0095A442 /* Camera_showfilters@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27492D4716AB2C2C0095A442 /* Camera_showfilters@2x.png */; };
+		27492D5016AB2C2C0095A442 /* Camera_thumb@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27492D4816AB2C2C0095A442 /* Camera_thumb@2x.png */; };
+		27492D5116AB2C2C0095A442 /* Filters_Background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27492D4916AB2C2C0095A442 /* Filters_Background@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,34 +73,6 @@
 			remoteGlobalIDString = 2C542392145ADEBD0026A152;
 			remoteInfo = QuickDialog;
 		};
-		0AC42AE016AB58FA009A4D07 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0AC42AC016AB58F9009A4D07 /* Venmo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C9BD6C6A13EEE06400F4D8F4;
-			remoteInfo = Venmo;
-		};
-		0AC42AE216AB58FA009A4D07 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0AC42AC016AB58F9009A4D07 /* Venmo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C9550E7613F5C48900212008;
-			remoteInfo = VenmoApp;
-		};
-		0AC42AE416AB58FA009A4D07 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0AC42AC016AB58F9009A4D07 /* Venmo.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = C9BD6C7A13EEE06400F4D8F4;
-			remoteInfo = VenmoSpecs;
-		};
-		0AC42AE616AB5900009A4D07 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0AC42AC016AB58F9009A4D07 /* Venmo.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = C9BD6C6913EEE06400F4D8F4;
-			remoteInfo = Venmo;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -102,61 +85,6 @@
 		0AC4274116AACC2F009A4D07 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		0AC4274516AACCA8009A4D07 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
 		0AC4274616AACCA8009A4D07 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
-		0AC42A9816AB58F9009A4D07 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		0AC42A9916AB58F9009A4D07 /* .gitmodules */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitmodules; sourceTree = "<group>"; };
-		0AC42A9D16AB58F9009A4D07 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		0AC42AA016AB58F9009A4D07 /* NSBundle+Venmo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSBundle+Venmo.h"; sourceTree = "<group>"; };
-		0AC42AA116AB58F9009A4D07 /* NSBundle+Venmo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+Venmo.m"; sourceTree = "<group>"; };
-		0AC42AA216AB58F9009A4D07 /* NSDictionary+Venmo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+Venmo.h"; sourceTree = "<group>"; };
-		0AC42AA316AB58F9009A4D07 /* NSDictionary+Venmo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+Venmo.m"; sourceTree = "<group>"; };
-		0AC42AA416AB58F9009A4D07 /* NSError+Venmo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSError+Venmo.h"; sourceTree = "<group>"; };
-		0AC42AA516AB58F9009A4D07 /* NSError+Venmo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSError+Venmo.m"; sourceTree = "<group>"; };
-		0AC42AA616AB58F9009A4D07 /* NSString+Venmo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+Venmo.h"; sourceTree = "<group>"; };
-		0AC42AA716AB58F9009A4D07 /* NSString+Venmo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+Venmo.m"; sourceTree = "<group>"; };
-		0AC42AA816AB58F9009A4D07 /* NSURL+Venmo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSURL+Venmo.h"; sourceTree = "<group>"; };
-		0AC42AA916AB58F9009A4D07 /* NSURL+Venmo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSURL+Venmo.m"; sourceTree = "<group>"; };
-		0AC42AAA16AB58F9009A4D07 /* VenmoActivityView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VenmoActivityView.m; sourceTree = "<group>"; };
-		0AC42AAB16AB58F9009A4D07 /* VenmoActivityView_Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VenmoActivityView_Internal.h; sourceTree = "<group>"; };
-		0AC42AAC16AB58F9009A4D07 /* VenmoBase64.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VenmoBase64.m; sourceTree = "<group>"; };
-		0AC42AAD16AB58F9009A4D07 /* VenmoBase64_Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VenmoBase64_Internal.h; sourceTree = "<group>"; };
-		0AC42AAE16AB58F9009A4D07 /* VenmoClient_Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VenmoClient_Internal.h; sourceTree = "<group>"; };
-		0AC42AAF16AB58F9009A4D07 /* VenmoClient_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VenmoClient_Private.h; sourceTree = "<group>"; };
-		0AC42AB016AB58F9009A4D07 /* VenmoDefines_Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VenmoDefines_Internal.h; sourceTree = "<group>"; };
-		0AC42AB116AB58F9009A4D07 /* VenmoHMAC_SHA256.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VenmoHMAC_SHA256.m; sourceTree = "<group>"; };
-		0AC42AB216AB58F9009A4D07 /* VenmoHMAC_SHA256_Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VenmoHMAC_SHA256_Internal.h; sourceTree = "<group>"; };
-		0AC42AB316AB58F9009A4D07 /* VenmoTransaction_Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VenmoTransaction_Internal.h; sourceTree = "<group>"; };
-		0AC42AB416AB58F9009A4D07 /* VenmoViewController_Internal.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VenmoViewController_Internal.h; sourceTree = "<group>"; };
-		0AC42AB616AB58F9009A4D07 /* Venmo-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Venmo-Prefix.pch"; sourceTree = "<group>"; };
-		0AC42AB716AB58F9009A4D07 /* Venmo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Venmo.h; sourceTree = "<group>"; };
-		0AC42AB816AB58F9009A4D07 /* VenmoClient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VenmoClient.h; sourceTree = "<group>"; };
-		0AC42AB916AB58F9009A4D07 /* VenmoClient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VenmoClient.m; sourceTree = "<group>"; };
-		0AC42ABA16AB58F9009A4D07 /* VenmoErrors.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VenmoErrors.h; sourceTree = "<group>"; };
-		0AC42ABB16AB58F9009A4D07 /* VenmoErrors.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VenmoErrors.m; sourceTree = "<group>"; };
-		0AC42ABC16AB58F9009A4D07 /* VenmoTransaction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VenmoTransaction.h; sourceTree = "<group>"; };
-		0AC42ABD16AB58F9009A4D07 /* VenmoTransaction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VenmoTransaction.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		0AC42ABE16AB58F9009A4D07 /* VenmoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VenmoViewController.h; sourceTree = "<group>"; };
-		0AC42ABF16AB58F9009A4D07 /* VenmoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VenmoViewController.m; sourceTree = "<group>"; };
-		0AC42AC016AB58F9009A4D07 /* Venmo.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; path = Venmo.xcodeproj; sourceTree = "<group>"; };
-		0AC42AC416AB58F9009A4D07 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		0AC42AC516AB58F9009A4D07 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		0AC42AC716AB58F9009A4D07 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		0AC42AC816AB58F9009A4D07 /* VenmoApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "VenmoApp-Info.plist"; sourceTree = "<group>"; };
-		0AC42AC916AB58F9009A4D07 /* VenmoApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VenmoApp-Prefix.pch"; sourceTree = "<group>"; };
-		0AC42ACA16AB58F9009A4D07 /* WelcomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WelcomeViewController.h; sourceTree = "<group>"; };
-		0AC42ACB16AB58F9009A4D07 /* WelcomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WelcomeViewController.m; sourceTree = "<group>"; };
-		0AC42ACD16AB58F9009A4D07 /* NSDictionarySpecs.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSDictionarySpecs.m; sourceTree = "<group>"; };
-		0AC42ACE16AB58F9009A4D07 /* NSStringSpecs.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NSStringSpecs.m; sourceTree = "<group>"; };
-		0AC42AD016AB58F9009A4D07 /* NSInvocation+SpecMethodPrefix.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSInvocation+SpecMethodPrefix.m"; sourceTree = "<group>"; };
-		0AC42AD116AB58F9009A4D07 /* VenmoSpecs-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "VenmoSpecs-Prefix.pch"; sourceTree = "<group>"; };
-		0AC42AD216AB58F9009A4D07 /* VenmoSpecs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VenmoSpecs.h; sourceTree = "<group>"; };
-		0AC42AD316AB58F9009A4D07 /* VenmoSpecsSpecs.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VenmoSpecsSpecs.m; sourceTree = "<group>"; };
-		0AC42AD416AB58F9009A4D07 /* VenmoBase64Specs.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VenmoBase64Specs.m; sourceTree = "<group>"; };
-		0AC42AD516AB58F9009A4D07 /* VenmoClientSpecs.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VenmoClientSpecs.m; sourceTree = "<group>"; };
-		0AC42AD616AB58F9009A4D07 /* VenmoTransactionSpecs.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VenmoTransactionSpecs.m; sourceTree = "<group>"; };
-		0AC42AD716AB58F9009A4D07 /* VenmoViewControllerSpecs.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VenmoViewControllerSpecs.m; sourceTree = "<group>"; };
-		0AC42B1016AB6651009A4D07 /* venmo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = venmo.png; path = Spur/venmo.png; sourceTree = "<group>"; };
-		272C8E2116AB721000DF2510 /* NSData+Base64.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSData+Base64.h"; sourceTree = "<group>"; };
-		272C8E2216AB721000DF2510 /* NSData+Base64.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+Base64.m"; sourceTree = "<group>"; };
 		27492C8C16AA3F430095A442 /* Spur.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spur.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27492C9016AA3F430095A442 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		27492C9216AA3F430095A442 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -171,20 +99,30 @@
 		27492CA416AA3F430095A442 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default@2x.png"; sourceTree = "<group>"; };
 		27492CA616AA3F430095A442 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		27492CA916AA3F430095A442 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard.storyboard; sourceTree = "<group>"; };
+		27492CB316AA41880095A442 /* SpurHomePageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurHomePageViewController.h; sourceTree = "<group>"; };
+		27492CB416AA41880095A442 /* SpurHomePageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurHomePageViewController.m; sourceTree = "<group>"; };
+		27492CB616AA41DF0095A442 /* SpurSignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurSignInViewController.h; sourceTree = "<group>"; };
+		27492CB716AA41DF0095A442 /* SpurSignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurSignInViewController.m; sourceTree = "<group>"; };
+		27492CB916AA42090095A442 /* SpurSignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurSignUpViewController.h; sourceTree = "<group>"; };
+		27492CBA16AA42090095A442 /* SpurSignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurSignUpViewController.m; sourceTree = "<group>"; };
 		27492CBF16AA42EB0095A442 /* SpurMakeRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurMakeRequestViewController.h; sourceTree = "<group>"; };
 		27492CC016AA42EB0095A442 /* SpurMakeRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurMakeRequestViewController.m; sourceTree = "<group>"; };
+		27492CC516AA43070095A442 /* SpurSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurSettingsViewController.h; sourceTree = "<group>"; };
+		27492CC616AA43070095A442 /* SpurSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurSettingsViewController.m; sourceTree = "<group>"; };
 		27492CC816AA446C0095A442 /* SpurIncomingOffersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurIncomingOffersTableViewController.h; sourceTree = "<group>"; };
 		27492CC916AA446C0095A442 /* SpurIncomingOffersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurIncomingOffersTableViewController.m; sourceTree = "<group>"; };
 		27492CCB16AA449B0095A442 /* SpurIncomingRequestsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurIncomingRequestsTableViewController.h; sourceTree = "<group>"; };
 		27492CCC16AA449B0095A442 /* SpurIncomingRequestsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurIncomingRequestsTableViewController.m; sourceTree = "<group>"; };
 		27492CCE16AA49140095A442 /* SpurExpandedIncomingRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurExpandedIncomingRequestViewController.h; sourceTree = "<group>"; };
 		27492CCF16AA49140095A442 /* SpurExpandedIncomingRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurExpandedIncomingRequestViewController.m; sourceTree = "<group>"; };
-		27492CD416AA4ABA0095A442 /* SpurPictureCaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurPictureCaptureViewController.h; sourceTree = "<group>"; };
-		27492CD516AA4ABA0095A442 /* SpurPictureCaptureViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurPictureCaptureViewController.m; sourceTree = "<group>"; };
 		27492CD716AA4B330095A442 /* SpurExpandedIncomingOfferViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurExpandedIncomingOfferViewController.h; sourceTree = "<group>"; };
 		27492CD816AA4B330095A442 /* SpurExpandedIncomingOfferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurExpandedIncomingOfferViewController.m; sourceTree = "<group>"; };
 		27492CDA16AA4BC40095A442 /* SpurExpandedPendingPaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurExpandedPendingPaymentViewController.h; sourceTree = "<group>"; };
 		27492CDB16AA4BC40095A442 /* SpurExpandedPendingPaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurExpandedPendingPaymentViewController.m; sourceTree = "<group>"; };
+		27492CDD16AA4C3B0095A442 /* SpurMakePaymentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurMakePaymentViewController.h; sourceTree = "<group>"; };
+		27492CDE16AA4C3B0095A442 /* SpurMakePaymentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurMakePaymentViewController.m; sourceTree = "<group>"; };
+		27492CE616AA59FB0095A442 /* SpurViewItemImageViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurViewItemImageViewController.h; sourceTree = "<group>"; };
+		27492CE716AA59FB0095A442 /* SpurViewItemImageViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurViewItemImageViewController.m; sourceTree = "<group>"; };
 		27492CEE16AA60A70095A442 /* SpurPendingPaymentsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurPendingPaymentsTableViewController.m; sourceTree = "<group>"; };
 		27492CF116AA63D70095A442 /* SpurPendingPaymentsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurPendingPaymentsTableViewController.h; sourceTree = "<group>"; };
 		27492CF216AA645E0095A442 /* SpurOutgoingOffersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurOutgoingOffersTableViewController.h; sourceTree = "<group>"; };
@@ -195,6 +133,15 @@
 		27492D0B16AA6A970095A442 /* SpurExpandedOutgoingOfferViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurExpandedOutgoingOfferViewController.m; sourceTree = "<group>"; };
 		27492D0F16AA6BC70095A442 /* SpurExpandedOutgoingRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpurExpandedOutgoingRequestViewController.h; sourceTree = "<group>"; };
 		27492D1016AA6BC70095A442 /* SpurExpandedOutgoingRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpurExpandedOutgoingRequestViewController.m; sourceTree = "<group>"; };
+		27492D3E16AB284C0095A442 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		27492D4216AB2C2C0095A442 /* btn_back@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_back@2x.png"; sourceTree = "<group>"; };
+		27492D4316AB2C2C0095A442 /* btn_camera@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_camera@2x.png"; sourceTree = "<group>"; };
+		27492D4416AB2C2C0095A442 /* btn_check@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_check@2x.png"; sourceTree = "<group>"; };
+		27492D4516AB2C2C0095A442 /* btn_x@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "btn_x@2x.png"; sourceTree = "<group>"; };
+		27492D4616AB2C2C0095A442 /* Camera_hidefilters@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Camera_hidefilters@2x.png"; sourceTree = "<group>"; };
+		27492D4716AB2C2C0095A442 /* Camera_showfilters@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Camera_showfilters@2x.png"; sourceTree = "<group>"; };
+		27492D4816AB2C2C0095A442 /* Camera_thumb@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Camera_thumb@2x.png"; sourceTree = "<group>"; };
+		27492D4916AB2C2C0095A442 /* Filters_Background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Filters_Background@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,7 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0AC42AE816AB5905009A4D07 /* libVenmo.a in Frameworks */,
+				27492D3F16AB284C0095A442 /* AVFoundation.framework in Frameworks */,
 				0AC4274216AACC2F009A4D07 /* Security.framework in Frameworks */,
 				0A54562716AAA5D60023C944 /* libQuickDialog.a in Frameworks */,
 				0A54561516AAA52A0023C944 /* CoreLocation.framework in Frameworks */,
@@ -226,178 +173,10 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0AC42A9616AB58F9009A4D07 /* Libraries */ = {
-			isa = PBXGroup;
-			children = (
-				272C8E2116AB721000DF2510 /* NSData+Base64.h */,
-				272C8E2216AB721000DF2510 /* NSData+Base64.m */,
-				0AC42A9716AB58F9009A4D07 /* Venmo */,
-			);
-			path = Libraries;
-			sourceTree = "<group>";
-		};
-		0AC42A9716AB58F9009A4D07 /* Venmo */ = {
-			isa = PBXGroup;
-			children = (
-				0AC42A9816AB58F9009A4D07 /* .gitignore */,
-				0AC42A9916AB58F9009A4D07 /* .gitmodules */,
-				0AC42A9A16AB58F9009A4D07 /* Libraries */,
-				0AC42A9D16AB58F9009A4D07 /* README.md */,
-				0AC42A9E16AB58F9009A4D07 /* Venmo */,
-				0AC42AC016AB58F9009A4D07 /* Venmo.xcodeproj */,
-				0AC42AC316AB58F9009A4D07 /* VenmoApp */,
-				0AC42ACC16AB58F9009A4D07 /* VenmoSpecs */,
-			);
-			path = Venmo;
-			sourceTree = "<group>";
-		};
-		0AC42A9A16AB58F9009A4D07 /* Libraries */ = {
-			isa = PBXGroup;
-			children = (
-				0AC42A9B16AB58F9009A4D07 /* JSONKit */,
-				0AC42A9C16AB58F9009A4D07 /* Kiwi */,
-			);
-			path = Libraries;
-			sourceTree = "<group>";
-		};
-		0AC42A9B16AB58F9009A4D07 /* JSONKit */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = JSONKit;
-			sourceTree = "<group>";
-		};
-		0AC42A9C16AB58F9009A4D07 /* Kiwi */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Kiwi;
-			sourceTree = "<group>";
-		};
-		0AC42A9E16AB58F9009A4D07 /* Venmo */ = {
-			isa = PBXGroup;
-			children = (
-				0AC42A9F16AB58F9009A4D07 /* Private */,
-				0AC42AB516AB58F9009A4D07 /* Supporting Files */,
-				0AC42AB716AB58F9009A4D07 /* Venmo.h */,
-				0AC42AB816AB58F9009A4D07 /* VenmoClient.h */,
-				0AC42AB916AB58F9009A4D07 /* VenmoClient.m */,
-				0AC42ABA16AB58F9009A4D07 /* VenmoErrors.h */,
-				0AC42ABB16AB58F9009A4D07 /* VenmoErrors.m */,
-				0AC42ABC16AB58F9009A4D07 /* VenmoTransaction.h */,
-				0AC42ABD16AB58F9009A4D07 /* VenmoTransaction.m */,
-				0AC42ABE16AB58F9009A4D07 /* VenmoViewController.h */,
-				0AC42ABF16AB58F9009A4D07 /* VenmoViewController.m */,
-			);
-			path = Venmo;
-			sourceTree = "<group>";
-		};
-		0AC42A9F16AB58F9009A4D07 /* Private */ = {
-			isa = PBXGroup;
-			children = (
-				0AC42AA016AB58F9009A4D07 /* NSBundle+Venmo.h */,
-				0AC42AA116AB58F9009A4D07 /* NSBundle+Venmo.m */,
-				0AC42AA216AB58F9009A4D07 /* NSDictionary+Venmo.h */,
-				0AC42AA316AB58F9009A4D07 /* NSDictionary+Venmo.m */,
-				0AC42AA416AB58F9009A4D07 /* NSError+Venmo.h */,
-				0AC42AA516AB58F9009A4D07 /* NSError+Venmo.m */,
-				0AC42AA616AB58F9009A4D07 /* NSString+Venmo.h */,
-				0AC42AA716AB58F9009A4D07 /* NSString+Venmo.m */,
-				0AC42AA816AB58F9009A4D07 /* NSURL+Venmo.h */,
-				0AC42AA916AB58F9009A4D07 /* NSURL+Venmo.m */,
-				0AC42AAA16AB58F9009A4D07 /* VenmoActivityView.m */,
-				0AC42AAB16AB58F9009A4D07 /* VenmoActivityView_Internal.h */,
-				0AC42AAC16AB58F9009A4D07 /* VenmoBase64.m */,
-				0AC42AAD16AB58F9009A4D07 /* VenmoBase64_Internal.h */,
-				0AC42AAE16AB58F9009A4D07 /* VenmoClient_Internal.h */,
-				0AC42AAF16AB58F9009A4D07 /* VenmoClient_Private.h */,
-				0AC42AB016AB58F9009A4D07 /* VenmoDefines_Internal.h */,
-				0AC42AB116AB58F9009A4D07 /* VenmoHMAC_SHA256.m */,
-				0AC42AB216AB58F9009A4D07 /* VenmoHMAC_SHA256_Internal.h */,
-				0AC42AB316AB58F9009A4D07 /* VenmoTransaction_Internal.h */,
-				0AC42AB416AB58F9009A4D07 /* VenmoViewController_Internal.h */,
-			);
-			path = Private;
-			sourceTree = "<group>";
-		};
-		0AC42AB516AB58F9009A4D07 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				0AC42AB616AB58F9009A4D07 /* Venmo-Prefix.pch */,
-			);
-			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		0AC42AC116AB58F9009A4D07 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				0AC42AE116AB58FA009A4D07 /* libVenmo.a */,
-				0AC42AE316AB58FA009A4D07 /* VenmoApp.app */,
-				0AC42AE516AB58FA009A4D07 /* VenmoSpecs.octest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		0AC42AC316AB58F9009A4D07 /* VenmoApp */ = {
-			isa = PBXGroup;
-			children = (
-				0AC42AC416AB58F9009A4D07 /* AppDelegate.h */,
-				0AC42AC516AB58F9009A4D07 /* AppDelegate.m */,
-				0AC42AC616AB58F9009A4D07 /* Supporting Files */,
-				0AC42ACA16AB58F9009A4D07 /* WelcomeViewController.h */,
-				0AC42ACB16AB58F9009A4D07 /* WelcomeViewController.m */,
-			);
-			path = VenmoApp;
-			sourceTree = "<group>";
-		};
-		0AC42AC616AB58F9009A4D07 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				0AC42AC716AB58F9009A4D07 /* main.m */,
-				0AC42AC816AB58F9009A4D07 /* VenmoApp-Info.plist */,
-				0AC42AC916AB58F9009A4D07 /* VenmoApp-Prefix.pch */,
-			);
-			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		0AC42ACC16AB58F9009A4D07 /* VenmoSpecs */ = {
-			isa = PBXGroup;
-			children = (
-				0AC42ACD16AB58F9009A4D07 /* NSDictionarySpecs.m */,
-				0AC42ACE16AB58F9009A4D07 /* NSStringSpecs.m */,
-				0AC42ACF16AB58F9009A4D07 /* Supporting Files */,
-				0AC42AD416AB58F9009A4D07 /* VenmoBase64Specs.m */,
-				0AC42AD516AB58F9009A4D07 /* VenmoClientSpecs.m */,
-				0AC42AD616AB58F9009A4D07 /* VenmoTransactionSpecs.m */,
-				0AC42AD716AB58F9009A4D07 /* VenmoViewControllerSpecs.m */,
-			);
-			path = VenmoSpecs;
-			sourceTree = "<group>";
-		};
-		0AC42ACF16AB58F9009A4D07 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				0AC42AD016AB58F9009A4D07 /* NSInvocation+SpecMethodPrefix.m */,
-				0AC42AD116AB58F9009A4D07 /* VenmoSpecs-Prefix.pch */,
-				0AC42AD216AB58F9009A4D07 /* VenmoSpecs.h */,
-				0AC42AD316AB58F9009A4D07 /* VenmoSpecsSpecs.m */,
-			);
-			path = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		0AC42B1216AB6656009A4D07 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				0AC42B1016AB6651009A4D07 /* venmo.png */,
-			);
-			name = Images;
-			sourceTree = "<group>";
-		};
 		27492C8116AA3F430095A442 = {
 			isa = PBXGroup;
 			children = (
-				0AC42B1216AB6656009A4D07 /* Images */,
-				0AC42A9616AB58F9009A4D07 /* Libraries */,
+				27492D3E16AB284C0095A442 /* AVFoundation.framework */,
 				0AC4274116AACC2F009A4D07 /* Security.framework */,
 				27492C9616AA3F430095A442 /* Spur */,
 				27492C8F16AA3F430095A442 /* Frameworks */,
@@ -430,6 +209,7 @@
 		27492C9616AA3F430095A442 /* Spur */ = {
 			isa = PBXGroup;
 			children = (
+				27492D4016AB2BD80095A442 /* Images */,
 				0AC4274516AACCA8009A4D07 /* KeychainItemWrapper.h */,
 				0AC4274616AACCA8009A4D07 /* KeychainItemWrapper.m */,
 				0A54560B16AA7F620023C944 /* SpurService.h */,
@@ -476,8 +256,6 @@
 				27492CCC16AA449B0095A442 /* SpurIncomingRequestsTableViewController.m */,
 				27492CCE16AA49140095A442 /* SpurExpandedIncomingRequestViewController.h */,
 				27492CCF16AA49140095A442 /* SpurExpandedIncomingRequestViewController.m */,
-				27492CD416AA4ABA0095A442 /* SpurPictureCaptureViewController.h */,
-				27492CD516AA4ABA0095A442 /* SpurPictureCaptureViewController.m */,
 			);
 			name = "Incoming Requests";
 			sourceTree = "<group>";
@@ -517,12 +295,10 @@
 		27492CFC16AA65850095A442 /* Pending Payments */ = {
 			isa = PBXGroup;
 			children = (
-				27492CDA16AA4BC40095A442 /* SpurExpandedPendingPaymentViewController.h */,
-				27492CDB16AA4BC40095A442 /* SpurExpandedPendingPaymentViewController.m */,
 				27492CF116AA63D70095A442 /* SpurPendingPaymentsTableViewController.h */,
 				27492CEE16AA60A70095A442 /* SpurPendingPaymentsTableViewController.m */,
-				0AC42B1316AB78E5009A4D07 /* SpurVenmoViewController.h */,
-				0AC42B1416AB78E5009A4D07 /* SpurVenmoViewController.m */,
+				27492D0616AA69570095A442 /* Expanded Pending Payment */,
+				27492D0716AA696B0095A442 /* Make Payment */,
 			);
 			name = "Pending Payments";
 			sourceTree = "<group>";
@@ -536,10 +312,46 @@
 			name = "Make Request";
 			sourceTree = "<group>";
 		};
+		27492D0616AA69570095A442 /* Expanded Pending Payment */ = {
+			isa = PBXGroup;
+			children = (
+				27492CDA16AA4BC40095A442 /* SpurExpandedPendingPaymentViewController.h */,
+				27492CDB16AA4BC40095A442 /* SpurExpandedPendingPaymentViewController.m */,
+			);
+			name = "Expanded Pending Payment";
+			sourceTree = "<group>";
+		};
+		27492D0716AA696B0095A442 /* Make Payment */ = {
+			isa = PBXGroup;
+			children = (
+				27492CDD16AA4C3B0095A442 /* SpurMakePaymentViewController.h */,
+				27492CDE16AA4C3B0095A442 /* SpurMakePaymentViewController.m */,
+			);
+			name = "Make Payment";
+			sourceTree = "<group>";
+		};
+		27492D0816AA697E0095A442 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				27492CB616AA41DF0095A442 /* SpurSignInViewController.h */,
+				27492CB716AA41DF0095A442 /* SpurSignInViewController.m */,
+				27492CB916AA42090095A442 /* SpurSignUpViewController.h */,
+				27492CBA16AA42090095A442 /* SpurSignUpViewController.m */,
+				27492CE616AA59FB0095A442 /* SpurViewItemImageViewController.h */,
+				27492CE716AA59FB0095A442 /* SpurViewItemImageViewController.m */,
+				27492CC516AA43070095A442 /* SpurSettingsViewController.h */,
+				27492CC616AA43070095A442 /* SpurSettingsViewController.m */,
+				27492CB316AA41880095A442 /* SpurHomePageViewController.h */,
+				27492CB416AA41880095A442 /* SpurHomePageViewController.m */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
 		27492D0916AA69940095A442 /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				27492CF616AA64EB0095A442 /* Tab View */,
+				27492D0816AA697E0095A442 /* Settings */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -562,6 +374,30 @@
 			name = "Expanded Outgoing Request";
 			sourceTree = "<group>";
 		};
+		27492D4016AB2BD80095A442 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				27492D4116AB2C2C0095A442 /* Camera Page */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		27492D4116AB2C2C0095A442 /* Camera Page */ = {
+			isa = PBXGroup;
+			children = (
+				27492D4216AB2C2C0095A442 /* btn_back@2x.png */,
+				27492D4316AB2C2C0095A442 /* btn_camera@2x.png */,
+				27492D4416AB2C2C0095A442 /* btn_check@2x.png */,
+				27492D4516AB2C2C0095A442 /* btn_x@2x.png */,
+				27492D4616AB2C2C0095A442 /* Camera_hidefilters@2x.png */,
+				27492D4716AB2C2C0095A442 /* Camera_showfilters@2x.png */,
+				27492D4816AB2C2C0095A442 /* Camera_thumb@2x.png */,
+				27492D4916AB2C2C0095A442 /* Filters_Background@2x.png */,
+			);
+			name = "Camera Page";
+			path = "Images/Camera Page";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -576,7 +412,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				0AC42AE716AB5900009A4D07 /* PBXTargetDependency */,
 				0A54562616AAA5CD0023C944 /* PBXTargetDependency */,
 			);
 			name = Spur;
@@ -609,10 +444,6 @@
 					ProductGroup = 0A54561716AAA5440023C944 /* Products */;
 					ProjectRef = 0A54561616AAA5440023C944 /* QuickDialog.xcodeproj */;
 				},
-				{
-					ProductGroup = 0AC42AC116AB58F9009A4D07 /* Products */;
-					ProjectRef = 0AC42AC016AB58F9009A4D07 /* Venmo.xcodeproj */;
-				},
 			);
 			projectRoot = "";
 			targets = (
@@ -636,27 +467,6 @@
 			remoteRef = 0A54562116AAA5440023C944 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		0AC42AE116AB58FA009A4D07 /* libVenmo.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libVenmo.a;
-			remoteRef = 0AC42AE016AB58FA009A4D07 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0AC42AE316AB58FA009A4D07 /* VenmoApp.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = VenmoApp.app;
-			remoteRef = 0AC42AE216AB58FA009A4D07 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		0AC42AE516AB58FA009A4D07 /* VenmoSpecs.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = VenmoSpecs.octest;
-			remoteRef = 0AC42AE416AB58FA009A4D07 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 /* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
@@ -669,7 +479,14 @@
 				27492CA516AA3F430095A442 /* Default@2x.png in Resources */,
 				27492CA716AA3F430095A442 /* Default-568h@2x.png in Resources */,
 				27492CAA16AA3F430095A442 /* MainStoryboard.storyboard in Resources */,
-				0AC42B1116AB6651009A4D07 /* venmo.png in Resources */,
+				27492D4A16AB2C2C0095A442 /* btn_back@2x.png in Resources */,
+				27492D4B16AB2C2C0095A442 /* btn_camera@2x.png in Resources */,
+				27492D4C16AB2C2C0095A442 /* btn_check@2x.png in Resources */,
+				27492D4D16AB2C2C0095A442 /* btn_x@2x.png in Resources */,
+				27492D4E16AB2C2C0095A442 /* Camera_hidefilters@2x.png in Resources */,
+				27492D4F16AB2C2C0095A442 /* Camera_showfilters@2x.png in Resources */,
+				27492D5016AB2C2C0095A442 /* Camera_thumb@2x.png in Resources */,
+				27492D5116AB2C2C0095A442 /* Filters_Background@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -682,20 +499,24 @@
 			files = (
 				27492C9D16AA3F430095A442 /* main.m in Sources */,
 				27492CA116AA3F430095A442 /* SpurAppDelegate.m in Sources */,
+				27492CB516AA41880095A442 /* SpurHomePageViewController.m in Sources */,
+				27492CB816AA41E00095A442 /* SpurSignInViewController.m in Sources */,
+				27492CBB16AA42090095A442 /* SpurSignUpViewController.m in Sources */,
 				27492CC116AA42EB0095A442 /* SpurMakeRequestViewController.m in Sources */,
+				27492CC716AA43070095A442 /* SpurSettingsViewController.m in Sources */,
 				27492CCA16AA446C0095A442 /* SpurIncomingOffersTableViewController.m in Sources */,
 				27492CCD16AA449B0095A442 /* SpurIncomingRequestsTableViewController.m in Sources */,
 				27492CD016AA49140095A442 /* SpurExpandedIncomingRequestViewController.m in Sources */,
-				27492CD616AA4ABA0095A442 /* SpurPictureCaptureViewController.m in Sources */,
 				27492CD916AA4B330095A442 /* SpurExpandedIncomingOfferViewController.m in Sources */,
 				27492CDC16AA4BC40095A442 /* SpurExpandedPendingPaymentViewController.m in Sources */,
+				27492CDF16AA4C3B0095A442 /* SpurMakePaymentViewController.m in Sources */,
+				27492CE816AA59FB0095A442 /* SpurViewItemImageViewController.m in Sources */,
 				27492CEF16AA60A70095A442 /* SpurPendingPaymentsTableViewController.m in Sources */,
 				27492CF416AA645E0095A442 /* SpurOutgoingOffersTableViewController.m in Sources */,
 				27492CFF16AA668E0095A442 /* SpurOutgoingRequestsViewController.m in Sources */,
 				27492D0C16AA6A970095A442 /* SpurExpandedOutgoingOfferViewController.m in Sources */,
 				27492D1116AA6BC70095A442 /* SpurExpandedOutgoingRequestViewController.m in Sources */,
 				0A54560D16AA7F620023C944 /* SpurService.m in Sources */,
-				272C8E2316AB721000DF2510 /* NSData+Base64.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -706,11 +527,6 @@
 			isa = PBXTargetDependency;
 			name = QuickDialog;
 			targetProxy = 0A54562516AAA5CD0023C944 /* PBXContainerItemProxy */;
-		};
-		0AC42AE716AB5900009A4D07 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Venmo;
-			targetProxy = 0AC42AE616AB5900009A4D07 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -796,14 +612,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Spur/Spur-Prefix.pch";
 				INFOPLIST_FILE = "Spur/Spur-Info.plist";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-force_load",
-					"${BUILT_PRODUCTS_DIR}/libVenmo.a",
-				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/QuickDialog\"/** Libraries/Venmo";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/QuickDialog\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -820,14 +632,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Spur/Spur-Prefix.pch";
 				INFOPLIST_FILE = "Spur/Spur-Info.plist";
-				OTHER_LDFLAGS = (
-					"-ObjC",
-					"-force_load",
-					"${BUILT_PRODUCTS_DIR}/libVenmo.a",
-				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/QuickDialog\"/** Libraries/Venmo";
+				USER_HEADER_SEARCH_PATHS = "\"${PROJECT_DIR}/QuickDialog\"/**";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

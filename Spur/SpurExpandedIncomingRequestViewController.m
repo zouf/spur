@@ -9,6 +9,7 @@
 #import "SpurExpandedIncomingRequestViewController.h"
 #import "SpurAppDelegate.h"
 #import "SpurService.h"
+#import "NSData+Base64.h"
 
 @interface SpurExpandedIncomingRequestViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *userLabel;
@@ -117,6 +118,15 @@
     
     NSString* str = [formatter stringFromDate:date];
     
+    //Encode the image
+    NSData *data = nil;
+    NSString *imageData = nil;
+    if (self.itemImage != nil) {
+        UIImage *image = self.itemImage;
+        data = UIImageJPEGRepresentation(image, 0.05f);
+        imageData = [data base64EncodedString];
+    }
+    
     
     SpurAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
     NSLog(@"%@\n",self.itemLabel.text);
@@ -130,7 +140,8 @@
     @"borrow": self.borrowLabel.text,
     @"requestorId": [self.request objectForKey:@"userId"],
     @"accepted": @(NO),
-    @"userId": [delegate getUserId]
+    @"userId": [delegate getUserId],
+    @"pic": imageData
     };
     NSLog(@"%@\n",self.request);
 
@@ -197,6 +208,27 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (IBAction)takePicture:(id)sender {
+    UIImagePickerController *myPicker = [[UIImagePickerController alloc] init];
+    [myPicker setSourceType:UIImagePickerControllerSourceTypeCamera];
+    [myPicker setDelegate:self];
+    
+    [self.navigationController presentViewController:myPicker animated:YES completion:nil];
+}
+
+-(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
+{
+    self.itemImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+    [self.itemImageView setImage:self.itemImage];
+    
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    
+        
+    
+    
 }
 
 @end

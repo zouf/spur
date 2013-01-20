@@ -12,6 +12,12 @@
 #import "SpurExpandedIncomingRequestViewController.h"
 #import "SpurAppDelegate.h"
 
+#define NAME_TAG 100
+#define BUY_SELL 101
+#define PRICE 102
+#define DESCRIPTION 103
+#define TIME 104
+
 @interface SpurIncomingRequestsTableViewController ()
 @property(nonatomic,retain) QuickDialogController * controller;
 @property (retain, nonatomic) QEntryElement *nameEntry;
@@ -154,8 +160,14 @@
     {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier];
         
+        
     }
-    
+    UILabel * name = (UILabel*)[cell viewWithTag:NAME_TAG];
+    UILabel * buySell = (UILabel*)[cell viewWithTag:BUY_SELL];
+    UILabel * price = (UILabel*)[cell viewWithTag:PRICE];
+    UILabel *description = (UILabel*)[cell viewWithTag:DESCRIPTION];
+    UILabel *time = (UILabel*)[cell viewWithTag:TIME];
+
     id item = [self.spurService.items objectAtIndex:indexPath.row];
     cell.textLabel.text = [item objectForKey:@"name"];
     

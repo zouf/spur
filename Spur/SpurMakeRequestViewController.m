@@ -168,6 +168,7 @@
     @"deviceToken" : delegate.deviceToken,
     @"posttime": str,
      @"userId": nm,
+    @"userName": [[NSUserDefaults standardUserDefaults]objectForKey:@"name"],
     @"borrow": @(borrow)
     };
     [self.spurService addItem:item completion:^(NSUInteger index){

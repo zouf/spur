@@ -8,22 +8,78 @@
         <scene sceneID="wum-iS-2Ns">
             <objects>
                 <tableViewController storyboardIdentifier="OutgoingOffersViewID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="YIK-aI-8UK" customClass="SpurPendingPaymentsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="eyr-vg-2oN">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="78" sectionHeaderHeight="22" sectionFooterHeight="22" id="eyr-vg-2oN">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PendingCell" id="zeB-44-arf">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="PendingCell" rowHeight="78" id="h0U-EW-bEc">
+                                <rect key="frame" x="0.0" y="22" width="320" height="78"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="77"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="left" text="Spiderman" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wec-Wx-gUo">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="173" id="sPp-3v-yoa"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="103" contentMode="left" text="Spiderman's request for radioactive spiders" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="199" translatesAutoresizingMaskIntoConstraints="NO" id="2es-AO-3G1">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="42" id="fUA-xe-XPJ"/>
+                                                <constraint firstAttribute="width" constant="199" id="vfX-fD-UYk"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" text="Buy / Sell" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="93" translatesAutoresizingMaskIntoConstraints="NO" id="ZtK-cn-ebz">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="42" id="6J9-3y-Rtb"/>
+                                                <constraint firstAttribute="width" constant="93" id="C0J-sF-4j9"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" text="Stop 3 criminals" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2cS-Pc-Xrj">
+                                            <color key="backgroundColor" red="0.32128632070000002" green="0.0" blue="0.0093975430350000007" alpha="0.0" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="123" id="vbK-EC-cCO"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                            <color key="textColor" red="0.94901960780000005" green="0.57254901960000004" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="104" contentMode="left" text="Time Posted" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E6n-T9-vcA">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="dbZ-Ff-8Oy"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="14"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="0.659378986" green="0.041133133820000001" blue="0.095853956609999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <connections>
-                                    <segue destination="aez-ZU-C1N" kind="push" id="1eY-rs-wAo"/>
-                                </connections>
+                                <constraints>
+                                    <constraint firstItem="E6n-T9-vcA" firstAttribute="leading" secondItem="2cS-Pc-Xrj" secondAttribute="leading" type="default" id="8XL-jv-cDR"/>
+                                    <constraint firstItem="Wec-Wx-gUo" firstAttribute="bottom" secondItem="2cS-Pc-Xrj" secondAttribute="bottom" type="default" id="8vx-n4-oQZ"/>
+                                    <constraint firstItem="E6n-T9-vcA" firstAttribute="trailing" secondItem="2cS-Pc-Xrj" secondAttribute="trailing" type="default" id="E4Y-bF-vpy"/>
+                                    <constraint firstItem="Wec-Wx-gUo" firstAttribute="leading" secondItem="h0U-EW-bEc" secondAttribute="leading" constant="9" id="IY0-lw-YBR"/>
+                                    <constraint firstItem="ZtK-cn-ebz" firstAttribute="top" secondItem="h0U-EW-bEc" secondAttribute="top" constant="-4" id="LXB-Fm-C83"/>
+                                    <constraint firstItem="2es-AO-3G1" firstAttribute="leading" secondItem="Wec-Wx-gUo" secondAttribute="leading" type="default" id="RqZ-4a-lbT"/>
+                                    <constraint firstItem="2cS-Pc-Xrj" firstAttribute="leading" secondItem="Wec-Wx-gUo" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Tzu-ue-dwg"/>
+                                    <constraint firstItem="Wec-Wx-gUo" firstAttribute="top" secondItem="2cS-Pc-Xrj" secondAttribute="top" type="default" id="X0l-JK-Htd"/>
+                                    <constraint firstItem="Wec-Wx-gUo" firstAttribute="centerY" secondItem="ZtK-cn-ebz" secondAttribute="centerY" type="default" id="XBO-Io-J5y"/>
+                                    <constraint firstItem="E6n-T9-vcA" firstAttribute="top" secondItem="ZtK-cn-ebz" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Zbf-aV-zXM"/>
+                                    <constraint firstItem="E6n-T9-vcA" firstAttribute="baseline" secondItem="2es-AO-3G1" secondAttribute="baseline" type="default" id="aGb-Lo-5fO"/>
+                                    <constraint firstItem="ZtK-cn-ebz" firstAttribute="leading" secondItem="h0U-EW-bEc" secondAttribute="leading" constant="108" id="eEY-Sp-nE6"/>
+                                </constraints>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -57,19 +113,78 @@
         <scene sceneID="m9j-kL-nag">
             <objects>
                 <tableViewController storyboardIdentifier="IncomingRequestsViewID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="P8A-dU-4Cq" customClass="SpurIncomingRequestsTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="4fb-AR-CP3">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="78" sectionHeaderHeight="22" sectionFooterHeight="22" id="4fb-AR-CP3">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RequestCell" id="GdS-Af-kiq">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RequestCell" rowHeight="78" id="GdS-Af-kiq">
+                                <rect key="frame" x="0.0" y="22" width="320" height="78"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="77"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="left" text="Spiderman" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UnT-aE-JmK">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="173" id="1EH-wK-nN3"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="103" contentMode="left" text="Spiderman's request for radioactive spiders" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="199" translatesAutoresizingMaskIntoConstraints="NO" id="ioo-tf-sAA">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="199" id="gdh-XD-NOe"/>
+                                                <constraint firstAttribute="height" constant="42" id="xWb-Cl-GxM"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" text="Buy / Sell" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="93" translatesAutoresizingMaskIntoConstraints="NO" id="rUW-17-34w">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="93" id="HLf-vP-ihX"/>
+                                                <constraint firstAttribute="height" constant="42" id="JvI-C1-Ana"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" text="Stop 3 criminals" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GR8-dF-3QJ">
+                                            <color key="backgroundColor" red="0.32128632068634033" green="0.0" blue="0.0093975430354475975" alpha="0.0" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="123" id="khT-W1-Jdd"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                            <color key="textColor" red="0.94901960784313721" green="0.5725490196078431" blue="0.49803921568627452" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="104" contentMode="left" text="Time Posted" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bpf-Kj-LA4">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="fam-kC-NRx"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="14"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="0.659378986" green="0.041133133820000001" blue="0.095853956609999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="bpf-Kj-LA4" firstAttribute="baseline" secondItem="ioo-tf-sAA" secondAttribute="baseline" type="default" id="4h6-bi-ZSZ"/>
+                                    <constraint firstItem="rUW-17-34w" firstAttribute="top" secondItem="GdS-Af-kiq" secondAttribute="top" constant="-4" id="9d6-XK-iHa"/>
+                                    <constraint firstItem="rUW-17-34w" firstAttribute="leading" secondItem="GdS-Af-kiq" secondAttribute="leading" constant="108" id="EPe-F1-Kh2"/>
+                                    <constraint firstItem="bpf-Kj-LA4" firstAttribute="trailing" secondItem="GR8-dF-3QJ" secondAttribute="trailing" type="default" id="FsM-Ja-KY3"/>
+                                    <constraint firstItem="GR8-dF-3QJ" firstAttribute="leading" secondItem="UnT-aE-JmK" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Noy-n4-1TD"/>
+                                    <constraint firstItem="UnT-aE-JmK" firstAttribute="centerY" secondItem="rUW-17-34w" secondAttribute="centerY" type="default" id="OXw-Eu-BYa"/>
+                                    <constraint firstItem="bpf-Kj-LA4" firstAttribute="top" secondItem="rUW-17-34w" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Sha-DU-dSf"/>
+                                    <constraint firstItem="bpf-Kj-LA4" firstAttribute="leading" secondItem="GR8-dF-3QJ" secondAttribute="leading" type="default" id="WYe-38-FmY"/>
+                                    <constraint firstItem="UnT-aE-JmK" firstAttribute="leading" secondItem="GdS-Af-kiq" secondAttribute="leading" constant="9" id="aBG-dJ-tmX"/>
+                                    <constraint firstItem="ioo-tf-sAA" firstAttribute="leading" secondItem="UnT-aE-JmK" secondAttribute="leading" type="default" id="g9H-wF-uAe"/>
+                                    <constraint firstItem="UnT-aE-JmK" firstAttribute="bottom" secondItem="GR8-dF-3QJ" secondAttribute="bottom" type="default" id="qlQ-p1-vjB"/>
+                                    <constraint firstItem="UnT-aE-JmK" firstAttribute="top" secondItem="GR8-dF-3QJ" secondAttribute="top" type="default" id="tyg-A6-BGZ"/>
+                                </constraints>
                                 <connections>
                                     <segue destination="Udw-Ee-f4o" kind="push" id="C0d-Uw-TGd"/>
                                 </connections>
@@ -243,19 +358,79 @@
         <scene sceneID="Tat-hI-hrr">
             <objects>
                 <tableViewController storyboardIdentifier="OutgoingRequestsViewID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Gnz-Pk-6Z3" customClass="SpurOutgoingRequestsViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="D6t-78-N8v">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="87" sectionHeaderHeight="22" sectionFooterHeight="22" id="D6t-78-N8v">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OutRequestCell" id="T8p-2i-yIM">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OutRequestCell" rowHeight="78" id="T8p-2i-yIM">
+                                <rect key="frame" x="0.0" y="22" width="320" height="78"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="77"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="left" text="Wayne Manor and Alfred and his little kiddies too" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="199" translatesAutoresizingMaskIntoConstraints="NO" id="FMb-wT-jv3">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="199" id="8O0-R9-HSr"/>
+                                                <constraint firstAttribute="height" constant="53" id="yhL-pV-YY3"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" text="Stop 3 criminals" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CYc-Sn-dyI">
+                                            <color key="backgroundColor" red="0.32128632070000002" green="0.0" blue="0.0093975430350000007" alpha="0.0" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="22" id="4dN-O3-zVz"/>
+                                                <constraint firstAttribute="width" constant="123" id="tIv-x5-Zax"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                            <color key="textColor" red="0.94901960780000005" green="0.57254901960000004" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="103" contentMode="left" text="Borrow" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="93" translatesAutoresizingMaskIntoConstraints="NO" id="R5t-ZZ-E2k">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="93" id="ECe-hR-j2l"/>
+                                                <constraint firstAttribute="height" constant="42" id="iQA-VN-7bg"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" text="Time Posted" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="93" translatesAutoresizingMaskIntoConstraints="NO" id="KVE-nb-Fl7">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="32" id="Lqo-CW-A8V"/>
+                                                <constraint firstAttribute="width" constant="93" id="kXz-Jr-3Ly"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="104" contentMode="left" text="###" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="101" translatesAutoresizingMaskIntoConstraints="NO" id="9jo-ac-JY8">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="101" id="ZB8-bR-cqV"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Medium" family="Helvetica Neue" pointSize="23"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstItem="FMb-wT-jv3" firstAttribute="top" secondItem="T8p-2i-yIM" secondAttribute="top" type="default" id="4cr-6z-Rix"/>
+                                    <constraint firstItem="KVE-nb-Fl7" firstAttribute="trailing" secondItem="9jo-ac-JY8" secondAttribute="trailing" type="default" id="AiT-m6-8j1"/>
+                                    <constraint firstItem="9jo-ac-JY8" firstAttribute="bottom" secondItem="R5t-ZZ-E2k" secondAttribute="bottom" type="default" id="EDs-zU-Z1y"/>
+                                    <constraint firstItem="R5t-ZZ-E2k" firstAttribute="top" secondItem="T8p-2i-yIM" secondAttribute="top" constant="35" id="GVF-la-eSg"/>
+                                    <constraint firstItem="CYc-Sn-dyI" firstAttribute="leading" secondItem="FMb-wT-jv3" secondAttribute="leading" type="default" id="O6Y-gx-1hr"/>
+                                    <constraint firstItem="R5t-ZZ-E2k" firstAttribute="centerY" secondItem="CYc-Sn-dyI" secondAttribute="centerY" type="default" id="Rej-eT-pmc"/>
+                                    <constraint firstItem="KVE-nb-Fl7" firstAttribute="leading" secondItem="FMb-wT-jv3" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="UAP-Xv-ckI"/>
+                                    <constraint firstItem="KVE-nb-Fl7" firstAttribute="top" secondItem="T8p-2i-yIM" secondAttribute="top" type="default" id="WrS-ka-1CM"/>
+                                    <constraint firstItem="9jo-ac-JY8" firstAttribute="top" secondItem="R5t-ZZ-E2k" secondAttribute="top" type="default" id="XSI-Cb-Wgd"/>
+                                    <constraint firstItem="FMb-wT-jv3" firstAttribute="leading" secondItem="T8p-2i-yIM" secondAttribute="leading" constant="13" id="bQX-xx-Cmz"/>
+                                    <constraint firstItem="R5t-ZZ-E2k" firstAttribute="centerX" secondItem="T8p-2i-yIM" secondAttribute="centerX" type="default" id="ghZ-bJ-a6r"/>
+                                </constraints>
                                 <connections>
                                     <segue destination="KAp-Kc-9y1" kind="push" id="w9v-gs-P6x"/>
                                 </connections>
@@ -416,19 +591,65 @@
         <scene sceneID="zQD-nw-khx">
             <objects>
                 <tableViewController storyboardIdentifier="IncomingOffersViewID" useStoryboardIdentifierAsRestorationIdentifier="YES" id="KAp-Kc-9y1" customClass="SpurIncomingOffersTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="iRp-OY-wQ2">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="119" sectionHeaderHeight="22" sectionFooterHeight="22" id="iRp-OY-wQ2">
                         <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OfferCell" id="ID9-nM-qfw">
-                                <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="OfferCell" rowHeight="119" id="ID9-nM-qfw">
+                                <rect key="frame" x="0.0" y="22" width="320" height="119"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="118"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="243-L6-1fY">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="83" id="XrB-Jd-52F"/>
+                                                <constraint firstAttribute="height" constant="103" id="gFi-Ro-3DZ"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="101" contentMode="left" text="The Hulk is a big green monster giant" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="217" translatesAutoresizingMaskIntoConstraints="NO" id="cJZ-PD-edc">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="217" id="buk-6T-4GJ"/>
+                                                <constraint firstAttribute="height" constant="64" id="d8s-qS-KSA"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="18"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="102" contentMode="left" text="Hulk Smash" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgR-cO-wZY">
+                                            <color key="backgroundColor" red="0.32128632070000002" green="0.0" blue="0.0093975430350000007" alpha="0.0" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="136" id="Bkn-tz-9zC"/>
+                                                <constraint firstAttribute="height" constant="49" id="idH-hH-ACI"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
+                                            <color key="textColor" red="0.94901960780000005" green="0.57254901960000004" blue="0.49803921569999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </label>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="103" contentMode="left" text="Time Posted" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="93" translatesAutoresizingMaskIntoConstraints="NO" id="frt-ck-GKa">
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="32" id="Lmt-ox-lQu"/>
+                                                <constraint firstAttribute="width" constant="93" id="tqh-qd-Vfo"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="frt-ck-GKa" secondAttribute="trailing" constant="7" id="4cy-3Y-8dY"/>
+                                    <constraint firstItem="243-L6-1fY" firstAttribute="top" secondItem="ID9-nM-qfw" secondAttribute="top" constant="7" id="Kse-jB-7oM"/>
+                                    <constraint firstItem="243-L6-1fY" firstAttribute="bottom" secondItem="dgR-cO-wZY" secondAttribute="bottom" type="default" id="TzH-zb-HiU"/>
+                                    <constraint firstAttribute="bottom" secondItem="frt-ck-GKa" secondAttribute="bottom" constant="17" id="acL-Mo-4Ky"/>
+                                    <constraint firstItem="cJZ-PD-edc" firstAttribute="leading" secondItem="243-L6-1fY" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="k3M-ut-JjL"/>
+                                    <constraint firstItem="cJZ-PD-edc" firstAttribute="trailing" secondItem="ID9-nM-qfw" secondAttribute="trailing" type="default" id="mDk-1d-Tyb"/>
+                                    <constraint firstItem="dgR-cO-wZY" firstAttribute="leading" secondItem="243-L6-1fY" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="n8d-9Q-KCg"/>
+                                    <constraint firstItem="cJZ-PD-edc" firstAttribute="top" secondItem="243-L6-1fY" secondAttribute="top" type="default" id="yx0-hF-buB"/>
+                                </constraints>
                                 <connections>
                                     <segue destination="WMB-Jh-kZI" kind="push" id="Td8-C5-o6Q"/>
                                 </connections>
@@ -571,7 +792,7 @@
             <objects>
                 <tableViewController id="aez-ZU-C1N" customClass="SpurExpandedPendingPaymentViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="wbf-wJ-Pha">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
@@ -632,7 +853,6 @@
         <class className="SpurExpandedIncomingOfferViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurExpandedIncomingOfferViewController.h"/>
             <relationships>
-                <relationship kind="action" name="acceptOffer:"/>
                 <relationship kind="outlet" name="borrowLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="itemImageView" candidateClass="UIImageView"/>
                 <relationship kind="outlet" name="itemLabel" candidateClass="UILabel"/>
@@ -644,7 +864,6 @@
         <class className="SpurExpandedIncomingRequestViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SpurExpandedIncomingRequestViewController.h"/>
             <relationships>
-                <relationship kind="action" name="submitOffer:"/>
                 <relationship kind="action" name="takePicture:"/>
                 <relationship kind="outlet" name="bestOffer" candidateClass="UITextField"/>
                 <relationship kind="outlet" name="borrowLabel" candidateClass="UILabel"/>

@@ -138,9 +138,11 @@
     @"posttime": str,
     @"itemName": self.itemLabel.text,
     @"borrow": self.borrowLabel.text,
+    @"requestorName": [self.request objectForKey:@"userName"],
     @"requestorId": [self.request objectForKey:@"userId"],
     @"accepted": @(NO),
     @"userId": [delegate getUserId],
+    @"userName": [[NSUserDefaults standardUserDefaults]objectForKey:@"name"],
     @"pic": imageData
     };
     NSLog(@"%@\n",self.request);

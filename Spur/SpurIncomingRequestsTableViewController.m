@@ -11,6 +11,7 @@
 #import "QuickDialog.h"
 #import "SpurExpandedIncomingRequestViewController.h"
 #import "SpurAppDelegate.h"
+#import "SpurInfoPageViewController.h"
 
 #define NAME_TAG 100
 #define BUY_SELL 101
@@ -306,4 +307,8 @@
     
 }
 
+- (IBAction)infoButtonPressed:(id)sender {
+    UIViewController *vc = [self.storyboard instantiateViewControllerWithIdentifier:@"InfoPage"];
+    [self.navigationController pushViewController:vc animated:YES];
+}
 @end

@@ -63,7 +63,7 @@
         id item = self.request;
         
         NSLog(@"%@\n",[item objectForKey:@"name"]);
-        NSString *name = [item objectForKey:@"userId"];
+        NSString *name = [item objectForKey:@"userName"];
         if (![name  isEqual:[NSNull null]])
         {
             self.userLabel.text  = name;
@@ -120,7 +120,7 @@
     
     //Encode the image
     NSData *data = nil;
-    NSString *imageData = nil;
+    NSString *imageData = @"";
     if (self.itemImage != nil) {
         UIImage *image = self.itemImage;
         data = UIImageJPEGRepresentation(image, 0.05f);
@@ -137,7 +137,7 @@
     @"deviceToken" : delegate.deviceToken,
     @"posttime": str,
     @"itemName": self.itemLabel.text,
-    @"borrow": self.borrowLabel.text,
+//    @"borrow": self.borrowLabel.text,
     @"requestorName": [self.request objectForKey:@"userName"],
     @"requestorId": [self.request objectForKey:@"userId"],
     @"accepted": @(NO),

@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface SpurIncomingRequestsTableViewController : UITableViewController
+- (IBAction)infoButtonPressed:(id)sender;
 
 @end

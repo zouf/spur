@@ -26,9 +26,6 @@
 		27492C9B16AA3F430095A442 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 27492C9916AA3F430095A442 /* InfoPlist.strings */; };
 		27492C9D16AA3F430095A442 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492C9C16AA3F430095A442 /* main.m */; };
 		27492CA116AA3F430095A442 /* SpurAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CA016AA3F430095A442 /* SpurAppDelegate.m */; };
-		27492CA316AA3F430095A442 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 27492CA216AA3F430095A442 /* Default.png */; };
-		27492CA516AA3F430095A442 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27492CA416AA3F430095A442 /* Default@2x.png */; };
-		27492CA716AA3F430095A442 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 27492CA616AA3F430095A442 /* Default-568h@2x.png */; };
 		27492CAA16AA3F430095A442 /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27492CA816AA3F430095A442 /* MainStoryboard.storyboard */; };
 		27492CC116AA42EB0095A442 /* SpurMakeRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CC016AA42EB0095A442 /* SpurMakeRequestViewController.m */; };
 		27492CCA16AA446C0095A442 /* SpurIncomingOffersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 27492CC916AA446C0095A442 /* SpurIncomingOffersTableViewController.m */; };
@@ -675,9 +672,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				27492C9B16AA3F430095A442 /* InfoPlist.strings in Resources */,
-				27492CA316AA3F430095A442 /* Default.png in Resources */,
-				27492CA516AA3F430095A442 /* Default@2x.png in Resources */,
-				27492CA716AA3F430095A442 /* Default-568h@2x.png in Resources */,
 				27492CAA16AA3F430095A442 /* MainStoryboard.storyboard in Resources */,
 				0AC42B1116AB6651009A4D07 /* venmo.png in Resources */,
 				0AC42B9016AB8928009A4D07 /* Spur_LogoRounded_57x57@2x.png in Resources */,

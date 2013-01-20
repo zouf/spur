@@ -150,7 +150,7 @@
     NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
     //Get the selected object in order to fill out the detail view
     id item = [self.spurService.items objectAtIndex:indexPath.row];
-    
+    NSLog(@"%@\n",item);
     [dvc setConfirmedOffer:item];
     
 }

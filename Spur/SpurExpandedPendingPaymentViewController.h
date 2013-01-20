@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Venmo/Venmo.h>
 
-@interface SpurExpandedPendingPaymentViewController : UITableViewController
+@interface SpurExpandedPendingPaymentViewController : UITableViewController 
 @property(nonatomic,retain) id confirmedOffer;
 @end

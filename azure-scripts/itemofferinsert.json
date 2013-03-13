@@ -1,0 +1,10 @@
+function insert(item, user, request) {
+
+    request.execute();
+    push.apns.send(item.requestorId, {
+           alert: "Your Spur " + item.itemName + " has gotten an offer!",
+				payload:{ //in app
+								inAppMessage: "Your Spur " + item.itemName + " has gotten an offer!"
+			}
+        });
+}

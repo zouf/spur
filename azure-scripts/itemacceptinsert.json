@@ -1,0 +1,9 @@
+function insert(item, user, request) {
+request.execute();
+   push.apns.send(item.requesteeID, {
+           alert: "Your Offer for " + item.itemName + " has been Accepted!",
+				payload:{ //in app
+								inAppMessage: "Your Offer for " + item.itemName + " has been Accepted!"
+			}
+        });
+}

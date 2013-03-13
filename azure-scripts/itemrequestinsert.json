@@ -1,0 +1,25 @@
+function insert(item, user, request){
+    request.execute({
+        success: function() {
+            request.respond();
+            sendNotifications();
+        }
+    });
+
+function sendNotifications() {
+    var userTable = tables.getTable('User');
+    userTable.read({
+        success: function(user) {
+            user.forEach(function(user) {
+                push.apns.send(user.deviceToken, { //alert
+							alert: "New Spur " + item.name + " has been added!",
+							payload:{ //in app
+								inAppMessage: "New Spur " + item.name + " has been added!"
+							}
+						
+						});
+            });
+        }
+    });
+}
+}
